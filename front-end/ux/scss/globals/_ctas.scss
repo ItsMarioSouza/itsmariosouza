@@ -6,6 +6,7 @@
 	text-decoration: none;
 	position: relative;
 	white-space: nowrap;
+	transition: color .25s;
 
 	&:after {
 		content: '';
@@ -15,20 +16,25 @@
 		right: -1px;
 		bottom: -2px;
 		z-index: -1;
-		border-bottom-width: 3px;
+		border-bottom-width: 2px;
 		border-bottom-style: solid;
-		border-bottom-color: $gray;
+		border-bottom-color: #000;
 		transition: all .25s ease-out;
-		opacity: .75;
+		// opacity: .75;
+	}
+
+	&:hover {
+		color: #fff;
+
 	}
 
 	&:hover:after {
-		border-bottom-width: calc(1rem * 1.5);
+		border-bottom-width: calc(1em * 1.2);
 			// Scalable greater than font size, can get jumpy if higher on larger font-sizes
-			// REM -webkit-font-smoothingt work since body font is adjustable via CMS via percentage
+			// REM won't work since body font is adjustable via CMS via percentage
 			// https://stackoverflow.com/questions/17982111/sass-variable-in-css-calc-function
 		transition: all .25s ease-in;
-		opacity: .5;
+		// opacity: .5;
 
 		@media (hover: none) {
 			border-bottom-width: 3px;

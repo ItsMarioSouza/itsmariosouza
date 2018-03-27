@@ -10,7 +10,7 @@
 	z-index: 20;
 	font-size: 1.75rem;
 	letter-spacing: 0.0625rem;
-	font-family: $space-mono;
+	font-family: $inconsolata;
 
 	a {
 		transition: .25s;
@@ -32,6 +32,7 @@
 
 .globalNav_item {
 	font-weight: 400;
+	text-transform: uppercase;
 
 	a {
 		position: relative;

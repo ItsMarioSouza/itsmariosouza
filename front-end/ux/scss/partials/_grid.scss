@@ -35,7 +35,7 @@
 	padding: 1rem;
 	@include gridTitle-center;
 
-	span {
+	.grid_item-client {
 		display: block;
 		font-weight: 600;
 		font-size: .75rem;

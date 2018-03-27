@@ -1,25 +1,15 @@
 /* ——————————————————————————————————————————
 	=HOMEPAGE
 —————————————————————————————————————————— */
-@media screen and (min-width: $medium-up) {
-	.intro {
-		width: 66%;
+.intro_copy {
+	span {
+		font-weight: 400;
 	}
 }
 
-
-@media screen and (min-width: $large-up) {
+@media screen and (min-width: $medium-up) {
 	.intro {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.intro_title {
-		width: 32%;
-		margin-right: 1rem;
-	}
-
-	.intro_description {
-		width: calc(68% - 1rem);
+		width: calc(66.66% - 1rem/3);
+			// same as 2 grid items
 	}
 }

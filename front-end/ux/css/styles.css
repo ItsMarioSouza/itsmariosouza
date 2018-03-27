@@ -351,7 +351,7 @@ html {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -371,7 +371,7 @@ a:visited {
 }
 
 p {
-  line-height: 1.4;
+  line-height: 1.64;
 }
 
 img {
@@ -426,7 +426,7 @@ img {
   z-index: 20;
   font-size: 1.75rem;
   letter-spacing: 0.0625rem;
-  font-family: "Space Mono", monospace, serif;
+  font-family: "Inconsolata", monospace;
 }
 
 .header_logo a {
@@ -454,6 +454,7 @@ img {
 
 .globalNav_item {
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 .globalNav_item a {
@@ -769,6 +770,9 @@ img {
   text-decoration: none;
   position: relative;
   white-space: nowrap;
+  -webkit-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
 }
 
 .borderLink a:after {
@@ -779,21 +783,23 @@ img {
   right: -1px;
   bottom: -2px;
   z-index: -1;
-  border-bottom-width: 3px;
+  border-bottom-width: 2px;
   border-bottom-style: solid;
-  border-bottom-color: #989898;
+  border-bottom-color: #000;
   -webkit-transition: all .25s ease-out;
   -o-transition: all .25s ease-out;
   transition: all .25s ease-out;
-  opacity: .75;
+}
+
+.borderLink a:hover {
+  color: #fff;
 }
 
 .borderLink a:hover:after {
-  border-bottom-width: calc(1rem * 1.5);
+  border-bottom-width: calc(1em * 1.2);
   -webkit-transition: all .25s ease-in;
   -o-transition: all .25s ease-in;
   transition: all .25s ease-in;
-  opacity: .5;
 }
 
 @media (hover: none) {
@@ -962,27 +968,13 @@ img {
 /* ——————————————————————————————————————————
 	=HOMEPAGE
 —————————————————————————————————————————— */
-@media screen and (min-width: 768px) {
-  .intro {
-    width: 66%;
-  }
+.intro_copy span {
+  font-weight: 400;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .intro {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .intro_title {
-    width: 32%;
-    margin-right: 1rem;
-  }
-  .intro_description {
-    width: calc(68% - 1rem);
+    width: calc(66.66% - 1rem/3);
   }
 }
 
@@ -1038,7 +1030,7 @@ img {
   margin: 0;
 }
 
-.grid_item-title span {
+.grid_item-title .grid_item-client {
   display: block;
   font-weight: 600;
   font-size: .75rem;
