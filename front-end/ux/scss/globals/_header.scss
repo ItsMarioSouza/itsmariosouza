@@ -1,0 +1,252 @@
+/* ——————————————————————————————————————————
+	=HEADER
+—————————————————————————————————————————— */
+.header {
+	transition: all .25s ease-in-out;
+}
+
+.header_logo {
+	margin: 0;
+	z-index: 20;
+	font-size: 1.75rem;
+	letter-spacing: 0.0625rem;
+	font-family: $space-mono;
+
+	a {
+		transition: .25s;
+
+		&:hover {
+			color: #787878;
+
+			@media (hover: none) {
+				color: inherit;
+			}
+		}
+	}
+}
+
+.globalNav_list,
+.globalNav_social-list {
+	@include listStyle-none;
+}
+
+.globalNav_item {
+	font-weight: 400;
+
+	a {
+		position: relative;
+
+		&:after {
+			background-color: #000;
+			@include centerUnderline-hide;
+		}
+
+		&:hover:after {
+			@include centerUnderline-show;
+
+			@media (hover: none) {
+				visibility: hidden;
+				transform: scaleX(0);
+			}
+		}
+	}
+}
+
+
+
+
+@media screen and (max-width: $medium-down) {
+	.header {
+		padding: 1.25rem 1rem;
+	}
+
+	.header_mobile-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.navicon {
+		display: block;
+		z-index: 20;
+
+		.navicon_line {
+			height: 2px;
+			background-color: #000;
+			display: block;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.navicon_line:nth-child(2) {
+			margin-top: 8px;
+			margin-bottom: 8px
+		}
+
+		&:hover{
+			cursor: pointer;
+		}
+
+		&.is-active {
+			.navicon_line:nth-child(2) {
+				opacity: 0;
+			}
+		}
+
+		&.navicon--angled {
+			.navicon_line {
+				margin-left: auto;
+			}
+
+			.navicon_line:nth-child(1) {
+				width: 35px
+			}
+
+			.navicon_line:nth-child(2) {
+				width: 30px;
+			}
+
+			.navicon_line:nth-child(3) {
+				width: 25px;
+			}
+
+			&.is-active {
+				.navicon_line {
+					width: 35px;
+				}
+
+				.navicon_line:nth-child(1) {
+					transform: translateY(10px) rotate(-45deg);
+				}
+
+				.navicon_line:nth-child(3) {
+					transform: translateY(-10px) rotate(45deg);
+				}
+			}
+		}
+
+		&.navicon--standard {
+			.navicon_line {
+				width: 35px;
+			}
+
+			&.is-active {
+				.navicon_line:nth-child(1) {
+					transform: translateY(10px) rotate(45deg);
+				}
+
+				.navicon_line:nth-child(3) {
+					transform: translateY(-10px) rotate(-45deg);
+				}
+			}
+		}
+
+	}
+
+	.globalNav {
+		position: fixed; // prevents displaying child elements while they're positioned off screen
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		z-index: 20;
+		margin-top: 4.5rem;
+		padding: .5rem 1rem 2rem 1rem;
+		box-sizing: border-box;
+		text-align: right;
+	}
+
+	.globalNav_item {
+		font-size: 1.5rem;
+		line-height: 2.85;
+	}
+
+	.globalNav_social-list {
+		margin-top: 1rem;
+	}
+
+	.globalNav_social-item {
+		display: inline-block;
+		margin-left: 1.5rem;
+
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		a {
+			display: block;
+		}
+
+		.svg-inline--fa {
+			font-size: 2rem;
+		}
+	}
+
+	.globalNav_social-link {
+		display: block;
+	}
+
+	.nav-closed {
+		.globalNav {
+			visibility: hidden;
+			opacity: 0;
+			right: -100%;
+			transition: all .45s ease-in; // Time to slide out when nav is closing
+		}
+	}
+
+	.nav-open {
+		overflow: hidden; // prevents scrolling underneath modal
+		position: fixed;
+		width: 100%;
+
+		.globalNav {
+			visibility: visible;
+			opacity: 1;
+			right: 0;
+			overflow-y: auto;
+			transition: all .85s ease-out; // Time to slide in when nav is opening
+		}
+	}
+}
+
+
+
+
+@media screen and (min-width: $medium-up) {
+	.header {
+		padding: 1.75rem 1rem;
+	}
+
+	.header_global-container {
+		justify-content: space-between;
+		display: flex;
+		align-items: center;
+	}
+
+	.navicon {
+		display: none;
+	}
+
+	.globalNav_social-list {
+		display: none;
+	}
+
+	.globalNav_item {
+		display: inline-block;
+		margin-left: .75rem;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&.current-menu-item a:after {
+			@include centerUnderline-show;
+		} // WP classes
+	}
+
+	.nav-open {
+		.modal.is-active {
+			display: none;
+		}
+	} // prevents modal from being visible if a user adjusts to desktop breakpoint when mobile nav is open
+}

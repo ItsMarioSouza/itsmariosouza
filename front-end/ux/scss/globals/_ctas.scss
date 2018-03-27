@@ -1,0 +1,95 @@
+/* ——————————————————————————————————————————
+	=CTAs
+—————————————————————————————————————————— */
+.borderLink a {
+	color: #000;
+	text-decoration: none;
+	position: relative;
+	white-space: nowrap;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -1px;
+		right: -1px;
+		bottom: -2px;
+		z-index: -1;
+		border-bottom-width: 3px;
+		border-bottom-style: solid;
+		border-bottom-color: $gray;
+		transition: all .25s ease-out;
+		opacity: .75;
+	}
+
+	&:hover:after {
+		border-bottom-width: calc(1rem * 1.5);
+			// Scalable greater than font size, can get jumpy if higher on larger font-sizes
+			// REM -webkit-font-smoothingt work since body font is adjustable via CMS via percentage
+			// https://stackoverflow.com/questions/17982111/sass-variable-in-css-calc-function
+		transition: all .25s ease-in;
+		opacity: .5;
+
+		@media (hover: none) {
+			border-bottom-width: 3px;
+			opacity: .75;
+		}
+	}
+}
+
+.backLink {
+	display: inline-block;
+
+	a {
+		display: flex;
+		align-items: center;
+		transition: color .25s;
+	}
+
+	svg {
+		font-size: 1.5rem;
+		position: relative;
+		left: 0;
+		margin-right: 5px;
+		transition: left .25s ease-in-out; // Arrow movement timing
+	}
+
+	&:hover {
+		color: gray;
+
+		@media (hover: none) {
+			color: inherit;
+		}
+
+		svg {
+			left: -5px;
+
+			@media (hover: none) {
+				left: 0;
+			}
+		}
+	}
+}
+
+.button {
+	padding: .5rem .75rem;
+	border: 1px solid #000;
+	font-family: inherit;
+	cursor: pointer;
+	background-image: linear-gradient(#000, #000);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	transition: all .2s ease-in; // Time to unhover
+
+	&:hover {
+		color: #fff;
+		background-size: 100% 100%;
+		transition: all .2s ease-out; // Time to hover
+
+		@media (hover: none) {
+			color: inherit;
+			background-size: 0% 100%;
+		} // Default hover looks jenky on touch, `pointer: course` didn't prevent iPhone hover, older IE11 doesn't supper `hover: hover` or `pointer: course`
+	}
+}

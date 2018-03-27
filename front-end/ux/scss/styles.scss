@@ -1,0 +1,40 @@
+/* ————————————––––––––––––––––––––––––––––
+	Main CSS Style Sheet
+	Author: Mario Souza
+	Date: 2018
+————————————–––––––––––––––––––––––––––– */
+
+
+
+
+// ————————————––––––––––––––––––––––––––––
+//	=NOTES
+// ————————————––––––––––––––––––––––––––––
+
+
+
+
+
+// ————————————––––––––––––––––––––––––––––
+//	=IMPORTS
+// ————————————––––––––––––––––––––––––––––
+// Globals
+@import "globals/_vars";
+@import "globals/_forms-reset";
+@import "globals/_normalize";
+@import "globals/_wp-core";
+@import "globals/_base";
+@import "globals/_header";
+@import "globals/_footer";
+@import "globals/_ctas";
+@import "globals/_modal";
+@import "globals/_forms";
+
+
+// Partials
+@import "partials/_home";
+@import "partials/_grid";
+@import "partials/_about";
+@import "partials/_blog";
+@import "partials/_post";
+@import "partials/_error";

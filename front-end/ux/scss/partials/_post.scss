@@ -1,0 +1,82 @@
+/* ——————————————————————————————————————————
+	=POST
+—————————————————————————————————————————— */
+.post_row {
+	margin-bottom: 2.5rem;
+}
+
+.post_copy {
+	max-width: 700px;
+	margin: auto;
+
+	ul,
+	ol {
+		line-height: 1.25;
+	}
+
+	ul li,
+	ol li {
+		margin-bottom: 0.3125rem;
+	}
+
+	blockquote {
+		font-size: 1.25rem;
+		font-style: italic;
+		position: relative;
+
+		&:before {
+			content: '\201C';
+			font-size: 2.5rem;
+			color: $gray;
+			position: absolute;
+			top: -.375rem;
+			left: -1.5rem;
+			font-weight: 400;
+		}
+
+		p {
+			margin: 0;
+		} // WP wraps blockquote text in a <p> tag
+	}
+}
+
+.post_image {
+	img {
+		display: block;
+	}
+}
+
+
+
+
+@media screen and (max-width: $small-down) {
+	.post_image {
+		img {
+			margin: auto;
+		}
+	}
+
+	.post_image--double {
+		img {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+
+
+
+@media screen and (min-width: $small-up) {
+	.post_image--double {
+		display: flex;
+		justify-content: center;
+
+		.post_image-container {
+			max-width: calc(50% - 1rem/2);
+
+			&:first-of-type {
+				margin-right: 1rem;
+			}
+		}
+	}
+}
