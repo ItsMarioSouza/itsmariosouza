@@ -43,7 +43,7 @@
 	}
 }
 
-.backLink {
+.arrowLink {
 	display: inline-block;
 
 	a {
@@ -55,9 +55,8 @@
 	svg {
 		font-size: 1.5rem;
 		position: relative;
-		left: 0;
-		margin-right: 5px;
 		transition: left .25s ease-in-out; // Arrow movement timing
+		left: 0;
 	}
 
 	&:hover {
@@ -66,9 +65,33 @@
 		@media (hover: none) {
 			color: inherit;
 		}
+	}
+}
 
+.arrowLink--back {
+	svg {
+		margin-right: 5px;
+	}
+
+	&:hover {
 		svg {
 			left: -5px;
+
+			@media (hover: none) {
+				left: 0;
+			}
+		}
+	}
+}
+
+.arrowLink--forward {
+	svg {
+		margin-left: 5px;
+	}
+
+	&:hover {
+		svg {
+			left: 5px;
 
 			@media (hover: none) {
 				left: 0;

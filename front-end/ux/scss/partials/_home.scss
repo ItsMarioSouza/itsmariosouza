@@ -7,6 +7,14 @@
 	}
 }
 
+.grid_cta--home {
+	text-align: center;
+
+	a {
+		display: inline-block;
+	}
+}
+
 @media screen and (min-width: $medium-up) {
 	.intro {
 		width: calc(66.66% - 1rem/3);

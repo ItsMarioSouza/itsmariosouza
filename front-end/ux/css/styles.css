@@ -809,11 +809,11 @@ img {
   }
 }
 
-.backLink {
+.arrowLink {
   display: inline-block;
 }
 
-.backLink a {
+.arrowLink a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -825,32 +825,49 @@ img {
   transition: color .25s;
 }
 
-.backLink svg {
+.arrowLink svg {
   font-size: 1.5rem;
   position: relative;
-  left: 0;
-  margin-right: 5px;
   -webkit-transition: left .25s ease-in-out;
   -o-transition: left .25s ease-in-out;
   transition: left .25s ease-in-out;
+  left: 0;
 }
 
-.backLink:hover {
+.arrowLink:hover {
   color: gray;
 }
 
 @media (hover: none) {
-  .backLink:hover {
+  .arrowLink:hover {
     color: inherit;
   }
 }
 
-.backLink:hover svg {
+.arrowLink--back svg {
+  margin-right: 5px;
+}
+
+.arrowLink--back:hover svg {
   left: -5px;
 }
 
 @media (hover: none) {
-  .backLink:hover svg {
+  .arrowLink--back:hover svg {
+    left: 0;
+  }
+}
+
+.arrowLink--forward svg {
+  margin-left: 5px;
+}
+
+.arrowLink--forward:hover svg {
+  left: 5px;
+}
+
+@media (hover: none) {
+  .arrowLink--forward:hover svg {
     left: 0;
   }
 }
@@ -970,6 +987,14 @@ img {
 —————————————————————————————————————————— */
 .intro_copy span {
   font-weight: 400;
+}
+
+.grid_cta--home {
+  text-align: center;
+}
+
+.grid_cta--home a {
+  display: inline-block;
 }
 
 @media screen and (min-width: 768px) {
