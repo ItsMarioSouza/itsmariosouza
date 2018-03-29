@@ -1,12 +1,6 @@
 /* ——————————————————————————————————————————
 	=HOMEPAGE
 —————————————————————————————————————————— */
-.intro_copy {
-	span {
-		font-weight: 400;
-	}
-}
-
 .grid_cta--home {
 	text-align: center;
 
@@ -19,5 +13,6 @@
 	.intro {
 		width: calc(66.66% - 1rem/3);
 			// same as 2 grid items
+		max-width: 720px;
 	}
 }
