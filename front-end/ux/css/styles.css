@@ -1026,6 +1026,10 @@ img {
   }
 }
 
+.grid_item:hover .grid_item-copy {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .grid_item-link {
   display: block;
   overflow: hidden;
@@ -1041,22 +1045,25 @@ img {
           box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.04);
 }
 
-.grid_item-title {
-  font-size: 1.5rem;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 1rem;
-  text-align: center;
+.grid_item-copy {
   position: absolute;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  top: 50%;
-  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  -webkit-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
-.grid_item-title .grid_item-client {
+.grid_item-title {
+  font-size: 1.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.grid_item-title span {
   display: block;
   font-weight: 600;
   font-size: .75rem;
@@ -1065,12 +1072,13 @@ img {
 
 .grid_item-title.grid_item-title--visible {
   text-align: center;
-  position: absolute;
+  position: relative;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   top: 50%;
   margin: 0;
+  width: 100%;
 }
 
 .grid_item-title.grid_item-title--hidden {

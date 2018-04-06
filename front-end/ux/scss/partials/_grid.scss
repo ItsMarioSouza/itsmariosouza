@@ -18,6 +18,10 @@
 				transform: scale(1);
 			}
 		}
+
+		.grid_item-copy {
+			background-color: rgba(0, 0, 0, .5);
+		}
 	}
 }
 
@@ -33,14 +37,22 @@
 	box-shadow: inset 0 0 100px rgba(0, 0, 0, .04); // transparent img background fallback
 }
 
+.grid_item-copy {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	transition: all .5s ease-in-out;
+}
+
 .grid_item-title {
 	font-size: 1.5rem;;
-	width: 100%;
+	// width: calc(100% - 2rem);
 	box-sizing: border-box;
-	padding: 1rem;
-	@include gridTitle-center;
 
-	.grid_item-client {
+	span {
 		display: block;
 		font-weight: 600;
 		font-size: .75rem;
@@ -75,7 +87,6 @@
 		}
 	}
 }
-
 
 
 
