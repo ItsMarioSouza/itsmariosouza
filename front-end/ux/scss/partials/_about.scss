@@ -1,7 +1,7 @@
 /* ——————————————————————————————————————————
 	=ABOUT PAGE
 —————————————————————————————————————————— */
-.about_row {
+.about__row {
 	margin-bottom: 3rem;
 
 	&:last-child {
@@ -9,13 +9,13 @@
 	}
 }
 
-.about_link-list {
+.about__link-list {
 	list-style: none;
 	padding-left: 0;
 	margin: 0;
 }
 
-.about_icon-container {
+.about__icon-container {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
@@ -32,7 +32,7 @@
 		margin-top: 2px;
 	}
 
-	&.about_icon-container--link {
+	&.about__icon-container--link {
 		transition: all .25s ease-in-out;
 
 		&:hover {
@@ -49,7 +49,7 @@
 
 
 @media screen and (max-width: $small-down) {
-	.about_link-list {
+	.about__link-list {
 		li {
 			margin-bottom: 2rem;
 
@@ -61,7 +61,7 @@
 }
 
 @media screen and (min-width: $small-up) {
-	.about_link-list {
+	.about__link-list {
 		display: flex;
 		align-items: center;
 
@@ -80,7 +80,7 @@
 
 
 @media screen and (max-width: $medium-down) {
-	.about_image-container {
+	.about__image-container {
 		img {
 			display: block;
 			margin: auto;
@@ -97,23 +97,23 @@
 		margin-bottom: 2rem;
 	}
 
-	.about_container {
+	.about__content-container {
 		display: flex;
 	}
 
-	.about_details-container {
+	.about__details-container {
 		width: calc(50% - 1rem);
 		margin-right: 2rem;
 		display: inline-block;
 		order: 1;
 	}
 
-	.about_image-container {
+	.about__image-container {
 		width: calc(50% - 1rem);
 		order: 2;
 	}
 
-	.about_name {
+	.about__name {
 		margin-top: 0;
 	}
 }

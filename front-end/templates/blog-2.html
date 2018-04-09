@@ -3,9 +3,9 @@
 
 		<div class="contentContainer contentContainer--blog" role="main">
 			<section class="hero">
-				<h1 class="hero_title hero_title--visible hero_title--dark">Play</h1>
+				<h1 class="hero__title hero_title--visible hero_title--dark">Play</h1>
 
-				<picture class="hero_image">
+				<picture class="hero__image">
 					<source media="(max-width: 767px)" srcset="http://placehold.it/750x450">
 
 					<img src="http://placehold.it/1200x420" alt="">
@@ -13,24 +13,30 @@
 			</section>
 
 			<section class="grid">
-				<div class="grid_list grid_list--blog">
-					<article class="grid_item grid_item--blog">
-						<a class="grid_item-link" href="post.html">
-							<img class="grid_item-img" src="http://placehold.it/720x600" />
-							<h2 class="grid_item-title grid_item-title--dark grid_item-title--visible">
-								<span>Client Name</span>
-								Nullam
-							</h2>
+				<div class="grid__list grid__list--blog">
+					<article class="grid__item grid__item--blog">
+						<a class="grid__item-link" href="post.html">
+							<img class="grid__item-img" src="http://placehold.it/720x600" />
+
+							<div class="grid__item-copy-container">
+								<h2 class="grid__item-title grid__item-title--dark grid__item-title--visible">
+									<span>Client Name</span>
+									Nullam
+								</h2>
+							</div>
 						</a>
 					</article>
 
-					<article class="grid_item grid_item--blog">
-						<a class="grid_item-link" href="post-password.html">
-							<img class="grid_item-img" src="http://placehold.it/720x600" />
-							<h2 class="grid_item-title grid_item-title--light grid_item-title--visible">
-								<span>Client Name</span>
-								Malesuada Quam Tortor
-							</h2>
+					<article class="grid__item grid__item--blog">
+						<a class="grid__item-link" href="post-password.html">
+							<img class="grid__item-img" src="http://placehold.it/720x600" />
+
+							<div class="grid__item-copy-container">
+								<h2 class="grid__item-title grid__item-title--light grid__item-title--visible">
+									<span>Client Name</span>
+									Malesuada Quam Tortor
+								</h2>
+							</div>
 						</a>
 					</article>
 				</div> <!-- grid_list -->
