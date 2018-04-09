@@ -23,11 +23,16 @@
 			background-color: rgba(0, 0, 0, .5);
 		}
 
-		.grid__item-title {
-			&:after {
-				@include centerUnderline-show;
-			}
-		}
+		// .grid__item-title {
+		// 	&:after {
+		// 		@include centerUnderline-show;
+		// 	}
+		//
+		// 	@media (hover: none) {
+		// 		visibility: hidden;
+		// 		transform: scaleX(0);
+		// 	}
+		// }
 	}
 }
 

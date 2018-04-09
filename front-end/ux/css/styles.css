@@ -1022,13 +1022,6 @@ img {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.grid__item:hover .grid__item-title:after {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
-}
-
 .grid__item-link {
   display: block;
   overflow: hidden;
