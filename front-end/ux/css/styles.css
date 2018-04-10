@@ -528,7 +528,7 @@ img {
   .navicon:hover {
     cursor: pointer;
   }
-  .navicon.is-active .navicon_line:nth-child(2) {
+  .navicon.is-active .navicon__line:nth-child(2) {
     opacity: 0;
   }
   .navicon.navicon--angled .navicon__line {
