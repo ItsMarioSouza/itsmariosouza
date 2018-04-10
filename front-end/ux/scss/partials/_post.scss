@@ -1,11 +1,11 @@
 /* ——————————————————————————————————————————
 	=POST
 —————————————————————————————————————————— */
-.post_row {
+.post__row {
 	margin-bottom: 2.5rem;
 }
 
-.post_copy {
+.post__copy {
 	max-width: 700px;
 	margin: auto;
 
@@ -40,7 +40,7 @@
 	}
 }
 
-.post_image {
+.post__image {
 	img {
 		display: block;
 	}
@@ -50,13 +50,13 @@
 
 
 @media screen and (max-width: $small-down) {
-	.post_image {
+	.post__image {
 		img {
 			margin: auto;
 		}
 	}
 
-	.post_image--double {
+	.post__image--double {
 		img {
 			margin-bottom: 1rem;
 		}
@@ -67,11 +67,11 @@
 
 
 @media screen and (min-width: $small-up) {
-	.post_image--double {
+	.post__image--double {
 		display: flex;
 		justify-content: center;
 
-		.post_image-container {
+		.post__image-container {
 			max-width: calc(50% - 1rem/2);
 
 			&:first-of-type {

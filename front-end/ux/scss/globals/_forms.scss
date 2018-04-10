@@ -15,25 +15,25 @@
 		margin-right: .25rem;
 	}
 
-	button {
-		cursor: pointer;
-		background-image: linear-gradient(#000, #000);
-		background-position: 50% 50%;
-		background-repeat: no-repeat;
-		background-size: 0% 100%;
-		transition: all .18s ease-in; // Time to unhover
-
-		&:hover {
-			color: #fff;
-			background-size: 101% 101%;
-			transition: all .18s ease-out; // Time to hover
-
-			@media (hover: none) {
-				color: inherit;
-				background-size: 0% 100%;
-			} // Default hover looks jenky on touch, `pointer: course` didn't prevent iPhone hover, older IE11 doesn't supper `hover: hover` or `pointer: course`
-		}
-	}
+	// button {
+	// 	cursor: pointer;
+	// 	background-image: linear-gradient(#000, #000);
+	// 	background-position: 50% 50%;
+	// 	background-repeat: no-repeat;
+	// 	background-size: 0% 100%;
+	// 	transition: all .18s ease-in; // Time to unhover
+	//
+	// 	&:hover {
+	// 		color: #fff;
+	// 		background-size: 101% 101%;
+	// 		transition: all .18s ease-out; // Time to hover
+	//
+	// 		@media (hover: none) {
+	// 			color: inherit;
+	// 			background-size: 0% 100%;
+	// 		} // Default hover looks jenky on touch, `pointer: course` didn't prevent iPhone hover, older IE11 doesn't supper `hover: hover` or `pointer: course`
+	// 	}
+	// }
 }
 
 .errorMessage {
