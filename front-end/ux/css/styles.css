@@ -997,6 +997,7 @@ img {
 .grid__title {
   font-size: 1.125rem;
   line-height: 1.4;
+  font-family: "Inconsolata", monospace;
 }
 
 .grid__item {
@@ -1177,6 +1178,10 @@ img {
 
 .about__row:last-child {
   margin-bottom: 0;
+}
+
+.about__name {
+  font-family: "Inconsolata", monospace;
 }
 
 .about__link-list {
