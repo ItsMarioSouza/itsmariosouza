@@ -20,6 +20,7 @@
 							// Arguments
 							$args = array(
 								'post_type' 		=> 'post',
+								'posts_per_page'	=> 3,
 								'meta_key'			=> 'posts_order_acf',
 								'orderby'			=> 'meta_value',
 								'order'				=> 'ASC',
