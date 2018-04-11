@@ -43,9 +43,8 @@
 			<?php
 				// ACF Fields
 				if( have_rows('post_back_link_acf', 'option') ): while( have_rows('post_back_link_acf', 'option') ): the_row();
-
 					$icon = get_sub_field('icon_acf');
-
+					$text = get_sub_field('text_acf');
 				endwhile; endif;
 			?>
 
@@ -53,7 +52,7 @@
 				<div class="arrowLink arrowLink--back">
 					<a href="/work">
 						<i class="<?php echo $icon ?>"></i>
-						<span>View All Work</span>
+						<span><?php echo $text ?>/span>
 					</a>
 				</div>
 			</section>
