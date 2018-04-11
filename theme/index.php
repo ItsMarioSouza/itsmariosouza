@@ -83,19 +83,20 @@
 								?>
 							<?php endwhile; endif; ?>
 
-							<li class="grid_item grid_item--home">
-								<a class="grid_item-link" href="<?php the_permalink(); ?>>">
-									<img class="grid_item-img" src="<?php echo $image ?>" alt="" />
+							<li class="grid__item grid__item--home">
+								<a class="grid__item-link" href="<?php the_permalink(); ?>>">
+									<img class="grid_item-img" src="<?php the_field('post_grid_image_acf'); ?>" alt="" />
 
-									<div class="grid_item-copy">
-										<h2 class="grid_item-title <?php echo $color ?> <?php echo $visibility ?>">
-											<?php echo $title ?>
-										</h2>
+									<div class="grid__item-copy-container">
+										<h1 class="grid__item-title <?php the_sub_field('color_acf'); ?> <?php the_sub_field('visibility_acf'); ?>">
+											<span></span>
+											<?php the_title(); ?>
+										</h1>
 									</div>
 								</a>
 							</li>
 							<?php wp_reset_postdata(); ?>
-							<?php endif; ?> 
+							<?php endif; ?>
 
 						<?php endwhile; endif; ?>
 
