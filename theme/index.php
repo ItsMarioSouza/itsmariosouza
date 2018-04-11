@@ -28,7 +28,7 @@
 
 			<section class="grid">
 				<?php if( !post_password_required($post) ): ?>
-					<ul class="grid__list grid_list--home">
+					<div class="grid__list grid_list--home">
 
 						<?php
 							// Arguments
@@ -71,7 +71,7 @@
 						<!-- Reset The Query -->
 						<?php wp_reset_query(); ?>
 
-					</ul> <!-- /grid__list -->
+					</div> <!-- /grid__list -->
 
 				<?php endif; //post_password_required ?>
 
