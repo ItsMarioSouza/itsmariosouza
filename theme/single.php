@@ -52,7 +52,7 @@
 				<div class="arrowLink arrowLink--back">
 					<a href="/work">
 						<i class="<?php echo $icon ?>"></i>
-						<span><?php echo $text ?>/span>
+						<span><?php echo $text ?></span>
 					</a>
 				</div>
 			</section>
