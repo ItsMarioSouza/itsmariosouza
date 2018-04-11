@@ -65,7 +65,6 @@
 			</section>
 
 			<section class="grid">
-				<?php if( !post_password_required($post) ): ?>
 					<div class="grid__list grid_list--home">
 
 						<?php if( have_rows('home_grid_items_acf') ): while( have_rows('home_grid_items_acf') ): the_row(); ?>
@@ -99,9 +98,7 @@
 
 					</div> <!-- /grid__list -->
 
-				<?php endif; //post_password_required ?>
 
-				<?php the_content(); ?>
 			</section>
 
 		</div> <!-- /contentContainer -->
