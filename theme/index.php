@@ -14,6 +14,8 @@
 			</section>
 
 			<section class="grid">
+				<h2 class="grid__title"><?php the_field('home_grid_title_acf'); ?></h2>
+
 				<?php if( !post_password_required($post) ): ?>
 
 
