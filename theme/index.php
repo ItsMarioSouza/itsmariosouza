@@ -58,7 +58,7 @@
 					<?php if( have_rows('home_grid_cta_acf') ): while( have_rows('home_grid_cta_acf') ): the_row(); ?>
 						<div class="grid__cta grid__cta--home">
 							<a href="<?php the_sub_field('link_acf'); ?>">
-								<button class="button"><?php the_sub_field('cta_acf'); ?></button>
+								<button class="button"><?php the_sub_field('text_acf'); ?></button>
 							</a>
 						</div>
 					<?php endwhile; endif; ?>
