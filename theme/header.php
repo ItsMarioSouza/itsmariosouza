@@ -10,7 +10,12 @@
 		<!-- Favicon / Device Images -->
 		<!-- Insert favicon code -->
 
-		<!-- Fonts -->
+		<?php
+			// Iclude WP head
+			wp_head();
+		?>
+
+		<!-- Fonts --> 
 		<link href="https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
 	</head>
 
