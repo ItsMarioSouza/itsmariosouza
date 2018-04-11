@@ -588,17 +588,17 @@ img {
   .globalNav__social-list {
     margin-top: 1rem;
   }
-  .globalNav__social-list {
+  .globalNav__social-item {
     display: inline-block;
     margin-left: 1.5rem;
   }
-  .globalNav__social-list:first-child {
+  .globalNav__social-item:first-child {
     margin-left: 0;
   }
-  .globalNav__social-list a {
+  .globalNav__social-item a {
     display: block;
   }
-  .globalNav__social-list .svg-inline--fa {
+  .globalNav__social-item .svg-inline--fa {
     font-size: 2rem;
   }
   .globalNav__social-link {
