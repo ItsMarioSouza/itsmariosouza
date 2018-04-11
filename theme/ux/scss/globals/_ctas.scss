@@ -1,0 +1,125 @@
+/* ——————————————————————————————————————————
+	=CTAs
+—————————————————————————————————————————— */
+.borderLink a {
+	color: #000;
+	text-decoration: none;
+	position: relative;
+	white-space: nowrap;
+	transition: color .25s;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -1px;
+		right: -1px;
+		bottom: -2px;
+		z-index: -1;
+		border-bottom-width: 2px;
+		border-bottom-style: solid;
+		border-bottom-color: $gray;
+		transition: all .25s ease-out;
+		opacity: .75;
+	}
+
+	// &:hover {
+	// 	color: #fff;
+	// }
+
+	&:hover:after {
+		border-bottom-width: calc(1em * 1.2);
+			// Scalable greater than font size, can get jumpy if higher on larger font-sizes
+			// REM won't work since body font is adjustable via CMS via percentage
+			// https://stackoverflow.com/questions/17982111/sass-variable-in-css-calc-function
+		transition: all .25s ease-in;
+		opacity: .5;
+
+		@media (hover: none) {
+			border-bottom-width: 3px;
+			opacity: .75;
+		}
+	}
+}
+
+.arrowLink {
+	display: inline-block;
+	font-family: $inconsolata;
+
+	a {
+		display: flex;
+		align-items: center;
+		transition: color .25s;
+	}
+
+	svg {
+		font-size: 1.5rem;
+		position: relative;
+		transition: left .25s ease-in-out; // Arrow movement timing
+		left: 0;
+	}
+
+	&:hover {
+		color: gray;
+
+		@media (hover: none) {
+			color: inherit;
+		}
+	}
+}
+
+.arrowLink--back {
+	svg {
+		margin-right: 5px;
+	}
+
+	&:hover {
+		svg {
+			left: -5px;
+
+			@media (hover: none) {
+				left: 0;
+			}
+		}
+	}
+}
+
+.arrowLink--forward {
+	svg {
+		margin-left: 5px;
+	}
+
+	&:hover {
+		svg {
+			left: 5px;
+
+			@media (hover: none) {
+				left: 0;
+			}
+		}
+	}
+}
+
+.button {
+	font-family: $inconsolata;
+	font-size: 1.125rem;
+	padding: .5rem .75rem;
+	border: 1px solid #000;
+	cursor: pointer;
+	background-image: linear-gradient(#000, #000);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	transition: all .2s ease-in; // Time to unhover
+
+	&:hover {
+		color: #fff;
+		background-size: 100% 100%;
+		transition: all .2s ease-out; // Time to hover
+
+		@media (hover: none) {
+			color: inherit;
+			background-size: 0% 100%;
+		} // Default hover looks jenky on touch, `pointer: course` didn't prevent iPhone hover, older IE11 doesn't supper `hover: hover` or `pointer: course`
+	}
+}

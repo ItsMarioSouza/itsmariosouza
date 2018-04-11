@@ -1,0 +1,23 @@
+/* ——————————————————————————————————————————
+	=MODAL
+—————————————————————————————————————————— */
+.modal {
+	position: fixed;
+	visibility: hidden;
+	height: 0;
+	top: -100%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: $gray;
+	opacity: .95;
+	z-index: 10;
+	transition: all .75s ease-in; // Time to slide out when closed
+
+	&.is-active {
+		visibility: visible;
+		height: 100%;
+		top: 0;
+		transition: all .55s ease-out; // Time to slide in when opened
+	}
+}

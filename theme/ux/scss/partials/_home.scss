@@ -1,0 +1,10 @@
+/* ——————————————————————————————————————————
+	=HOMEPAGE
+—————————————————————————————————————————— */
+@media screen and (min-width: $medium-up) {
+	.intro__copy-container {
+		width: calc(66.66% - 1rem/3);
+			// same as 2 grid items
+		max-width: 720px;
+	}
+}
