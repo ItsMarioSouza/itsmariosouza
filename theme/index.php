@@ -42,7 +42,7 @@
 
 									<div class="grid__item-copy-container">
 										<h1 class="grid__item-title <?php echo $color ?> <?php echo $visibility ?>">
-											<span></span>
+											<span><?php the_field('post_client_acf'); ?></span>
 											<?php the_title(); ?>
 										</h1>
 									</div>
