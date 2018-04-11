@@ -23,8 +23,7 @@
 							<?php
 								// Feilds from parent repeater – grid items
 								$post_object = get_sub_field('posts_acf');
-								if( $post_object ) :
-								$post = $post_object;
+								if( $post_object ) : $post = $post_object;
 							?>
 
 							<?php if( have_rows('title_options_acf') ): while( have_rows('title_options_acf') ): the_row(); ?>
@@ -47,8 +46,8 @@
 									</div>
 								</a>
 							</article>
-							<?php wp_reset_postdata(); ?>
-							<?php endif; ?>
+
+							<?php wp_reset_postdata(); endif; //ACF Post Object ?>
 
 						<?php endwhile; endif; ?>
 
