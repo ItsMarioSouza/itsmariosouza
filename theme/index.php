@@ -51,32 +51,30 @@
 								// Feilds from parent repeater – grid items
 								$link = get_sub_field('link_acf');
 								$image = get_sub_field('image_acf');
-								$client = get_sub_field('client_acf');
 								$title = get_sub_field('title_acf');
 							?>
-
-							<?php if( have_rows('title_options_acf') ): while( have_rows('title_options_acf') ): the_row(); ?>
-								<?php
-									// Feilds from child repeater – title options
-									$color = get_sub_field('color_acf');
-									$visibility = get_sub_field('visibility_acf');
-								?>
-							<?php endwhile; endif; ?>
-
-							<li class="grid__item grid__item--home">
-								<a class="grid__item-link" href="<?php echo $link ?>">
-									<img class="grid__item-img" src="<?php echo $image ?>" alt="" />
-
-									<div class="grid__item-copy-container">
-										<h1 class="grid__item-title <?php echo $color ?> <?php echo $visibility ?>">
-											<span><?php the_field('post_client_acf'); ?></span>
-											<?php echo $title ?>
-										</h1>
-									</div>
-								</a>
-							</li>
 						<?php endwhile; endif; ?>
 
+						<?php if( have_rows('title_options_acf') ): while( have_rows('title_options_acf') ): the_row(); ?>
+							<?php
+								// Feilds from child repeater – title options
+								$color = get_sub_field('color_acf');
+								$visibility = get_sub_field('visibility_acf');
+							?>
+						<?php endwhile; endif; ?>
+
+						<li class="grid__item grid__item--home">
+							<a class="grid__item-link" href="<?php the_permalink(); ?>">
+								<img class="grid__item-img" src="<?php echo $image ?>" alt="" />
+
+								<div class="grid__item-copy-container">
+									<h1 class="grid__item-title <?php echo $color ?> <?php echo $visibility ?>">
+										<span><!-- ADD CLIENT FIELD --></span>
+										<?php echo $title ?>
+									</h1>
+								</div>
+							</a>
+						</li>
 
 					<?php endwhile; else : ?>
 						<p><?php esc_html_e('Sorry, no posts to display.'); ?></p>
