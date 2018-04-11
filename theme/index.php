@@ -33,7 +33,6 @@
 						// Arguments
 						$args = array(
 							'post_type' 		=> 'post',
-							'posts_per_page' 	=> 3,
 							'meta_key'			=> 'posts_order_acf',
 							'orderby'			=> 'meta_value',
 							'order'				=> 'ASC',
@@ -69,7 +68,7 @@
 									<div class="grid__item-copy-container">
 										<h1 class="grid__item-title <?php echo $color ?> <?php echo $visibility ?>">
 											<span><!-- ADD CLIENT FIELD --></span>
-											<?php echo $title ?>
+											<?php the_title(); ?>
 										</h1>
 									</div>
 								</a>
