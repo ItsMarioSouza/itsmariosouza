@@ -8,20 +8,7 @@
 
 		<div class="contentContainer contentContainer--home" role="main">
 			<section class="intro">
-
-				<?php if( have_rows('home_hero_image_acf') ): ?>
-					<?php while( have_rows('home_hero_image_acf') ): the_row(); ?>
-						<picture class="intro__image">
-							<source media="(max-width: 767px)" srcset="<?php the_sub_field('image_mobile_acf'); ?>">
-
-							<img src="<?php the_sub_field('image_desktop_acf'); ?>" alt="">
-						</picture>
-					<?php endwhile; ?>
-				<?php endif; ?>
-
-				<div class="intro__copy borderLink borderLink--option">
-					<h1><?php the_field('home_headline_acf'); ?></h1>
-
+				<div class="intro__copy-container borderLink borderLink--option">
 					<?php the_field('home_copy_acf'); ?>
 				</div>
 			</section>
@@ -29,7 +16,6 @@
 			<section class="grid">
 				<?php if( !post_password_required($post) ): ?>
 					<div class="grid__list grid_list--home">
-
 						<?php
 							// Arguments
 							$args = array(
@@ -70,7 +56,6 @@
 
 						<!-- Reset The Query -->
 						<?php wp_reset_query(); ?>
-
 					</div> <!-- /grid__list -->
 
 				<?php endif; //post_password_required ?>
