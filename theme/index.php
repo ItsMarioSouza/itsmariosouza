@@ -55,6 +55,11 @@
 
 					</div> <!-- /grid__list -->
 
+					<div class="grid__cta grid__cta--home">
+						<a href="blog.html">
+							<button class="button"><?php the_field('home_grid_cta_acf'); ?></button>
+						</a>
+					</div>
 
 				<?php endif; //post_password_required ?>
 
