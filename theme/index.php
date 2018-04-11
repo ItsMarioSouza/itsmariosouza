@@ -94,6 +94,8 @@
 									</div>
 								</a>
 							</li>
+							<?php wp_reset_postdata(); ?>
+
 						<?php endwhile; endif; ?>
 
 					</div> <!-- /grid__list -->
