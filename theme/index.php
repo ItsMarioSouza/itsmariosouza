@@ -95,6 +95,7 @@
 								</a>
 							</li>
 							<?php wp_reset_postdata(); ?>
+							<?php endif; ?> 
 
 						<?php endwhile; endif; ?>
 
