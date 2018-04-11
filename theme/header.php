@@ -10,18 +10,8 @@
 		<!-- Favicon / Device Images -->
 		<!-- Insert favicon code -->
 
-		<?php
-			// Iclude WP head
-			wp_head();
-
-			// Inject font families
-			if( have_rows('font_families_acf', 'option') ): while( have_rows('font_families_acf', 'option') ): the_row();
-				the_sub_field('fonts_acf');
-			endwhile; endif;
-
-			// Inject style options
-			include_once (get_template_directory() . '/partials/template_parts/style-options.php');
-		?>
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
 	</head>
 
 	<body <?php body_class(); ?>>
