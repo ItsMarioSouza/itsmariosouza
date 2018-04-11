@@ -46,7 +46,7 @@
 					<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
 						<?php if( have_rows('post_title_options_acf') ): while( have_rows('post_title_options_acf') ): the_row(); ?>
-							<article class="grid__item grid_item--home">
+							<article class="grid__item grid__item--home">
 								<a class="grid__item-link" href="<?php the_permalink(); ?>">
 									<img class="grid__item-img" src="<?php the_field('post_grid_image_acf'); ?>" alt="" />
 
