@@ -70,7 +70,7 @@
 						<?php if( have_rows('home_grid_items_acf') ): while( have_rows('home_grid_items_acf') ): the_row(); ?>
 							<?php
 								// Feilds from parent repeater – grid items
-								$post_object = get_sub_field('animateur');
+								$post_object = get_sub_field('posts_acf');
 								if( $post_object ) :
 								$post = $post_object;
 							?>
