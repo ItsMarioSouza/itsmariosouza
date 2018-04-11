@@ -23,7 +23,7 @@
 								'posts_per_page'	=> 3,
 								'meta_key'			=> 'posts_order_acf',
 								'orderby'			=> 'meta_value',
-								'order'				=> 'ASC',
+								'order'				=> 'ASC'
 							);
 
 							// Query
@@ -57,6 +57,46 @@
 
 						<!-- Reset The Query -->
 						<?php wp_reset_query(); ?>
+					</div> <!-- /grid__list -->
+
+				<?php endif; //post_password_required ?>
+
+				<?php the_content(); ?>
+			</section>
+
+			<section class="grid">
+				<?php if( !post_password_required($post) ): ?>
+					<div class="grid__list grid_list--home">
+
+						<?php if( have_rows('home_grid_items_acf') ): while( have_rows('home_grid_items_acf') ): the_row(); ?>
+							<?php
+								// Feilds from parent repeater – grid items
+								$post_object = get_sub_field('animateur');
+								if( $post_object ) :
+								$post = $post_object;
+							?>
+
+							<?php if( have_rows('title_options_acf') ): while( have_rows('title_options_acf') ): the_row(); ?>
+								<?php
+									// Feilds from child repeater – title options
+									$color = get_sub_field('color_acf');
+									$visibility = get_sub_field('visibility_acf');
+								?>
+							<?php endwhile; endif; ?>
+
+							<li class="grid_item grid_item--home">
+								<a class="grid_item-link" href="<?php the_permalink(); ?>>">
+									<img class="grid_item-img" src="<?php echo $image ?>" alt="" />
+
+									<div class="grid_item-copy">
+										<h2 class="grid_item-title <?php echo $color ?> <?php echo $visibility ?>">
+											<?php echo $title ?>
+										</h2>
+									</div>
+								</a>
+							</li>
+						<?php endwhile; endif; ?>
+
 					</div> <!-- /grid__list -->
 
 				<?php endif; //post_password_required ?>
