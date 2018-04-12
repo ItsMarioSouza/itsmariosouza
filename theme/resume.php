@@ -1,5 +1,10 @@
-<!-- partial:partials/_header.html -->
-<!-- partial -->
+<?php
+	/*
+	Template Name: Resume
+	*/
+
+	get_header();
+?>
 
 		<div class="contentContainer contentContainer--resume" role="main">
 			<section class="">
@@ -13,5 +18,4 @@
 			</section>
 		</aside> <!-- /aside -->
 
-<!-- partial:partials/_footer.html -->
-<!-- partial -->
+<?php get_footer(); ?>
