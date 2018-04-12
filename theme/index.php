@@ -9,7 +9,7 @@
 		<div class="contentContainer contentContainer--home" role="main">
 			<section class="intro">
 				<div class="intro__copy-container borderLink borderLink--option">
-					<?php the_field('home_copy_acf'); ?>
+					<!-- <?php the_field('home_copy_acf'); ?> -->
 				</div>
 			</section>
 
