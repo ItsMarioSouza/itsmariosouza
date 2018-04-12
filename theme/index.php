@@ -63,9 +63,12 @@
 						</div>
 					<?php endwhile; endif; ?>
 
-				<?php endif; //post_password_required ?>
-
-				<?php the_content(); ?>
+				<?php
+					// End if post_password_required
+					endif;
+					// include content if needed for password form
+					the_content();
+				?>
 			</section>
 		</div> <!-- /contentContainer -->
 

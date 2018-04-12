@@ -19,7 +19,11 @@
 				</section>
 			</aside> <!-- /aside -->
 
-		<?php endif; //post_password_required ?>
+		<?php
+			// End if post_password_required
+			endif;
+			// include content if needed for password form
+			the_content();
+		?>
 
-		<?php the_content(); ?>
 <?php get_footer(); ?>

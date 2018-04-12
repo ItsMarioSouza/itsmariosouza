@@ -67,7 +67,12 @@
 						<?php wp_reset_query(); ?>
 					</div> <!-- /grid_list -->
 
-				<?php endif; the_content(); //post_password_required ?>
+				<?php 
+					// End if post_password_required
+					endif;
+					// include content if needed for password form
+					the_content();
+				?>
 
 			</section>
 		</div> <!-- /contentContainer -->
