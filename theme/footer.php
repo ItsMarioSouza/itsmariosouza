@@ -18,7 +18,7 @@
 			</div>
 		</footer>
 
-		<div class="modal modal--option modal-js"></div>
+		<div class="modal modal-js"></div>
 
 		<?php wp_footer(); ?>
 	</body>

@@ -27,7 +27,7 @@
 								</div>
 							<?php endwhile; endif;?>
 
-							<div class="about__intro-copy borderLink borderLink--option"><?php the_field('about_intro_copy_acf'); ?></div>
+							<div class="about__intro-copy borderLink"><?php the_field('about_intro_copy_acf'); ?></div>
 						</div>
 
 						<div class="about__row">

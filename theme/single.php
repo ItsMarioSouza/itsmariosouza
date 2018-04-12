@@ -16,7 +16,7 @@
 
 									if( get_row_layout() == 'copy_acf' ):
 										$copy = get_sub_field('text_acf');
-										echo '<div class="post_row"><div class="post__copy post__copy--option borderLink borderLink--option">' . $copy . '</div></div>';
+										echo '<div class="post_row"><div class="post__copy borderLink">' . $copy . '</div></div>';
 
 									elseif( get_row_layout() == 'image_acf' ):
 										$columns = get_sub_field('columns_acf');
