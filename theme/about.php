@@ -43,10 +43,6 @@
 								<?php endwhile; endif; ?>
 							</ul>
 						</div>
-
-						<div class="about__row">
-							<div class="about__email-copy borderLink borderLink--option"><?php the_field('about_email_copy_acf'); ?></div>
-						</div>
 					</div> <!-- /contactInfo -->
 				</div>
 			</section>
