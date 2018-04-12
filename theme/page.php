@@ -66,9 +66,9 @@
 						<!-- Reset The Query -->
 						<?php wp_reset_query(); ?>
 					</div> <!-- /grid_list -->
-				<?php endif; //post_password_required ?>
 
-				<?php the_content(); ?>
+				<?php endif; the_content(); //post_password_required ?>
+
 			</section>
 		</div> <!-- /contentContainer -->
 

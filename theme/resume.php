@@ -5,17 +5,21 @@
 
 	get_header();
 ?>
+		<?php if( !post_password_required($post) ): ?>
 
-		<div class="contentContainer contentContainer--resume" role="main">
-			<section class="">
+			<div class="contentContainer contentContainer--resume" role="main">
+				<section class="">
 
-			</section>
-		</div> <!-- /main -->
+				</section>
+			</div> <!-- /main -->
 
-		<aside class="">
-			<section class="">
+			<aside class="">
+				<section class="">
 
-			</section>
-		</aside> <!-- /aside -->
+				</section>
+			</aside> <!-- /aside -->
 
+		<?php endif; //post_password_required ?>
+
+		<?php the_content(); ?>
 <?php get_footer(); ?>
