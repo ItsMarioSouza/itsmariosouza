@@ -10,7 +10,7 @@
 			<section class="about">
 				<h1 class="about__title"><?php the_title(); ?></h1>
 
-				<div class="about__container">
+				<div class="about__content-container">
 					<div class="about__image-container">
 						<?php $image = get_field('about_image_acf'); ?>
 						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
