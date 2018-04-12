@@ -36,7 +36,7 @@
 									<?php if( have_rows('about_icon_link_list_acf') ): while( have_rows('about_icon_link_list_acf') ): the_row(); ?>
 										<?php $link = get_sub_field('link_acf'); ?>
 										<li>
-											<a class="about__icon-container about_icon-container--link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
+											<a class="about__icon-container about__icon-container--link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
 												<i class="<?php the_sub_field('icon_acf'); ?>"></i>
 												<span class="about__icon-text"><?php the_sub_field('text_acf'); ?></span>
 											</a>
