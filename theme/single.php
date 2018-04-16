@@ -9,7 +9,7 @@
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<h1 class="post__title"><?php the_title(); ?></h1>
 
-					<?php if( !post_password_required() ): // If password is not needed ?>
+					<?php if( !post_password_required() ): //If password is not needed ?>
 						<section class="post__hero">
 							<div class="post__hero-container">
 								<img src="<?php the_field('post_hero-image_acf'); ?>" />
@@ -24,10 +24,10 @@
 
 										<ul class="post__details-list">
 											<li>
-												<span>Client:</span> <?php the_sub_field('client_acf'); ?>
+												<span>Client: </span><?php the_sub_field('client_acf'); ?>
 											</li>
 											<li>
-												<span>Role:</span> <?php the_sub_field('role_acf'); ?>
+												<span>Role: </span><?php the_sub_field('role_acf'); ?>
 											</li>
 										</ul>
 									</div>
