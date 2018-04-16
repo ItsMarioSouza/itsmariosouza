@@ -9,14 +9,13 @@
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<h1 class="post__title"><?php the_title(); ?></h1>
 
-					<section class="post__hero">
-						<div class="post__hero-container">
-							<img src="/etc/test.png" />
-						</div>
-					</section>
-
-
 					<?php if( !post_password_required($post) ): ?>
+						<section class="post__hero">
+							<div class="post__hero-container">
+								<img src="/etc/test.png" />
+							</div>
+						</section>
+
 						<?php
 							if( have_rows('post_content_acf') ): while ( have_rows('post_content_acf') ) : the_row();
 
