@@ -9,7 +9,7 @@
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<h1 class="post__title"><?php the_title(); ?></h1>
 
-					<?php if( !post_password_required() ): ?>
+					<?php if( !post_password_required() ): // If password is not needed ?>
 						<section class="post__hero">
 							<div class="post__hero-container">
 								<img src="<?php the_field('post_hero-image_acf'); ?>" />
@@ -61,14 +61,14 @@
 							?>
 						</section>
 
-					<?php
-						// If password needed display the content
-						else: the_content();
-						// End password protexted
-						endif;
-					?>
+					<?php else: // If password is needed ?>
+						<section>
+							<?php the_content(); ?>
+						</section>
 
-				<?php endwhile; endif; ?>
+					<?php endif; // password protect ?>
+
+				<?php endwhile; endif; // have posts?>
 			</article>
 
 			<?php
