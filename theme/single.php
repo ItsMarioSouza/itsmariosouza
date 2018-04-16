@@ -34,7 +34,7 @@
 								<?php endwhile; endif; ?>
 
 									<div class="post__copy post__copy--intro borderLink">
-										<?php ?>
+										<?php the_field('post_intro_copy_acf'); ?>
 									</div>
 							</div>
 
