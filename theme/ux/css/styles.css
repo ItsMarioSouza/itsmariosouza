@@ -408,6 +408,10 @@ img {
   margin-bottom: 4rem;
 }
 
+.contentContainer .section--bottom-space {
+  margin-bottom: 4rem;
+}
+
 .contentContainer a {
   font-weight: 400;
 }
