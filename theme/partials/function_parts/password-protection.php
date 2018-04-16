@@ -62,9 +62,8 @@
 		// Form
 		$form ='<form class="form form--password" action="' . esc_url( site_url('wp-login.php?action=postpass', 'login_post') ) . '" method="post"><label class="hidden" for="' . $id . '">' . $label . '</label><input name="post_password" id="' . $id . '" type="password" placeholder="Password" /><button class="button" type="submit" name="Submit">' . $submit . '</button><p aria-live="polite" class="errorMessage">' . $errorCopy  . '</p></form>';
 
-		return $intro . $form;
-		// return  $sectionOpen . $intro . $form . $sectionClose;
-		// return  '<section>' . $intro . $form . '</section>';
+		// return $intro . $form;
+		return  '<section>' . $intro . $form . '</section>';
 	}
 	add_filter( 'the_password_form', 'my_password_form' );
 
