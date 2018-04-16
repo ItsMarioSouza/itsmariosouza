@@ -58,20 +58,20 @@
 							<?php endwhile; endif; ?>
 						</div> <!-- /grid__list -->
 
-					<?php else: // If password is needed ?>
-						<section>
-							<?php the_content(); ?>
-						</section>
+						<?php if( have_rows('home_grid_cta_acf') ): while( have_rows('home_grid_cta_acf') ): the_row(); ?>
+							<div class="grid__cta grid__cta--home">
+								<a href="<?php the_sub_field('link_acf'); ?>">
+									<button class="button"><?php the_sub_field('text_acf'); ?></button>
+								</a>
+							</div>
+						<?php endwhile; endif; ?>
 
-					<?php endif; // password protect ?>
-
-					<?php if( have_rows('home_grid_cta_acf') ): while( have_rows('home_grid_cta_acf') ): the_row(); ?>
-						<div class="grid__cta grid__cta--home">
-							<a href="<?php the_sub_field('link_acf'); ?>">
-								<button class="button"><?php the_sub_field('text_acf'); ?></button>
-							</a>
-						</div>
-					<?php endwhile; endif; ?>
+					<?php
+						// If password is needed
+						else: the_content();
+						// end password protect
+						endif;
+					?>
 				</section> <!-- /grid -->
 
 		</div> <!-- /contentContainer -->
