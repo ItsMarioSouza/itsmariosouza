@@ -12,7 +12,7 @@
 					<?php if( !post_password_required($post) ): ?>
 						<section class="post__hero">
 							<div class="post__hero-container">
-								<img src="/etc/test.png" />
+								<img src="<?php the_field('post_hero-image_acf'); ?>" />
 							</div>
 						</section>
 
