@@ -65,7 +65,8 @@
 							// End if post_password_required
 							endif;
 							// include content if needed for password form
-							echo '<section>' the_content() '</section>';
+							$content = the_content();
+							echo '<section>' . $content . '</section>';
 						?>
 				<?php endwhile; endif; ?>
 			</article>
