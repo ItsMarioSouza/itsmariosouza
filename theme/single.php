@@ -61,14 +61,12 @@
 							?>
 						</section>
 
+						<?php endif; // End if post_password_required ?>
+
 						<section>
-							<?php
-								// End if post_password_required
-								endif;
-								// include content if needed for password form
-								the_content();
-							?>
-					</section>
+							<?php the_content(); // include content if needed for password form ?>
+						</section>
+
 				<?php endwhile; endif; ?>
 			</article>
 
