@@ -62,8 +62,9 @@
 						</section>
 
 					<?php
+						// If password needed display the content
 						else: the_content();
-
+						// End password protexted
 						endif;
 					?>
 
