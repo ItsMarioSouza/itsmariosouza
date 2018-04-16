@@ -43,13 +43,21 @@
 						<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
 							<?php if( have_rows('post_title_options_acf') ): while( have_rows('post_title_options_acf') ): the_row(); ?>
+
+								<?php if( have_rows('post_details_list_acf') ): while( have_rows('post_details_list_acf') ): the_row(); ?>
+									<?php
+										// Feilds from child repeater – title options
+										$client = get_sub_field('client_acf');
+									?>
+								<?php endwhile; endif; ?>
+
 								<article class="grid__item grid_item--blog">
 									<a class="grid__item-link" href="<?php the_permalink(); ?>">
 										<img class="grid__item-img" src="<?php the_field('post_grid_image_acf'); ?>" alt="" />
 
 										<div class="grid__item-copy-container">
 											<h1 class="grid__item-title <?php the_sub_field('color_acf'); ?> <?php the_sub_field('visibility_acf'); ?>">
-												<span><?php the_field('post_client_acf'); ?></span>
+												<span><?php echo $client ?></span>
 												<?php the_title(); ?>
 											</h1>
 										</div>
@@ -67,7 +75,7 @@
 						<?php wp_reset_query(); ?>
 					</div> <!-- /grid_list -->
 
-				<?php 
+				<?php
 					// End if post_password_required
 					endif;
 					// include content if needed for password form
