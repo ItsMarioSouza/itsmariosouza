@@ -67,7 +67,8 @@
 		$sectionClose = '</section>';
 
 		// return $intro . $form;
-		return  $sectionOpen . $intro . $form . $sectionClose;
+		// return  $sectionOpen . $intro . $form . $sectionClose;
+		return  '<section>' . $intro . $form . '</section>';
 	}
 	add_filter( 'the_password_form', 'my_password_form' );
 
