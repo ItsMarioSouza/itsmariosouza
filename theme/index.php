@@ -36,13 +36,20 @@
 								?>
 							<?php endwhile; endif; ?>
 
+							<?php if( have_rows('post_details_list_acf') ): while( have_rows('post_details_list_acf') ): the_row(); ?>
+								<?php
+									// Feilds from child repeater – title options
+									$client = get_sub_field('client_acf');
+								?>
+							<?php endwhile; endif; ?>
+
 							<article class="grid__item grid__item--home">
 								<a class="grid__item-link" href="<?php the_permalink(); ?>">
 									<img class="grid__item-img" src="<?php the_field('post_grid_image_acf'); ?>" alt="" />
 
 									<div class="grid__item-copy-container">
 										<h1 class="grid__item-title <?php echo $color ?> <?php echo $visibility ?>">
-											<span><?php the_field('post_client_acf'); ?></span>
+											<span><?php echo $client ?></span>
 											<?php the_title(); ?>
 										</h1>
 									</div>
