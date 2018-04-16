@@ -62,7 +62,7 @@
 						</section>
 
 					<?php else:
-						echo '<section>' the_content(); '</section>';
+						echo '<section>' the_content() '</section>';
 					?>
 
 					<?php endif; // if password protection needs pass?>
