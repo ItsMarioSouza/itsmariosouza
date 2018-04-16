@@ -1458,6 +1458,8 @@ img {
   }
   .post__copy.post__copy--intro {
     margin: inherit;
+    -ms-flex-preferred-size: 75%;
+        flex-basis: 75%;
   }
   .post__copy p:first-child {
     margin-top: 1.125rem;
