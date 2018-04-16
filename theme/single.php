@@ -16,35 +16,34 @@
 							</div>
 						</section>
 
-						<?php
-							if( have_rows('post_content_acf') ): while ( have_rows('post_content_acf') ) : the_row();
+						<section>
+							<?php
+								if( have_rows('post_content_acf') ): while ( have_rows('post_content_acf') ) : the_row();
 
-								if( get_row_layout() == 'copy_acf' ):
-									$copy = get_sub_field('text_acf');
-									echo '<div class="post_row"><div class="post__copy borderLink">' . $copy . '</div></div>';
+									if( get_row_layout() == 'copy_acf' ):
+										$copy = get_sub_field('text_acf');
+										echo '<div class="post_row"><div class="post__copy borderLink">' . $copy . '</div></div>';
 
-								elseif( get_row_layout() == 'image_acf' ):
-									$columns = get_sub_field('columns_acf');
-									$imageOne = get_sub_field('image_one_acf');
-									$imageTwo = get_sub_field('image_two_acf');
+									elseif( get_row_layout() == 'image_acf' ):
+										$columns = get_sub_field('columns_acf');
+										$imageOne = get_sub_field('image_one_acf');
+										$imageTwo = get_sub_field('image_two_acf');
 
-									if($columns == '1'):
-										echo '<div class="post__row"><div class="post__image-container"><div class="post__image post__image--single"><img src="' . $imageOne . '" /></div></div></div>';
-									elseif($columns == '2'):
-										echo '<div class="post__row"><div class="post__image post__image--double"><div class="post__image-container"><img src="' . $imageOne . '" /></div><div class="post__image-container"><img src="' . $imageTwo . '" /></div></div></div>';
+										if($columns == '1'):
+											echo '<div class="post__row"><div class="post__image-container"><div class="post__image post__image--single"><img src="' . $imageOne . '" /></div></div></div>';
+										elseif($columns == '2'):
+											echo '<div class="post__row"><div class="post__image post__image--double"><div class="post__image-container"><img src="' . $imageOne . '" /></div><div class="post__image-container"><img src="' . $imageTwo . '" /></div></div></div>';
+										endif;
 									endif;
-								endif;
 
-							endwhile; endif;
-						?>
+								endwhile; endif;
 
-					<?php
-						// End if post_password_required
-						endif;
-						// include content if needed for password form
-						the_content();
-					?>
+								// include content if needed for password form
+								the_content();
+							?>
+						</section>
 
+					<?php endif; // End if post_password_required ?>
 				<?php endwhile; endif; ?>
 			</article>
 
