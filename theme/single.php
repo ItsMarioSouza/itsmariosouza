@@ -67,12 +67,8 @@
 							endif;
 							// include content if needed for password form
 							// $content = the_content();
-							// echo '<section>' . $content . '</section>';
+							echo '<section>' the_content(); '</section>';
 						?>
-
-						<section>
-							<?php the_content();?>
-						</section>
 				<?php endwhile; endif; ?>
 			</article>
 
