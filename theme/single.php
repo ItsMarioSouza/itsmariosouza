@@ -61,12 +61,11 @@
 							?>
 						</section>
 
-					<?php else:
-						$content = the_content();
-						echo '<section>' . $content . '</section>';
-					?>
+					<?php
+						else: the_content();
 
-					<?php endif; // if password protection needs pass?>
+						endif;
+					?>
 
 				<?php endwhile; endif; ?>
 			</article>
