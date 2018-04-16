@@ -16,7 +16,26 @@
 							</div>
 						</section>
 
-						<section>
+						<section class="post__content">
+							<div class="post__row">
+								<div class="post__details">
+									<hr />
+
+									<ul class="post__details-list">
+										<li>
+											<span>Client:</span> Cool Client Name Long
+										</li>
+										<li>
+											<span>Role:</span> Some Role
+										</li>
+									</ul>
+								</div>
+
+								<div class="post__copy post__copy--intro borderLink">
+									<?php ?>
+								</div>
+							</div>
+
 							<?php
 								if( have_rows('post_content_acf') ): while ( have_rows('post_content_acf') ) : the_row();
 
@@ -37,13 +56,15 @@
 									endif;
 
 								endwhile; endif;
-
-								// include content if needed for password form
-								the_content();
 							?>
 						</section>
 
-					<?php endif; // End if post_password_required ?>
+						<?php
+							// End if post_password_required
+							endif;
+							// include content if needed for password form
+							the_content();
+						?>
 				<?php endwhile; endif; ?>
 			</article>
 
