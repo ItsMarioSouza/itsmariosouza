@@ -18,22 +18,24 @@
 
 						<section class="post__content">
 							<div class="post__row">
-								<div class="post__details">
-									<hr />
+								<?php if( have_rows('post_details_list_acf') ): while( have_rows('post_details_list_acf') ): the_row(); ?>
+									<div class="post__details">
+										<hr />
 
-									<ul class="post__details-list">
-										<li>
-											<span>Client:</span> Cool Client Name Long
-										</li>
-										<li>
-											<span>Role:</span> Some Role
-										</li>
-									</ul>
-								</div>
+										<ul class="post__details-list">
+											<li>
+												<span>Client:</span> <?php the_sub_field('client_acf'); ?>
+											</li>
+											<li>
+												<span>Role:</span> <?php the_sub_field('role_acf'); ?>
+											</li>
+										</ul>
+									</div>
+								<?php endwhile; endif; ?>
 
-								<div class="post__copy post__copy--intro borderLink">
-									<?php ?>
-								</div>
+									<div class="post__copy post__copy--intro borderLink">
+										<?php ?>
+									</div>
 							</div>
 
 							<?php
