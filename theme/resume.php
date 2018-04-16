@@ -5,7 +5,7 @@
 
 	get_header();
 ?>
-		<?php if( !post_password_required($post) ): ?>
+		<?php if( ! post_password_required() ): //If password is not needed ?>
 
 			<div class="contentContainer contentContainer--resume" role="main">
 				<section class="">
@@ -20,10 +20,10 @@
 			</aside> <!-- /aside -->
 
 		<?php
-			// End if post_password_required
+			//If password is needed
+			else: the_content();
+			//End password protect
 			endif;
-			// include content if needed for password form
-			the_content();
 		?>
 
 <?php get_footer(); ?>

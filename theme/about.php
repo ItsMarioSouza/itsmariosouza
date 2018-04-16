@@ -10,7 +10,7 @@
 			<section class="about">
 				<h1 class="about__title"><?php the_title(); ?></h1>
 
-				<?php if( ! post_password_required() ): ?>
+				<?php if( ! post_password_required() ): //If password is not needed ?>
 					<div class="about__content-container">
 						<div class="about__image-container">
 							<?php $image = get_field('about_image_acf'); ?>
@@ -48,9 +48,9 @@
 					</div>
 
 				<?php
-					// If password is needed
+					//If password is needed
 					else: the_content();
-					// end password protect
+					//End password protect
 					endif;
 				?>
 			</section>

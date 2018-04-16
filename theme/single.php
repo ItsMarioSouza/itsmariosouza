@@ -61,12 +61,12 @@
 							?>
 						</section>
 
-					<?php else: // If password is needed ?>
+					<?php else: //If password is needed ?>
 						<section>
 							<?php the_content(); ?>
 						</section>
 
-					<?php endif; // password protect ?>
+					<?php endif; //End password protect ?>
 
 				<?php endwhile; endif; //have posts?>
 			</article>

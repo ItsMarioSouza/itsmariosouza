@@ -16,7 +16,7 @@
 				<section class="grid">
 					<h2 class="grid__title"><?php the_field('home_grid_title_acf'); ?></h2>
 
-					<?php if( ! post_password_required() ): ?>
+					<?php if( ! post_password_required() ): //If password is not needed ?>
 						<div class="grid__list grid_list--home">
 							<?php if( have_rows('home_grid_items_acf') ): while( have_rows('home_grid_items_acf') ): the_row(); ?>
 								<?php
@@ -67,9 +67,9 @@
 						<?php endwhile; endif; ?>
 
 					<?php
-						// If password is needed
+						//If password is needed
 						else: the_content();
-						// end password protect
+						//End password protect
 						endif;
 					?>
 				</section> <!-- /grid -->

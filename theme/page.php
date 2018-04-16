@@ -24,7 +24,7 @@
 			<section class="grid">
 				<h2 class="grid__title"><?php the_field('blog_grid_title_acf'); ?></h2>
 
-				<?php if( !post_password_required($post) ): ?>
+				<?php if( ! post_password_required() ): ?>
 					<div class="grid__list grid_list--blog">
 						<?php
 							// Arguments
@@ -76,12 +76,11 @@
 					</div> <!-- /grid_list -->
 
 				<?php
-					// End if post_password_required
+					//If password is needed
+					else: the_content();
+					//End password protect
 					endif;
-					// include content if needed for password form
-					the_content();
 				?>
-
 			</section>
 		</div> <!-- /contentContainer -->
 
