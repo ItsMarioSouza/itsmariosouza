@@ -5,10 +5,37 @@
 	margin-bottom: 2.5rem;
 }
 
+.post__details,
 .post__copy {
 	max-width: 700px;
-	margin: auto;
+}
 
+// new
+.post__details {
+	hr {
+		border: 1px solid black;
+		margin: .5rem 0;
+	}
+}
+
+.post__details-list {
+	@include listStyle-none;
+	line-height: 1.64;
+}
+
+.post__details-list {
+	li {
+		white-space: nowrap;
+
+		span {
+			font-weight: 400;
+		}
+	}
+}
+// new
+
+
+.post__copy {
 	ul,
 	ol {
 		line-height: 1.25;
@@ -17,6 +44,7 @@
 	ul li,
 	ol li {
 		margin-bottom: 0.3125rem;
+			// space between each item, but not space when items fall onto 2 lines
 	}
 
 	blockquote {
@@ -76,6 +104,58 @@
 
 			&:first-of-type {
 				margin-right: 1rem;
+			}
+		}
+	}
+}
+
+
+
+
+@media screen and (max-width: $large-down) {
+	.post__details,
+	.post__copy {
+		margin: auto;
+	}
+
+	.post__details {
+		margin-bottom: 2.5rem;
+
+		hr {
+			width: 25%;
+		}
+	}
+}
+
+
+
+
+@media screen and (min-width: $large-up) {
+	.post__row {
+		&:first-child {
+			display: flex;
+			justify-content: space-around;
+		}
+	}
+
+	.post__details {
+		margin-right: 3rem;
+
+		hr {
+			width: calc(100% + 1rem);
+		}
+	}
+
+	.post__copy {
+		margin: auto; // center normal `<p>`s
+
+		&.post__copy--intro {
+			margin: inherit; // no centering `<p>`s when details are to left
+		}
+
+		p {
+			&:first-child {
+				margin-top: 1.125rem; // lines up details block and first `<p>`
 			}
 		}
 	}
