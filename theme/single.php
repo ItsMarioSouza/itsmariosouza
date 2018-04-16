@@ -68,7 +68,7 @@
 
 					<?php endif; // password protect ?>
 
-				<?php endwhile; endif; // have posts?>
+				<?php endwhile; endif; //have posts?>
 			</article>
 
 			<?php

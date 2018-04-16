@@ -13,14 +13,11 @@
 				</div>
 			</section>
 
-			<section class="grid">
-				<h2 class="grid__title"><?php the_field('home_grid_title_acf'); ?></h2>
-
-				<?php if( !post_password_required($post) ): ?>
-
+			<?php if( !post_password_required($post) ): ?>
+				<section class="grid">
+					<h2 class="grid__title"><?php the_field('home_grid_title_acf'); ?></h2>
 
 					<div class="grid__list grid_list--home">
-
 						<?php if( have_rows('home_grid_items_acf') ): while( have_rows('home_grid_items_acf') ): the_row(); ?>
 							<?php
 								// Feilds from parent repeater – grid items
@@ -59,7 +56,6 @@
 							<?php wp_reset_postdata(); endif; //ACF Post Object ?>
 
 						<?php endwhile; endif; ?>
-
 					</div> <!-- /grid__list -->
 
 					<?php if( have_rows('home_grid_cta_acf') ): while( have_rows('home_grid_cta_acf') ): the_row(); ?>
@@ -69,14 +65,14 @@
 							</a>
 						</div>
 					<?php endwhile; endif; ?>
+				</section> <!-- /grid -->
 
-				<?php
-					// End if post_password_required
-					endif;
-					// include content if needed for password form
-					the_content();
-				?>
-			</section>
+			<?php else: // If password is needed ?>
+				<section>
+					<?php the_content(); ?>
+				</section>
+
+			<?php endif; // password protect ?>
 		</div> <!-- /contentContainer -->
 
 <?php get_footer(); ?>
