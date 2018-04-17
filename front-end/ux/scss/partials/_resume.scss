@@ -1,8 +1,18 @@
 /* ——————————————————————————————————————————
 	=RESUME
 —————————————————————————————————————————— */
-.contentContainer--resume .res__intro {
-	margin-bottom: 3rem;
+.contentContainer--resume {
+	.res__intro {
+		margin-bottom: 3rem;
+	}
+
+	a {
+		transition: all .25s ease-in-out;
+
+		&:hover {
+			color: $gray;
+		}
+	}
 }
 
 .res__intro-title {
