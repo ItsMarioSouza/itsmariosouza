@@ -63,7 +63,7 @@
 
 
 										<li>
-											<a class="icon__container about__icon-container about__icon-container--link" href="<?php echo $link['url']; ?>" target="">
+											<a class="icon__container about__icon-container about__icon-container--link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
 												<i class="<?php the_sub_field('icon'); ?>"></i>
 												<span class="icon__text about__icon-text"><?php the_sub_field('text'); ?></span>
 											</a>
