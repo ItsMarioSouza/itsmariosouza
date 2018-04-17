@@ -1,20 +1,35 @@
 /* ——————————————————————————————————————————
 	=RESUME
 —————————————————————————————————————————— */
+.contentContainer--resume {
+	.res__intro {
+		margin-bottom: 3rem;
+	}
+
+	a {
+		transition: all .25s ease-in-out;
+
+		&:hover {
+			color: $gray;
+		}
+	}
+}
+
 .res__intro-title {
 	font-family: $inconsolata;
 	font-size: 3rem;
 	letter-spacing: .01em;
 }
 
-.icon__container {
+.res__icon-container  {
+	margin-bottom: 1.5rem;
+
 	.svg-inline--fa {
 		font-size: 1.5rem;
 	}
 }
 
 .res__section-title {
-	font-size: 1.125rem;
 	text-transform: uppercase;
 	padding-bottom: .25rem;
 	border-bottom: 2px solid black;
@@ -22,42 +37,45 @@
 }
 
 .res__block {
-	max-width: 764px;
-	margin-bottom: 2.5rem;
+	margin-bottom: 3rem;
 }
 
 .res__block-title {
 	font-size: 1.125rem;
+	margin-bottom: .75rem;
 }
 
 .res__blockIntro-list {
 	@include listStyle-none;
 	display: flex;
+	// flex-wrap: wrap;
 	font-style: italic;
-	margin: -.5rem 0 -.75rem 0;
+	margin-bottom: .5rem;
 
 	li {
-		padding: 0 .5rem;
+		padding-right: .5rem;
+		margin-right: .5rem;
 		border-right: 1px solid black;
-
-		&:first-child {
-			padding-left: 0;
-		}
 
 		&:last-child {
 			padding-right: 0;
+			margin-right: 0;
 			border-right: none;
+			margin-bottom: 0;
 		}
 	}
 }
 
-.res__blockintro-aux p {
-	line-height: normal;
+.res__blockIntro-aux {
+	p {
+		line-height: 1.4;
+		margin-top: 0;
+	}
 }
 
 .res__blockDetails {
 	&.res__blockDetails--client {
-		padding-left: 1.75rem;
+		padding-left: 2rem;
 	}
 }
 
@@ -67,7 +85,70 @@
 
 .res__blockDetails-list {
 	margin-top: 0;
+	padding-left: 2rem;
+
+	&:first-child {
+		margin-top: 1rem; // If there's not title
+	}
+
+	li {
+		line-height: 1.25;
+		margin-bottom: .375rem;
+	}
+
+	span {
+
+	}
 }
+
+.res__aside-container {
+	.res__blockDetails-list {
+		@include listStyle-none;
+	}
+
+	.res__section-title {
+		margin-bottom: 1.125rem;
+	}
+}
+
+
+
+
+@media screen and (max-width: $small-down) {
+	.res__section-title {
+		font-size: 1.0625rem;
+	}
+}
+
+
+
+
+@media screen and (min-width: $small-up) {
+	.res__section-title {
+		font-size: 1.125rem;
+	}
+}
+
+
+
+
+@media screen and (max-width: $medium-down) {
+	.res__blockIntro-list,
+	.res__blockIntro-aux  {
+		font-size: .875rem;
+	}
+}
+
+
+
+
+@media screen and (max-width: $large-down) {
+	.contentContainer--resume {
+		max-width: 764px;
+	}
+}
+
+
 
 
 @media screen and (min-width: $large-up) {
@@ -82,5 +163,9 @@
 
 	.res__aside-container {
 		flex-basis: 23%;
+	}
+
+	.res__block {
+		max-width: 764px;
 	}
 }

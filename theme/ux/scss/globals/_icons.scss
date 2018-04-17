@@ -4,6 +4,10 @@
 .icon__container {
 	display: flex;
 	align-items: center;
+
+	.fa-linkedin-in + .icon__text {
+		margin-top: 2px;
+	}
 }
 
 .icon__text {

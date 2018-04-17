@@ -20,7 +20,7 @@
 .footer__social-link {
 	display: block;
 	color: #000;
-	transition: .25s;
+	transition: .25s ease-in-out;
 
 	&:hover {
 		color: $gray;
