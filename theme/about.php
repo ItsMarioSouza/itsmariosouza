@@ -51,9 +51,9 @@
 								<ul class="about__link-list">
 									<?php if( have_rows('test') ): while( have_rows('test') ): the_row(); ?>
 
-										<li>
-											<?php $choice = get_sub_field('choice'); ?>
+										<?php $choice = get_sub_field('choice'); ?>
 
+										<li>
 											<?php if( $choice == 'link' ): ?>
 												<?php $link = get_sub_field('link'); ?>
 
