@@ -7,7 +7,8 @@
 ?>
 		<?php if( ! post_password_required() ): //If password is not needed ?>
 
-			<div class="contentContainer contentContainer--resume" role="main">
+		<div class="contentContainer contentContainer--resume" role="main">
+			<?php if( ! post_password_required() ): //If password is not needed ?>
 				<section class="res__intro">
 					<h1 class="res__intro-title">Mario Souza</h1>
 
@@ -266,13 +267,13 @@
 						</section>
 					</aside> <!-- /res__aside-container -->
 				</div> <!-- /res__flex-container -->
-			</div> <!-- /main -->
 
-		<?php
-			//If password is needed
-			else: the_content();
-			//End password protect
-			endif;
-		?>
+			<?php else: //If password is needed ?>
+				<section>
+					<?php the_content(); ?>
+				</section>
+
+			<?php endif; //End password protect ?>
+		</div> <!-- /main -->
 
 <?php get_footer(); ?>
