@@ -66,10 +66,10 @@
 												<?php
 													$window = get_sub_field('window');
 
-													if( $window == 'existing' ):
-														$target = '';
-													elseif( $window == 'new' ):
+													if( $window == 'new' ):
 														$target = '_blank';
+													elseif( $window == 'existing' ):
+														$target = '';
 													endif;
 
 												?>
