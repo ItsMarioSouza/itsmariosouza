@@ -32,8 +32,8 @@
 
 	function load_my_styles() {
 		// Register Font Awesome
-		wp_register_style( 'font-awesome-css', get_template_directory_uri() . '/ux/vendor/fa-svg-with-js.min.css', array(), null, 'all' );
-		wp_enqueue_style( 'font-awesome-css' );
+		// wp_register_style( 'font-awesome-css', get_template_directory_uri() . '/ux/vendor/fa-svg-with-js.min.css', array(), null, 'all' );
+		// wp_enqueue_style( 'font-awesome-css' );
 
 		// Register Main CSS
 		wp_register_style( 'main-css', get_template_directory_uri() . '/ux/css/styles.min.css', array(), null, 'screen' );
