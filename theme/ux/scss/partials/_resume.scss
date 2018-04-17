@@ -1,0 +1,86 @@
+/* ——————————————————————————————————————————
+	=RESUME
+—————————————————————————————————————————— */
+.res__intro-title {
+	font-family: $inconsolata;
+	font-size: 3rem;
+	letter-spacing: .01em;
+}
+
+.icon__container {
+	.svg-inline--fa {
+		font-size: 1.5rem;
+	}
+}
+
+.res__section-title {
+	font-size: 1.125rem;
+	text-transform: uppercase;
+	padding-bottom: .25rem;
+	border-bottom: 2px solid black;
+	letter-spacing: .05em;
+}
+
+.res__block {
+	max-width: 764px;
+	margin-bottom: 2.5rem;
+}
+
+.res__block-title {
+	font-size: 1.125rem;
+}
+
+.res__blockIntro-list {
+	@include listStyle-none;
+	display: flex;
+	font-style: italic;
+	margin: -.5rem 0 -.75rem 0;
+
+	li {
+		padding: 0 .5rem;
+		border-right: 1px solid black;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:last-child {
+			padding-right: 0;
+			border-right: none;
+		}
+	}
+}
+
+.res__blockintro-aux p {
+	line-height: normal;
+}
+
+.res__blockDetails {
+	&.res__blockDetails--client {
+		padding-left: 1.75rem;
+	}
+}
+
+.res__blockDetails-title {
+	margin-bottom: .25rem;
+}
+
+.res__blockDetails-list {
+	margin-top: 0;
+}
+
+
+@media screen and (min-width: $large-up) {
+	.res__flex-container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.res__main-container {
+		flex-basis: 73%;
+	}
+
+	.res__aside-container {
+		flex-basis: 23%;
+	}
+}
