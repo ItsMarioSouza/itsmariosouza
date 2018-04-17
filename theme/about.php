@@ -67,9 +67,9 @@
 													$window = get_sub_field('window');
 
 													if( $window == 'existing' ):
-														$target = '_blank';
-													elseif( $window == 'new' ):
 														$target = '';
+													elseif( $window == 'new' ):
+														$target = '_blank';
 													endif;
 
 												?>
