@@ -5,7 +5,6 @@
 
 	get_header();
 ?>
-		<?php if( ! post_password_required() ): //If password is not needed ?>
 
 		<div class="contentContainer contentContainer--resume" role="main">
 			<?php if( ! post_password_required() ): //If password is not needed ?>
