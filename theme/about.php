@@ -67,14 +67,14 @@
 													$window = get_sub_field('window');
 
 													if( $window == 'existing' ):
-														$target = '_blank'
+														$target = '_blank';
 													elseif( $window == 'new' ):
-														$target = ''
+														$target = '';
 													endif;
 
 												?>
 
-												<a class="icon__container about__icon-container about__icon-container--link" href="<?php the_sub_field('file'); ?>" target="<?php echo $target; ?>">
+												<a class="icon__container about__icon-container about__icon-container--link" href="<?php the_sub_field('file'); ?>" target="<?php $target ?>">
 													<i class="<?php the_sub_field('icon'); ?>"></i>
 													<span class="icon__text about__icon-text"><?php the_sub_field('text'); ?></span>
 												</a>
