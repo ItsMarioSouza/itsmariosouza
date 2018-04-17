@@ -14,7 +14,7 @@
 					<div class="res__intro-utilities">
 						<a class="icon__container res__icon-container about__icon-container--link" href="/wp-content/uploads/2018/04/mario-souza-resume-web-oct-2017.pdf" target="_blank">
 							<i class="fal fa-file-alt"></i>
-							<span class="icon__text res__icon-text">Download Résumé</span>
+							<span class="icon__text res__icon-text">Download PDF</span>
 						</a>
 					</div>
 				</section>
