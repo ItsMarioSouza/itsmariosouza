@@ -51,23 +51,30 @@
 								<ul class="about__link-list">
 									<?php if( have_rows('test') ): while( have_rows('test') ): the_row(); ?>
 
-										<?php
-											$choice = get_sub_field('choice');
-
-											if( $choice == 'link' ):
-												$link = get_sub_field('link');
-											elseif( $choice == 'file' ):
-												$link = get_sub_field('file');
-											endif;
-										?>
-
-
 										<li>
-											<a class="icon__container about__icon-container about__icon-container--link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
-												<i class="<?php the_sub_field('icon'); ?>"></i>
-												<span class="icon__text about__icon-text"><?php the_sub_field('text'); ?></span>
-											</a>
+											<?php $choice = get_sub_field('choice'); ?>
+
+											<?php if( $choice == 'link' ): ?>
+												<?php $link = get_sub_field('link'); ?>
+
+												<a class="icon__container about__icon-container about__icon-container--link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
+													<i class="<?php the_sub_field('icon'); ?>"></i>
+													<span class="icon__text about__icon-text"><?php the_sub_field('text'); ?></span>
+												</a>
+
+											<?php elseif( $choice == 'file' ): ?>
+												<?php $link = get_sub_field('file'); ?>
+
+												<a class="icon__container about__icon-container about__icon-container--link" href="<?php echo $link['url']; ?>" target="_blank">
+													<i class="<?php the_sub_field('icon'); ?>"></i>
+													<span class="icon__text about__icon-text"><?php the_sub_field('text'); ?></span>
+												</a>
+
+											<?php endif; ?>
 										</li>
+
+
+
 									<?php endwhile; endif; ?>
 								</ul>
 							</div>
