@@ -20,20 +20,8 @@
 }
 
 .about__icon-container {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-
 	.svg-inline--fa {
 		font-size: 1.5rem;
-	}
-
-	.about__icon-text {
-		margin-left: .5rem;
-	}
-
-	.fa-linkedin-in + .about__icon-text {
-		margin-top: 2px;
 	}
 
 	&.about__icon-container--link {

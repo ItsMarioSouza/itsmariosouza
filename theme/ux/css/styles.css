@@ -1187,28 +1187,8 @@ img {
   margin: 0;
 }
 
-.about__icon-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
 .about__icon-container .svg-inline--fa {
   font-size: 1.5rem;
-}
-
-.about__icon-container .about__icon-text {
-  margin-left: .5rem;
-}
-
-.about__icon-container .fa-linkedin-in + .about__icon-text {
-  margin-top: 2px;
 }
 
 .about__icon-container.about__icon-container--link {

@@ -22,9 +22,9 @@
 								<h2 class="about__name"><?php the_field('about_name_acf'); ?></h2>
 
 								<?php if( have_rows('about_location_acf') ): while( have_rows('about_location_acf') ): the_row(); ?>
-									<div class="about__icon-container">
+									<div class="icon__container about__icon-container">
 										<i class="<?php the_sub_field('icon_acf'); ?>"></i>
-										<span class="about__icon-text"><?php the_sub_field('text_acf'); ?></span>
+										<span class="icon__text about__icon-text"><?php the_sub_field('text_acf'); ?></span>
 									</div>
 								<?php endwhile; endif;?>
 
