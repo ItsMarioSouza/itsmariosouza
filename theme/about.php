@@ -74,7 +74,7 @@
 
 												?>
 
-												<a class="icon__container about__icon-container about__icon-container--link" href="<?php the_sub_field('file'); ?>" target="<?php $target ?>">
+												<a class="icon__container about__icon-container about__icon-container--link" href="<?php the_sub_field('file'); ?>" target="<?php echo $target; ?>">
 													<i class="<?php the_sub_field('icon'); ?>"></i>
 													<span class="icon__text about__icon-text"><?php the_sub_field('text'); ?></span>
 												</a>
