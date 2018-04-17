@@ -51,23 +51,39 @@
 								<ul class="about__link-list">
 									<?php if( have_rows('test') ): while( have_rows('test') ): the_row(); ?>
 
-										<?php
-											$choice = get_sub_field('choice');
-
-											if( $choice == 'link' ):
-												$link = get_sub_field('link');
-											elseif( $choice == 'file' ):
-												$link = get_sub_field('file');
-											endif;
-										?>
-
+										<?php $choice = get_sub_field('choice'); ?>
 
 										<li>
-											<a class="icon__container about__icon-container about__icon-container--link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
-												<i class="<?php the_sub_field('icon'); ?>"></i>
-												<span class="icon__text about__icon-text"><?php the_sub_field('text'); ?></span>
-											</a>
+											<?php if( $choice == 'link' ): //If it's a link ?>
+												<?php $link = get_sub_field('link'); ?>
+
+												<a class="icon__container about__icon-container about__icon-container--link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
+													<i class="<?php the_sub_field('icon'); ?>"></i>
+													<span class="icon__text about__icon-text"><?php the_sub_field('text'); ?></span>
+												</a>
+
+											<?php elseif( $choice == 'file' ): //If it's a file ?>
+												<?php
+													$window = get_sub_field('window');
+
+													if( $window == 'existing' ):
+														$target = '_blank'
+													elseif( $window == 'new' ):
+														$target = ''
+													endif;
+
+												?>
+
+												<a class="icon__container about__icon-container about__icon-container--link" href="<?php the_sub_field('file'); ?>" target="<?php echo $target; ?>">
+													<i class="<?php the_sub_field('icon'); ?>"></i>
+													<span class="icon__text about__icon-text"><?php the_sub_field('text'); ?></span>
+												</a>
+
+											<?php endif; ?>
 										</li>
+
+
+
 									<?php endwhile; endif; ?>
 								</ul>
 							</div>
