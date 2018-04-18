@@ -48,13 +48,15 @@
 
 											<?php elseif( $choice == 'file' ): //If it's a file ?>
 												<?php
-													// $window = get_sub_field('window_target_acf');
-													//
-													// if ( $window == 'new' ) {
-													// 	$target = '_blank';
-													// } elseif ( $window == 'existing' ) {
-													// 	$target = '';
-													// }
+													$window = get_sub_field('window_target_acf');
+
+													if ( $window == 'new' ) {
+														$target = '_blank';
+													} elseif ( $window == 'existing' ) {
+														$target = '';
+													} else {
+														$target = '_blank';
+													}
 													// endif;
 												?>
 
