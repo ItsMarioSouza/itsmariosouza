@@ -19,75 +19,43 @@
 
 						<div class="about__details-container">
 							<div class="about__row">
-								<h2 class="about__name"><?php the_field('about_name_acf'); ?></h2>
-
-								<?php if( have_rows('about_location_acf') ): while( have_rows('about_location_acf') ): the_row(); ?>
-									<div class="icon__container about__icon-container">
-										<i class="<?php the_sub_field('icon_acf'); ?>"></i>
-										<span class="icon__text about__icon-text"><?php the_sub_field('text_acf'); ?></span>
-									</div>
-								<?php endwhile; endif;?>
-
-								<div class="about__intro-copy borderLink"><?php the_field('about_intro_copy_acf'); ?></div>
-							</div>
-
-							<div class="about__row">
 								<ul class="about__link-list">
 									<?php if( have_rows('about_icon_link_list_acf') ): while( have_rows('about_icon_link_list_acf') ): the_row(); ?>
-										<?php $link = get_sub_field('link_acf'); ?>
-										<li>
-											<a class="icon__container about__icon-container about__icon-container--link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
-												<i class="<?php the_sub_field('icon_acf'); ?>"></i>
-												<span class="icon__text about__icon-text"><?php the_sub_field('text_acf'); ?></span>
-											</a>
-										</li>
-									<?php endwhile; endif; ?>
-								</ul>
-							</div>
 
-
-
-							<div class="about__row">
-								<ul class="about__link-list">
-									<?php if( have_rows('test') ): while( have_rows('test') ): the_row(); ?>
-
-										<?php $choice = get_sub_field('choice'); ?>
+										<?php $choice = get_sub_field('link_type_acf'); ?>
 
 										<li>
-											<?php if( $choice == 'link' ): //If it's a link ?>
-												<?php $link = get_sub_field('link'); ?>
+											<?php if( $choice == 'url' ): //If it's a link ?>
+												<?php $link = get_sub_field('link_acf'); ?>
 
 												<a class="icon__container about__icon-container about__icon-container--link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
-													<i class="<?php the_sub_field('icon'); ?>"></i>
-													<span class="icon__text about__icon-text"><?php the_sub_field('text'); ?></span>
+													<i class="<?php the_sub_field('icon_acf'); ?>"></i>
+													<span class="icon__text about__icon-text"><?php the_sub_field('text_acf'); ?></span>
 												</a>
 
 											<?php elseif( $choice == 'file' ): //If it's a file ?>
 												<?php
-													$window = get_sub_field('window');
-
-													if( $window == 'new' ):
-														$target = '_blank';
-													elseif( $window == 'existing' ):
-														$target = '';
-													endif;
-
+													// $window = get_sub_field('window_target_acf');
+													//
+													// if( $window == 'new' ):
+													// 	$target = '_blank';
+													// elseif( $window == 'existing' ):
+													// 	$target = '';
+													// endif;
 												?>
 
-												<a class="icon__container about__icon-container about__icon-container--link" href="<?php the_sub_field('file'); ?>" target="<?php echo $target ?>">
-													<i class="<?php the_sub_field('icon'); ?>"></i>
-													<span class="icon__text about__icon-text"><?php the_sub_field('text'); ?></span>
+												<a class="icon__container about__icon-container about__icon-container--link" href="<?php the_sub_field('file_acf'); ?>" target="_blank">
+													<i class="<?php the_sub_field('icon_acf'); ?>"></i>
+													<span class="icon__text about__icon-text"><?php the_sub_field('text_acf'); ?></span>
 												</a>
 
 											<?php endif; ?>
 										</li>
 
-
-
 									<?php endwhile; endif; ?>
 								</ul>
 							</div>
-						</div> <!-- /contactInfo -->
+						</div> <!-- /about__details-container -->
 					</div>
 
 				<?php
