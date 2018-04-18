@@ -19,6 +19,19 @@
 
 						<div class="about__details-container">
 							<div class="about__row">
+								<h2 class="about__name"><?php the_field('about_name_acf'); ?></h2>
+
+								<?php if( have_rows('about_location_acf') ): while( have_rows('about_location_acf') ): the_row(); ?>
+									<div class="icon__container about__icon-container">
+										<i class="<?php the_sub_field('icon_acf'); ?>"></i>
+										<span class="icon__text about__icon-text"><?php the_sub_field('text_acf'); ?></span>
+									</div>
+								<?php endwhile; endif;?>
+
+								<div class="about__intro-copy borderLink"><?php the_field('about_intro_copy_acf'); ?></div>
+							</div> <!-- /about__row -->
+
+							<div class="about__row">
 								<ul class="about__link-list">
 									<?php if( have_rows('about_icon_link_list_acf') ): while( have_rows('about_icon_link_list_acf') ): the_row(); ?>
 
@@ -54,7 +67,7 @@
 
 									<?php endwhile; endif; ?>
 								</ul>
-							</div>
+							</div> <!-- /about__row -->
 						</div> <!-- /about__details-container -->
 					</div>
 
