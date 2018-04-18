@@ -54,7 +54,8 @@
 														$target = '_blank';
 													} elseif ( $window == 'existing' ) {
 														$target = '';
-													} endif;
+													}
+													endif;
 												?>
 
 												<a class="icon__container about__icon-container about__icon-container--link" href="<?php the_sub_field('file_acf'); ?>" target="<?php echo $target ?>">
