@@ -50,14 +50,12 @@
 												<?php
 													$window = get_sub_field('window_target_acf');
 
-													if ( $window == 'new' ) {
-														$target = '_blank';
-													} elseif ( $window == 'existing' ) {
+													if ( $window == 'existing' ) {
 														$target = '';
 													} else {
+														// If user chooses new target or anything else...
 														$target = '_blank';
 													}
-													// endif;
 												?>
 
 												<a class="icon__container about__icon-container about__icon-container--link" href="<?php the_sub_field('file_acf'); ?>" target="<?php echo $target ?>">
