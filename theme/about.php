@@ -48,17 +48,16 @@
 
 											<?php elseif( $choice == 'file' ): //If it's a file ?>
 												<?php
-													$window = get_sub_field('window_target_acf');
-
-													if ( $window == 'existing' ) {
-														$target = '';
-													} else {
-														// If user chooses new target or anything else...
-														$target = '_blank';
-													}
+													// $window = get_sub_field('window_target_acf');
+													//
+													// if ( $window == 'existing' ) {
+													// 	$target = '';
+													// } else {
+													// 	$target = '_blank';
+													// }
 												?>
 
-												<a class="icon__container about__icon-container about__icon-container--link" href="<?php the_sub_field('file_acf'); ?>" target="<?php echo $target ?>">
+												<a class="icon__container about__icon-container about__icon-container--link" href="<?php the_sub_field('file_acf'); ?>" target="_blank">
 													<i class="<?php the_sub_field('icon_acf'); ?>"></i>
 													<span class="icon__text about__icon-text"><?php the_sub_field('text_acf'); ?></span>
 												</a>
