@@ -34,9 +34,7 @@
 							<div class="about__row">
 								<ul class="about__link-list">
 									<?php if( have_rows('about_icon_link_list_acf') ): while( have_rows('about_icon_link_list_acf') ): the_row(); ?>
-
 										<?php $choice = get_sub_field('link_type_acf'); ?>
-
 										<li>
 											<?php if( $choice == 'url' ): //If it's a link ?>
 												<?php $link = get_sub_field('link_acf'); ?>
@@ -61,10 +59,8 @@
 													<i class="<?php the_sub_field('icon_acf'); ?>"></i>
 													<span class="icon__text about__icon-text"><?php the_sub_field('text_acf'); ?></span>
 												</a>
-
 											<?php endif; ?>
 										</li>
-
 									<?php endwhile; endif; ?>
 								</ul>
 							</div> <!-- /about__row -->
