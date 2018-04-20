@@ -22,6 +22,8 @@
 			</section>
 
 			<section class="grid">
+				<?php $animation = get_field('blog_grid_item_animation_acf'); ?>
+
 				<h2 class="grid__title"><?php the_field('blog_grid_title_acf'); ?></h2>
 
 				<?php if( ! post_password_required() ): ?>
@@ -50,7 +52,7 @@
 										$client = get_sub_field('client_acf');
 									?>
 								<?php endwhile; endif; ?>
-								<?php $animation = get_field('blog_grid_item_animation_acf'); ?>
+
 								<article class="grid__item grid_item--blog" data-aos="<?php echo $animation ?>">
 									<a class="grid__item-link" href="<?php the_permalink(); ?>">
 										<img class="grid__item-img" src="<?php the_field('post_grid_image_acf'); ?>" alt="" />
