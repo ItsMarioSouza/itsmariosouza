@@ -14,6 +14,7 @@
 		<!-- Styles -->
 		<link href="https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="ux/vendor/fa-svg-with-js.min.css" />
+		<link href="ux/vendor/aos.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="ux/css/styles.css" />
 	</head>
 
@@ -34,13 +35,13 @@
 
 				<nav class="globalNav globalNav-js">
 					<ul class="globalNav__list">
-						<li class="globalNav__item">
+						<li class="globalNav__item" data-aos="slide-up">
 							<a href="blog.html">Work</a>
 						</li>
-						<li class="globalNav__item">
+						<li class="globalNav__item" data-aos="slide-up">
 							<a href="about.html">About</a>
 						</li>
-						<li class="globalNav__item">
+						<li class="globalNav__item" data-aos="slide-up">
 							<a href="resume.html">Résumé</a>
 						</li>
 					</ul>
@@ -76,9 +77,11 @@
 				<h1 class="hero__title hero__title--visible hero__title--light">Work</h1>
 
 				<picture class="hero__image">
-					<source media="(max-width: 767px)" srcset="http://placehold.it/750x450">
+					<!-- <source media="(max-width: 767px)" srcset="http://placehold.it/750x450"> -->
+					<source media="(max-width: 767px)" srcset="etc/mobile.jpg">
 
-					<img src="http://placehold.it/1200x420" alt="">
+					<!-- <img src="http://placehold.it/1200x420" alt=""> -->
+					<img src="etc/desktop.jpg" alt="">
 				</picture>
 			</section>
 
@@ -86,7 +89,7 @@
 				<h2 class="grid__title">Stuff I've made with other talented individuals:</h2>
 
 				<div class="grid__list grid__list--blog">
-					<article class="grid__item grid__item--blog">
+					<article class="grid__item grid__item--blog" data-aos="slide-up">
 						<a class="grid__item-link" href="post.html">
 							<img class="grid__item-img" src="http://placehold.it/720x600" />
 
@@ -99,7 +102,7 @@
 						</a>
 					</article>
 
-					<article class="grid__item grid__item--blog">
+					<article class="grid__item grid__item--blog" data-aos="slide-up">
 						<a class="grid__item-link" href="post.html">
 							<img class="grid__item-img" src="http://placehold.it/720x600" />
 
@@ -112,7 +115,7 @@
 						</a>
 					</article>
 
-					<article class="grid__item grid__item--blog">
+					<article class="grid__item grid__item--blog" data-aos="slide-up">
 						<a class="grid__item-link" href="post-password.html">
 							<img class="grid__item-img" src="http://placehold.it/720x600" />
 
@@ -125,7 +128,7 @@
 						</a>
 					</article>
 
-					<article class="grid__item grid__item--blog">
+					<article class="grid__item grid__item--blog" data-aos="slide-up">
 						<a class="grid__item-link" href="post-password.html">
 							<img class="grid__item-img" src="http://placehold.it/720x600" />
 
@@ -178,6 +181,7 @@
 		<!-- Scripts -->
 		<script src="ux/vendor/jquery-1.12.4.min.js"></script>
 		<script src="ux/vendor/fontawesome-all.min.js" defer></script>
+		<script src="ux/vendor/aos.js"></script>
 		<script src="ux/js/main.js" defer></script>
 	</body>
 </html>

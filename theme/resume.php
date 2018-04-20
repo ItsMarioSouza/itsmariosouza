@@ -56,7 +56,6 @@
 										<li>Managed the UX/UI design, development, QA testing, and analytics reporting of a microsite with 5 unique iterations that informed users as the contest progressed, which was part of a larger overall campaign complete with video, OLA, influencers, and social media.</li>
 										<li>Determined overall campaign KPIs and user flow with a cross-disciplinary agency team.</li>
 										<li>Coordinated with an independent vendor to write the terms and determine the contest winner.</li>
-										<li></li>
 									</ul>
 								</div>
 

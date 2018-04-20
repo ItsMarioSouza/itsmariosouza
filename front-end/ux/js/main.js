@@ -1,5 +1,6 @@
 // Main JS File
 
+
 $(document).ready(function() {
 
 	/* ––––––––––––––––––––––––––––––––————————————————
@@ -35,6 +36,15 @@ $(document).ready(function() {
 				openNav();
 			}
 		});
+	});
+
+
+	/* ––––––––––––––––––––––––––––––––————————————————
+	// Inititiate AOS Scroll Animations
+	––––––––––––––––––––––––––––––––———————————————— */
+	AOS.init({
+		offset: 25,
+		duration: 750,
 	});
 
 
