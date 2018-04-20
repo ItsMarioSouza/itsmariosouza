@@ -24,6 +24,10 @@
 		wp_register_script('font-awesome-js', get_template_directory_uri() . '/ux/vendor/fontawesome-all.min.js', array('jquery'), null, true);
 		wp_enqueue_script('font-awesome-js');
 
+		// Register AOS
+		wp_register_script('aos-js', get_template_directory_uri() . '/ux/vendor/aos.js', array(), null, true);
+		wp_enqueue_script('aos-js');
+
 		// Register Main JS
 		wp_register_script('main-js', get_template_directory_uri() . '/ux/js/main.min.js', array('jquery'), null, true);
 		wp_enqueue_script('main-js');
@@ -34,6 +38,10 @@
 		// Register Font Awesome
 		// wp_register_style( 'font-awesome-css', get_template_directory_uri() . '/ux/vendor/fa-svg-with-js.min.css', array(), null, 'all' );
 		// wp_enqueue_style( 'font-awesome-css' );
+
+		// Register AOS
+		wp_register_style( 'aos-css', get_template_directory_uri() . '/ux/vendor/fa-svg-with-js.min.css', array(), null, 'all' );
+		wp_enqueue_style( 'aos-css' );
 
 		// Register Main CSS
 		wp_register_style( 'main-css', get_template_directory_uri() . '/ux/css/styles.min.css', array(), null, 'screen' );
