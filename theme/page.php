@@ -5,7 +5,6 @@
 
 	get_header();
 ?>
-<?php $animation = get_the_field('blog_grid_item_animation_acf'); ?>
 
 		<div class="contentContainer contentContainer--blog" role="main">
 			<section class="hero">
