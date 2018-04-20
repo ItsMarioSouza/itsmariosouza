@@ -40,7 +40,7 @@
 		// wp_enqueue_style( 'font-awesome-css' );
 
 		// Register AOS
-		wp_register_style( 'aos-css', get_template_directory_uri() . '/ux/vendor/fa-svg-with-js.min.css', array(), null, 'all' );
+		wp_register_style( 'aos-css', get_template_directory_uri() . '/ux/vendor/aos.css', array(), null, 'all' );
 		wp_enqueue_style( 'aos-css' );
 
 		// Register Main CSS
