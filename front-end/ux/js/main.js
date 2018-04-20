@@ -44,6 +44,7 @@ $(document).ready(function() {
 	AOS.init({
 		offset: 25,
 		duration: 750,
+		once: 'true'
 	});
 
 
