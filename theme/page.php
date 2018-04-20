@@ -5,6 +5,7 @@
 
 	get_header();
 ?>
+<?php $animation = get_the_field('blog_grid_item_animation_acf'); ?>
 
 		<div class="contentContainer contentContainer--blog" role="main">
 			<section class="hero">
@@ -51,7 +52,7 @@
 									?>
 								<?php endwhile; endif; ?>
 
-								<article class="grid__item grid_item--blog" data-aos="<?php the_field('blog_grid_item_animation_acf'); ?>">
+								<article class="grid__item grid_item--blog" data-aos="<?php echo $animation ?>">
 									<a class="grid__item-link" href="<?php the_permalink(); ?>">
 										<img class="grid__item-img" src="<?php the_field('post_grid_image_acf'); ?>" alt="" />
 
