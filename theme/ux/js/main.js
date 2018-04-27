@@ -41,11 +41,37 @@ $(document).ready(function() {
 	/* ––––––––––––––––––––––––––––––––————————————————
 	// Inititiate AOS Scroll Animations
 	––––––––––––––––––––––––––––––––———————————————— */
-	AOS.init({
-		offset: 25,
-		duration: 750,
-		once: 'true'
+	$(function() {
+		//local variables
+		var $gridItem = $('.grid__item--blog');
+
+		//apply transition to all items
+		if (window.innerWidth >= 576) {
+			$($gridItem).each(function(index) {
+				$(this).css({'transition-delay': .1*(0 + index) + 's'});
+			});
+		}
+
+		//inititate AOS
+		AOS.init({
+			offset: 25,
+			duration: 750,
+			once: 'true'
+		});
+
+		//Check and delay new elemets that have not been animated
+		if (window.innerWidth >= 576) {
+			$(document).on('scroll', function() {
+				var $gridItem2 = $('.grid__item--blog').not('.aos-animate');
+
+				$($gridItem2).each(function(index) {
+					$(this).css({'transition-delay': .1*(0 + index) + 's'});
+				});
+			});
+		}
 	});
+
+
 
 
 	/* ––––––––––––––––––––––––––––––––————————————————
