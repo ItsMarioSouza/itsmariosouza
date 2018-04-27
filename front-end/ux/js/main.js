@@ -49,6 +49,8 @@ $(document).ready(function() {
 		if (window.innerWidth >= 576) {
 			$($gridItem).each(function(index) {
 				$(this).css({'transition-delay': .1*(0 + index) + 's'});
+
+				console.log("initial delay applied");
 			});
 		}
 
@@ -66,6 +68,8 @@ $(document).ready(function() {
 
 				$($gridItem2).each(function(index) {
 					$(this).css({'transition-delay': .1*(0 + index) + 's'});
+
+					console.log("secondary delay applied");
 				});
 			});
 		}
