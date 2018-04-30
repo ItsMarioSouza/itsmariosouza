@@ -7,10 +7,10 @@
 ?>
 
 		<div class="contentContainer contentContainer--resume" role="main">
+			<h1 class="res__intro-title">Résumé</h1>
+
 			<?php if( ! post_password_required() ): //If password is not needed ?>
 				<section class="res__intro">
-					<h1 class="res__intro-title">Résumé</h1>
-
 					<div class="res__intro-utilities">
 						<a class="icon__container res__icon-container about__icon-container--link" href="/wp-content/uploads/2018/04/mario-souza-resume-web-oct-2017.pdf" target="_blank">
 							<i class="fal fa-file-alt"></i>
