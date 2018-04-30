@@ -16,8 +16,8 @@
 }
 
 .res__intro-title {
-	font-family: $inconsolata;
-	font-size: 3rem;
+	// font-family: $inconsolata;
+	font-size: 2.875rem;
 	letter-spacing: .01em;
 }
 
@@ -98,6 +98,12 @@
 
 	span {
 
+	}
+
+	&.res__blockDetails-list--extra-spacing {
+		li {
+			margin-bottom: .875rem;
+		}
 	}
 }
 
