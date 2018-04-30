@@ -39,33 +39,57 @@
 									</div>
 								</div>
 
+								<div class="res__blockDetails">
+									<div class="res__blockDetails-copy">
+										<p>Produce high-quality products and experiences across technology. Aided the agency with the switch from Flash to HTLM5 display ads. Client facing and allocated through entire project life cycles. Bridge multiple departments to facilitate integration, foster innovation and design on brand. Responsible for work statements, production schedules, project budgets and managing both internal and external resources.</p>
+									</div>
+								</div>
+
 								<div class="res__blockDetails res__blockDetails--client">
-									<h4 class="res__blockDetails-title">Ocean Spray Growers Portal</h4>
+									<h4 class="res__blockDetails-title">Ocean Spray – Dot Com</h4>
 
 									<ul class="res__blockDetails-list">
-										<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</li>
-										<li>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis.</li>
-										<li>Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+										<li>Lead digital producer of a global flagship website</li>
+										<li>Managed the internal front-end and Client back-end development, analytics, & QA of the site, which has been adapted for 40+ countries and translated into 10+ languages</li>
+										<li>Coordinated a WCAG 2.0 AA site update for the APAC market</li>
+										<li>Worked with Client’s global and in-market teams to determine content for each new site, then prepared copy for translation and gathered assets for retouching</li>
+										<li>Oversaw quarterly analytics reporting and improvement recommendations for the US site, email campaigns, & media</li>
 									</ul>
 								</div>
 
 								<div class="res__blockDetails res__blockDetails--client">
-									<h4 class="res__blockDetails-title">CenturyLink Sing with Kelvin</h4>
+									<h4 class="res__blockDetails-title">Ocean Spray – Mocktails</h4>
 
 									<ul class="res__blockDetails-list">
-										<li>Managed the UX/UI design, development, QA testing, and analytics reporting of a microsite with 5 unique iterations that informed users as the contest progressed, which was part of a larger overall campaign complete with video, OLA, influencers, and social media.</li>
-										<li>Determined overall campaign KPIs and user flow with a cross-disciplinary agency team.</li>
-										<li>Coordinated with an independent vendor to write the terms and determine the contest winner.</li>
+										<li>Lead digital producer of an integrated campaign with 2 separate targets to launch a new product line</li>
+										<li>Managed the UX/UI design, development, QA, & analytics of 2 landing pages, each appealing to their target. Pages housed product information, a store locator, & shareable content like recipes and videos</li>
+										<li>Handled the design, development, QA testing, & tracking of a banner ad concept per target</li>
+										<li>Re-formatted final video content for social and site to meet specs using FFmpeg</li>
+										<li>Consulted, organized, & prototyped social content, both organic and paid units like Carousel and Canvas</li>
 									</ul>
 								</div>
 
 								<div class="res__blockDetails res__blockDetails--client">
-									<h4 class="res__blockDetails-title">Jack Daniel's Barrel Hunt</h4>
+									<h4 class="res__blockDetails-title">CenturyLink – Sing with Kelvin</h4>
 
 									<ul class="res__blockDetails-list">
-										<li>Donec sed odio dui.</li>
-										<li>Curabitur blandit tempus porttitor.</li>
-										<li>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</li>
+										<li>Lead digital producer of an integrated campaign to highlight the power of the internet</li>
+										<li>Managed the UX/UI design, development, QA, & analytics of a microsite with 5 unique iterations, which housed an array of content from contest information to participant submissions</li>
+										<li>Prepared the client facing schedule based on media and content production dates</li>
+										<li>Determined overall campaign KPIs and user flow with a cross-disciplinary agency team</li>
+										<li>Coordinated with an independent vendor to write terms and determine the winner</li>
+									</ul>
+								</div>
+
+								<div class="res__blockDetails res__blockDetails--client">
+									<h4 class="res__blockDetails-title">Jack Daniel’s – Barrel Hunt</h4>
+
+									<ul class="res__blockDetails-list">
+										<li>Digital producer of an integrated campaign to celebrate the 150th anniversary of the Jack Daniel Distillery</li>
+										<li>Managed the UX/UI design, development, QA, and analytics of a landing page, which was the central hub of a global scavenger hunt for 150 barrels, which informed users of upcoming/found barrels, rules, and winner details</li>
+										<li>Partnered with Client’s global and in-market teams to gather content from each scavenger hunt winner in real time, which was adapted and uploaded to the site</li>
+										<li>Coordinated with Client’s IT team to host, push updates, & scape their Facebook page to pull in content</li>
+										<li>Handled the design, development, and QA of an email template</li>
 									</ul>
 								</div>
 							</div> <!-- /res__block -->
@@ -106,25 +130,6 @@
 								<div class="res__blockDetails">
 									<div class="res__blockDetails-copy">
 										<p>Learned the operations of a graphic design, web development and marketing agency. Exposed to multiple projects at any single point in time. Became a more valuable team member by teaching myself new skills such as CSS and basic audio editing.</p>
-									</div>
-								</div>
-							</div> <!-- /res__block -->
-
-
-							<div class="res__block">
-								<h3 class="res__block-title">Farmer</h3>
-
-								<div class="res__blockIntro">
-									<ul class="res__blockIntro-list">
-										<li>Bog Lane Farms</li>
-										<li>Harwich, MA</li>
-										<li>May 2007 - September 2012</li>
-									</ul>
-								</div>
-
-								<div class="res__blockDetails">
-									<div class="res__blockDetails-copy">
-										<p>Carried out day-to-day operations in regards to maintaining a cranberry bog.</p>
 									</div>
 								</div>
 							</div> <!-- /res__block -->
@@ -237,12 +242,12 @@
 								<h2 class="res__section-title">Certificates</h2>
 
 								<div class="res__blockDetails">
-									<ul class="res__blockDetails-list">
+									<ul class="res__blockDetails-list res__blockDetails-list--extra-spacing">
 										<li>
 											<span>JavaScript Circuit – </span>distributed by General Assembly
 										</li>
 										<li>
-											<span>Certified ScrumMaster&reg; –</span>distributed by Scrum Alliance
+											<span>Certified ScrumMaster&reg; – </span>distributed by Scrum Alliance
 										</li>
 										<li>
 											<span>Inbound Marketing Certified –  </span>distributed by HubSpot
@@ -258,8 +263,8 @@
 
 								<div class="res__blockDetails">
 									<div class="res__blockDetails-copy">
-										<p><span>Everyday Tools Used: </span>Mac OS X, Slack, Google Drive, Smartsheet, Jira, Trello, Keynote, Photoshop, Sublime Text and FTP</p>
-										<p><span>Other Proficiencies: </span>Excel, PowerPoint, Word, HTML, CSS, JavaScript, jQuery, Gulp, WordPress, Drupal, InDesign, Illustrator, Acrobat, log and cookie based analytics tools, social media platforms, Microsoft Project, Audacity, MOZ and Articulate Storyline</p>
+										<p><span>Everyday Tools Used: </span>Mac OS X, Slack, Google Drive, Smartsheet, Jira, Trello, Keynote, Photoshop, Atom and FTP</p>
+										<p><span>Other Proficiencies: </span>Excel, PowerPoint, Word, HTML, CSS, JavaScript, jQuery, Gulp, WordPress, Drupal, Git, FFmpeg, InDesign, Illustrator, Acrobat, Google Analytics, social media platforms, Microsoft Project, Audacity, MOZ and Articulate Storyline</p>
 									</div>
 								</div>
 							</div> <!-- /res__block -->
