@@ -22,7 +22,7 @@
 				<div class="res__flex-container">
 					<div class="res__main-container">
 						<section>
-							<h2 class="res__section-title">Professional & Work Experience</h2>
+							<h2 class="res__section-title">Professional Experience</h2>
 
 							<div class="res__block">
 								<h3 class="res__block-title">Digital Producer</h3>
