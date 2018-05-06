@@ -42,7 +42,7 @@
 								if( have_rows('post_content_acf') ): while ( have_rows('post_content_acf') ): the_row();
 									if (get_row_layout() == 'copy_acf') {
 										$copy = get_sub_field('text_acf');
-										echo '<div class="post_row"><div class="post__copy borderLink">' . $copy . '</div></div>';
+										echo '<div class="post__row"><div class="post__copy borderLink">' . $copy . '</div></div>';
 									} elseif (get_row_layout() == 'image_acf') {
 										$columns = get_sub_field('columns_acf');
 										$imageOne = get_sub_field('image_one_acf');
