@@ -1491,10 +1491,6 @@ img {
   letter-spacing: .01em;
 }
 
-.res__icon-container {
-  margin-bottom: 1.5rem;
-}
-
 .res__icon-container .svg-inline--fa {
   font-size: 1.5rem;
 }
@@ -1578,6 +1574,10 @@ img {
 
 .res__aside-container .res__section-title {
   margin-bottom: 1.125rem;
+}
+
+.res__aside-container .res__icon-container {
+  margin-bottom: 1.5rem;
 }
 
 @media screen and (max-width: 575px) {
