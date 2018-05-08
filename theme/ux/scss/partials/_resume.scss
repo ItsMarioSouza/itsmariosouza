@@ -21,6 +21,10 @@
 	letter-spacing: .01em;
 }
 
+.res__intro-utilities {
+	display: flex; // prevents a single PDF link from taking up 100% width
+}
+
 .res__icon-container  {
 	.svg-inline--fa {
 		font-size: 1.5rem;
