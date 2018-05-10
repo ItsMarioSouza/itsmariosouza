@@ -19,6 +19,10 @@
 						<img src="<?php the_sub_field('image_desktop_acf'); ?>" alt="">
 					</picture>
 				<?php endwhile; endif; ?>
+
+				<div class="hero__mario" data-aos="slide-right">
+					<img src="ux/img/mario.png" />
+				</div>
 			</section>
 
 			<section class="grid">
