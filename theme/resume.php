@@ -277,6 +277,15 @@
 					<?php the_content(); ?>
 				</section>
 
+				<section>
+					<div class="arrowLink arrowLink--back">
+						<a href="/">
+							<i class="fal fa-angle-left"></i>
+							<span>Back Home</span>
+						</a>
+					</div>
+				</section>
+
 			<?php endif; //End password protect ?>
 		</div> <!-- /main -->
 
