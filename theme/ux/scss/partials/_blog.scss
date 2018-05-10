@@ -88,4 +88,13 @@
 		width: 70%; // left + width need to equal 100% so element doesn;t casue overflow
 		bottom: 11%;
 	}
+
+	@media screen and (min-width: $medium-up)  {
+		& img {
+			width: 3vw;
+			max-width: 36px;
+			height: 4.167vw;
+			max-height: 50px;
+		}
+	}
 }

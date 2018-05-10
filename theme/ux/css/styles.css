@@ -1360,6 +1360,15 @@ img {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .hero__mario img {
+    width: 3vw;
+    max-width: 36px;
+    height: 4.167vw;
+    max-height: 50px;
+  }
+}
+
 /* ——————————————————————————————————————————
 	=POST
 —————————————————————————————————————————— */
