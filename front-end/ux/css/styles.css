@@ -1213,6 +1213,9 @@ img {
 @media screen and (max-width: 575px) {
   .about__link-list li {
     margin-bottom: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .about__link-list li:last-child {
     margin-bottom: 0;

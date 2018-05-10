@@ -44,6 +44,7 @@
 	.about__link-list {
 		li {
 			margin-bottom: 2rem;
+			display: flex; // prevents links from beiong 100% width
 
 			&:last-child {
 				margin-bottom: 0;
