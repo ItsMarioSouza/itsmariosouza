@@ -84,7 +84,6 @@
 
 	@media screen and (min-width: $medium-up) {
 		position: absolute;
-		display: flex;
 		left: 30%;
 		width: 40%; // left + width <= 100% so element doesn't casue overflow right
 		bottom: 11%;
