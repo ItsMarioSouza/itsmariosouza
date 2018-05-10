@@ -1278,6 +1278,7 @@ img {
 —————————————————————————————————————————— */
 .hero {
   position: relative;
+  overflow: hidden;
 }
 
 .hero__image {
@@ -1355,7 +1356,7 @@ img {
     display: -ms-flexbox;
     display: flex;
     left: 30%;
-    width: 70%;
+    width: 40%;
     bottom: 11%;
   }
 }

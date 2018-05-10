@@ -3,6 +3,7 @@
 —————————————————————————————————————————— */
 .hero {
 	position: relative;
+	overflow: hidden; // mario animation
 }
 
 .hero__image {
@@ -85,7 +86,7 @@
 		position: absolute;
 		display: flex;
 		left: 30%;
-		width: 70%; // left + width need to equal 100% so element doesn;t casue overflow
+		width: 40%; // left + width <= 100% so element doesn't casue overflow right
 		bottom: 11%;
 	}
 
