@@ -5,6 +5,10 @@
 	position: relative;
 }
 
+.hero__image {
+	display: block;
+}
+
 .hero__title {
 	// font-family: $inconsolata;
 	position: absolute;
@@ -65,5 +69,24 @@
 @media screen and (min-width: $large-up) {
 	.hero__title {
 		font-size: 3rem;
+	}
+}
+
+
+
+
+/* =Mario Animations */
+.hero__mario {
+	@media screen and (max-width: $medium-down) {
+		display: none;
+	}
+
+
+	@media screen and (min-width: $medium-up) {
+		position: absolute;
+		display: flex;
+		left: 30%;
+		width: 70%; // left + width need to equal 100% so element doesn;t casue overflow
+		bottom: 11%;
 	}
 }
