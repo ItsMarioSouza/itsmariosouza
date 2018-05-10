@@ -21,7 +21,7 @@
 				<?php endwhile; endif; ?>
 
 				<div class="hero__mario" data-aos="slide-right">
-					<img src="ux/img/mario.png" />
+					<img src="/wp-content/themes/itsmariosouza/ux/img/mario.png" />
 				</div>
 			</section>
 
