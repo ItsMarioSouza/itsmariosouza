@@ -35,10 +35,6 @@
 	add_action('wp_enqueue_scripts', 'load_my_scripts');
 
 	function load_my_styles() {
-		// Register Font Awesome
-		// wp_register_style( 'font-awesome-css', get_template_directory_uri() . '/ux/vendor/fa-svg-with-js.min.css', array(), null, 'all' );
-		// wp_enqueue_style( 'font-awesome-css' );
-
 		// Register AOS
 		wp_register_style( 'aos-css', get_template_directory_uri() . '/ux/vendor/aos.css', array(), null, 'screen' );
 		wp_enqueue_style( 'aos-css' );
