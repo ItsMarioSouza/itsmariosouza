@@ -1355,9 +1355,10 @@ img {
 @media screen and (min-width: 768px) {
   .hero__mario {
     position: absolute;
-    left: 30%;
-    width: 40%;
+    left: 0;
+    width: 32.5%;
     bottom: 11%;
+    text-align: right;
   }
 }
 

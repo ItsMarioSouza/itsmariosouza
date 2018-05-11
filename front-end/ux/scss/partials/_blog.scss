@@ -84,9 +84,10 @@
 
 	@media screen and (min-width: $medium-up) {
 		position: absolute;
-		left: 30%;
-		width: 40%; // left + width <= 100% so element doesn't casue overflow right
+		left: 0;
+		width: 32.5%; // left + width <= 100% so element doesn't casue overflow right
 		bottom: 11%;
+		text-align: right;
 	}
 
 	@media screen and (min-width: $medium-up)  {
