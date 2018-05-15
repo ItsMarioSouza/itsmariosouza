@@ -43,7 +43,7 @@
 		wp_register_style( 'main-css', get_template_directory_uri() . '/ux/css/styles.min.css', array(), null, 'screen' );
 		wp_enqueue_style( 'main-css' );
 	}
-	add_action( 'wp_enqueue_scripts', 'load_my_styles' );
+	add_action('wp_enqueue_scripts', 'load_my_styles');
 
 
 

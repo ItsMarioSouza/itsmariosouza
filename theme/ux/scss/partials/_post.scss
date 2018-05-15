@@ -32,8 +32,6 @@
 		}
 	}
 }
-// new
-
 
 .post__copy {
 	ul,
@@ -152,6 +150,10 @@
 		&.post__copy--intro {
 			margin: inherit; // no centering `<p>`s when details are to left
 			flex-basis: 75%; // keeps element aligned left and gives it room w/ short text
+
+			& + h2 {
+				margin-top: 2px; // align with `<hr>`
+			}
 		}
 
 		p {

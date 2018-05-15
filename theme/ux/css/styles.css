@@ -1498,6 +1498,9 @@ img {
     -ms-flex-preferred-size: 75%;
         flex-basis: 75%;
   }
+  .post__copy.post__copy--intro + h2 {
+    margin-top: 2px;
+  }
   .post__copy p:first-child {
     margin-top: 1.125rem;
   }
