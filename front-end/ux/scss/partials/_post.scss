@@ -151,7 +151,7 @@
 			margin: inherit; // no centering `<p>`s when details are to left
 			flex-basis: 75%; // keeps element aligned left and gives it room w/ short text
 
-			& + h2 {
+			& > h2:first-child {
 				margin-top: 2px; // align with `<hr>`
 			}
 		}

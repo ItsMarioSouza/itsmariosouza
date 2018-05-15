@@ -1498,7 +1498,7 @@ img {
     -ms-flex-preferred-size: 75%;
         flex-basis: 75%;
   }
-  .post__copy.post__copy--intro + h2 {
+  .post__copy.post__copy--intro > h2:first-child {
     margin-top: 2px;
   }
   .post__copy p:first-child {
