@@ -1409,6 +1409,12 @@ img {
   margin-bottom: 0;
 }
 
+.post__copy h2 > p:first-child,
+.post__copy h3 > p:first-child,
+.post__copy h4 > p:first-child {
+  margin-top: .75rem;
+}
+
 .post__copy h2 {
   margin-top: 2rem;
 }
