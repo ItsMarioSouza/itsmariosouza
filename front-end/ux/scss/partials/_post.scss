@@ -39,7 +39,7 @@
 	h4 {
 		margin-bottom: 0;
 
-		& > p:first-child {
+		& + p:first-child {
 			margin-top: .75rem;
 		}
 	}
