@@ -1409,6 +1409,10 @@ img {
   margin-bottom: 0;
 }
 
+.post__copy h2 {
+  margin-top: 2rem;
+}
+
 .post__copy ul,
 .post__copy ol {
   line-height: 1.25;
