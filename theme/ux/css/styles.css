@@ -1410,8 +1410,14 @@ img {
 }
 
 .post__copy h2 + p,
+.post__copy h2 + ol,
+.post__copy h2 + ul,
 .post__copy h3 + p,
-.post__copy h4 + p {
+.post__copy h3 + ol,
+.post__copy h3 + ul,
+.post__copy h4 + p,
+.post__copy h4 + ol,
+.post__copy h4 + ul {
   margin-top: .75rem;
 }
 

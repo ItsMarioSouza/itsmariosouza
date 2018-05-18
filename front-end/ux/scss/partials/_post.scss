@@ -39,7 +39,9 @@
 	h4 {
 		margin-bottom: 0;
 
-		& + p {
+		& + p,
+		& + ol,
+		& + ul {
 			margin-top: .75rem;
 		}
 	}
