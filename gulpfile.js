@@ -3,6 +3,7 @@ var gulp             = require('gulp');
 var sass             = require('gulp-sass');
 var browserSync      = require('browser-sync').create();
 var uglify           = require('gulp-uglify');
+var pump             = require('pump');
 var cssnano          = require('gulp-cssnano');
 var runSequence      = require('run-sequence');
 var autoprefixer     = require('gulp-autoprefixer');
@@ -91,24 +92,23 @@ gulp.task('minify-css', function() {
 
 
 // JS > Minfied JS
-gulp.task('minify-js', function () {
-	return gulp.src(srcDirectory + '/ux/js/main.js') // get file
-
-	.pipe(uglify()) // minify file
-
-	.pipe(rename({
-		suffix: '.min'
-	})) // rename with min suffix
-
-	.pipe(gulp.dest(thmDirectory + '/ux/js')) // place file in location
+gulp.task('minify-js', function(callback) {
+	pump([
+		gulp.src(srcDirectory + '/ux/js/main.js'),
+		uglify(),
+		rename({suffix: '.min'}),
+		gulp.dest(thmDirectory + '/ux/js')
+	], callback);
 });
 
 
+// Clean Src CSS folder
 gulp.task('clean:srcCSS', function() {
 	return del.sync(srcDirectory + '/ux/css');
 });
 
 
+// Clean Thm UX folder
 gulp.task('clean:thmUX', function() {
 	return del.sync(thmDirectory + '/ux');
 });
