@@ -128,7 +128,7 @@
 			break;
 		}
 	}
-	add_action ('manage_posts_custom_column', 'posts_custom_column', 10, 2);
+	add_action('manage_posts_custom_column', 'posts_custom_column', 10, 2);
 
 
 
