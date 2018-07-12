@@ -7,7 +7,7 @@
 ?>
 
 		<div class="contentContainer contentContainer--resume" role="main">
-			<h1 class="res__intro-title">Resume</h1>
+			<h1 class="res__intro-title"><?php the_title(); ?></h1>
 
 			<?php if( ! post_password_required() ): //If password is not needed ?>
 				<section class="res__intro">
