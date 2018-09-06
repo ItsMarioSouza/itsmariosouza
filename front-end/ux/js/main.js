@@ -1,5 +1,5 @@
 // Main JS File
-jQuery.noConflict();
+// jQuery.noConflict();
 
 jQuery(document).ready(function($) {
 
