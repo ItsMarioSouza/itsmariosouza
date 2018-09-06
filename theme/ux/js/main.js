@@ -1,6 +1,7 @@
 // Main JS File
+jQuery.noConflict();
 
-$(document).ready(function() {
+jQuery(document).ready(function($) {
 
 	/* ––––––––––––––––––––––––––––––––————————————————
 	// GLOBAL VARIABLES
