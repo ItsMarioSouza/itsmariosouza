@@ -10,7 +10,6 @@
 	* Custom Scripts + Styles
 	 *
 	 * https://code.tutsplus.com/articles/how-to-include-javascript-and-css-in-your-wordpress-themes-and-plugins--wp-24321
-	 * https://stackoverflow.com/questions/33280386/wordpress-how-can-i-disable-gravity-forms-inclusion-of-jquery
 	 */
 	function load_my_scripts() {
 		// Register Font Awesome
