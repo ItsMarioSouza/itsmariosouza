@@ -39,7 +39,7 @@
 								'meta_key' 		=> 'posts_order_acf',
 								'orderby' 		=> 'meta_value',
 								// 'order' 		=> 'ASC',
-								'order' 		=> 'DEC',
+								'order' 		=> 'DESC',
 							);
 
 							// Query
