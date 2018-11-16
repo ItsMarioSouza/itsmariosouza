@@ -39,7 +39,6 @@
 								'meta_key' 		=> 'posts_order_acf',
 								'orderby' 		=> 'meta_value date',
 								// 'order' 		=> 'ASC',
-								// TEST
 								'order' 		=> 'DESC',
 							);
 
