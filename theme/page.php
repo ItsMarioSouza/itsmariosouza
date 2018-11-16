@@ -40,6 +40,7 @@
 								'orderby' 		=> 'meta_value date',
 								// 'order' 		=> 'ASC',
 								'order' 		=> 'DESC',
+								// Test
 							);
 
 							// Query
