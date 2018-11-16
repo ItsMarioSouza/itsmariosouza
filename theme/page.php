@@ -38,8 +38,8 @@
 								'post_type' 	=> 'post',
 								'meta_key' 		=> 'posts_order_acf',
 								'orderby' 		=> 'meta_value',
-								'order' 		=> 'ASC',
-								// 'order' 		=> 'DESC',
+								// 'order' 		=> 'ASC',
+								'order' 		=> 'DESC',
 							);
 
 							// Query
