@@ -12,7 +12,8 @@
 					<?php if( !post_password_required() ): //If password is not needed ?>
 						<section class="post__hero">
 							<div class="post__hero-container">
-								<img src="<?php the_field('post_hero-image_acf'); ?>" />
+								<!-- <img src="<?php the_field('post_hero-image_acf'); ?>" /> -->
+								<?php echo wp_get_attachment_image(the_field('post_hero-image_acf'), 'full'); ?>	
 							</div>
 						</section>
 
