@@ -13,7 +13,12 @@
 						<section class="post__hero">
 							<div class="post__hero-container">
 								<!-- <img src="<?php the_field('post_hero-image_acf'); ?>" /> -->
-								<?php echo wp_get_attachment_image(the_field('post_hero-image_acf'), 'full'); ?>	
+								<?php
+									$image = get_field('post_hero-image_acf');
+									$size = 'full';
+
+									echo wp_get_attachment_image($image, $size);
+								?>
 							</div>
 						</section>
 
