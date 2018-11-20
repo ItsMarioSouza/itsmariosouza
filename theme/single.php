@@ -3,6 +3,9 @@
 
 	get_header();
 ?>
+		<style type="text/css">
+			.post__hero-container img {height: auto;}
+		</style>
 
 		<div class="contentContainer contentContainer--post" role="main">
 			<article class="post">
