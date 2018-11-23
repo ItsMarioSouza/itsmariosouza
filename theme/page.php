@@ -60,15 +60,12 @@
 								<article class="grid__item grid__item--blog" data-aos="<?php echo $animation ?>">
 									<a class="grid__item-link" href="<?php the_permalink(); ?>">
 
-									
-
 										<?php
 											$image = get_field('post_grid_image_acf');
 											$size = 'full';
 											if($image) {
 												echo wp_get_attachment_image($image, $size);
 											}
-											endif;
 										?>
 
 										<div class="grid__item-copy-container">
