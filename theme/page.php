@@ -64,7 +64,7 @@
 											$image = get_field('post_grid_image_acf');
 											$size = 'full';
 											if($image) {
-												echo wp_get_attachment_image($image, $size);
+												echo wp_get_attachment_image($image, $size, 'class' => 'grid__item-img');
 											}
 										?>
 
