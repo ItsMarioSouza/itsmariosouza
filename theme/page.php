@@ -62,14 +62,7 @@
 
 										<img class="grid__item-img" src="<?php the_field('post_grid_image_acf'); ?>" alt="" />
 
-										<!-- <?php
-											$image = the_field('post_grid_image_acf');
-											$size = 'full';
-											if($image) {
-												echo wp_get_attachment_image($image, $size);
-											}
-											endif;
-										?> -->
+										
 
 										<div class="grid__item-copy-container">
 											<h1 class="grid__item-title <?php the_sub_field('color_acf'); ?> <?php the_sub_field('visibility_acf'); ?>">
