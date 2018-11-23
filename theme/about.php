@@ -13,8 +13,13 @@
 				<?php if( ! post_password_required() ): //If password is not needed ?>
 					<div class="about__content-container">
 						<div class="about__image-container">
-							<?php $image = get_field('about_image_acf'); ?>
-							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+							<?php
+								$image = get_field('about_image_acf');
+								$size = 'full';
+								if($image) {
+									echo wp_get_attachment_image($image, $size);
+								}
+							?>
 						</div>
 
 						<div class="about__details-container">
