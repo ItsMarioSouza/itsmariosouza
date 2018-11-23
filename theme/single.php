@@ -16,7 +16,6 @@
 								<?php
 									$image = get_field('post_hero-image_acf');
 									$size = 'full';
-
 									echo wp_get_attachment_image($image, $size);
 								?>
 							</div>
@@ -51,11 +50,18 @@
 										echo '<div class="post__row"><div class="post__copy borderLink">' . $copy . '</div></div>';
 									} elseif (get_row_layout() == 'image_acf') {
 										$columns = get_sub_field('columns_acf');
-										$imageOne = get_sub_field('image_one_acf');
-										$imageTwo = get_sub_field('image_two_acf');
+										// $imageOne = get_sub_field('image_one_acf');
+										// $imageTwo = get_sub_field('image_two_acf');
+
+										$imageOne = get_field('image_one_acf');
+										$imageTwo = get_field('image_two_acf'));
+										$size = 'full';
+
+										echo wp_get_attachment_image($imageOne, $size);
+										echo wp_get_attachment_image($imageTwo, $size);
 
 										if ($columns == '1') {
-											echo '<div class="post__row"><div class="post__image-container"><div class="post__image post__image--single"><img src="' . $imageOne . '" /></div></div></div>';
+											echo '<div class="post__row"><div class="post__image-container"><div class="post__image post__image--single"><img src="' . echo wp_get_attachment_image($imageOne, $size); . '" /></div></div></div>';
 										} elseif ($columns == '2') {
 											echo '<div class="post__row"><div class="post__image post__image--double"><div class="post__image-container"><img src="' . $imageOne . '" /></div><div class="post__image-container"><img src="' . $imageTwo . '" /></div></div></div>';
 										}
