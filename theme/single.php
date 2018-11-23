@@ -12,11 +12,12 @@
 					<?php if( !post_password_required() ): //If password is not needed ?>
 						<section class="post__hero">
 							<div class="post__hero-container">
-								<!-- <img src="<?php the_field('post_hero-image_acf'); ?>" /> -->
 								<?php
 									$image = get_field('post_hero-image_acf');
 									$size = 'full';
-									echo wp_get_attachment_image($image, $size);
+									if($image) {
+										echo wp_get_attachment_image($image, $size);
+									}
 								?>
 							</div>
 						</section>
@@ -52,11 +53,12 @@
 										$columns = get_sub_field('columns_acf');
 										$imageOne = get_sub_field('image_one_acf');
 										$imageTwo = get_sub_field('image_two_acf');
+										$size = 'full';
 
 										if ($columns == '1') {
-											echo '<div class="post__row"><div class="post__image-container"><div class="post__image post__image--single"><img src="' . $imageOne . '" /></div></div></div>';
+											echo '<div class="post__row"><div class="post__image-container"><div class="post__image post__image--single"><img src="' . wp_get_attachment_image($imageOne, $size) . '" /></div></div></div>';
 										} elseif ($columns == '2') {
-											echo '<div class="post__row"><div class="post__image post__image--double"><div class="post__image-container"><img src="' . $imageOne . '" /></div><div class="post__image-container"><img src="' . $imageTwo . '" /></div></div></div>';
+											echo '<div class="post__row"><div class="post__image post__image--double"><div class="post__image-container">' . wp_get_attachment_image($imageOne, $size) . '</div><div class="post__image-container">' . wp_get_attachment_image($imageTwo, $size) . '</div></div></div>';
 										}
 									}
 								endwhile; endif;
