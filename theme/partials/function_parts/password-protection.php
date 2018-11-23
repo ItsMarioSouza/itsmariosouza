@@ -65,5 +65,3 @@
 		return $intro . $form;
 	}
 	add_filter( 'the_password_form', 'my_password_form' );
-
-?>
