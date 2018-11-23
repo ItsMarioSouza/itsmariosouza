@@ -57,8 +57,8 @@
 										$imageTwo = get_field('image_two_acf'));
 										$size = 'full';
 
-										echo wp_get_attachment_image($imageOne, $size);
-										echo wp_get_attachment_image($imageTwo, $size);
+										// echo wp_get_attachment_image($imageOne, $size);
+										// echo wp_get_attachment_image($imageTwo, $size);
 
 										if ($columns == '1') {
 											echo '<div class="post__row"><div class="post__image-container"><div class="post__image post__image--single"><img src="' . echo wp_get_attachment_image($imageOne, $size); . '" /></div></div></div>';
