@@ -60,8 +60,14 @@
 										// echo wp_get_attachment_image($imageOne, $size);
 										// echo wp_get_attachment_image($imageTwo, $size);
 
+										// if ($columns == '1') {
+										// 	echo '<div class="post__row"><div class="post__image-container"><div class="post__image post__image--single"><img src="' . $imageOne . '" /></div></div></div>';
+										// } elseif ($columns == '2') {
+										// 	echo '<div class="post__row"><div class="post__image post__image--double"><div class="post__image-container"><img src="' . $imageOne . '" /></div><div class="post__image-container"><img src="' . $imageTwo . '" /></div></div></div>';
+										}
+
 										if ($columns == '1') {
-											echo '<div class="post__row"><div class="post__image-container"><div class="post__image post__image--single"><img src="' . echo wp_get_attachment_image($imageOne, $size); . '" /></div></div></div>';
+											echo '<div class="post__row"><div class="post__image-container"><div class="post__image post__image--single">' . echo wp_get_attachment_image($imageOne, $size); . '</div></div></div>';
 										} elseif ($columns == '2') {
 											echo '<div class="post__row"><div class="post__image post__image--double"><div class="post__image-container"><img src="' . $imageOne . '" /></div><div class="post__image-container"><img src="' . $imageTwo . '" /></div></div></div>';
 										}
