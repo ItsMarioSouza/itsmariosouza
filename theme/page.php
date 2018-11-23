@@ -47,6 +47,10 @@
 
 						<!-- Get Posts & Place Them Into Template -->
 						<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+							<?php
+								$image = the_field('post_grid_image_acf');
+								$size = 'full';
+							?>
 
 							<?php if( have_rows('post_title_options_acf') ): while( have_rows('post_title_options_acf') ): the_row(); ?>
 
@@ -61,8 +65,6 @@
 									<a class="grid__item-link" href="<?php the_permalink(); ?>">
 
 										<?php
-											$image = the_field('post_grid_image_acf');
-											$size = 'full';
 											if($image) {
 												echo wp_get_attachment_image($image, $size);
 											}
