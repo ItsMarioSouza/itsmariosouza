@@ -47,16 +47,12 @@
 
 						<!-- Get Posts & Place Them Into Template -->
 						<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-							<?php
-								$image = the_field('post_grid_image_acf');
-								$size = 'full';
-							?>
 
 							<?php if( have_rows('post_title_options_acf') ): while( have_rows('post_title_options_acf') ): the_row(); ?>
 
 								<?php if( have_rows('post_details_list_acf') ): while( have_rows('post_details_list_acf') ): the_row(); ?>
 									<?php
-										// Feilds from child repeater – title options
+										// Feilds from child repeater
 										$client = get_sub_field('client_acf');
 									?>
 								<?php endwhile; endif; ?>
@@ -64,13 +60,16 @@
 								<article class="grid__item grid__item--blog" data-aos="<?php echo $animation ?>">
 									<a class="grid__item-link" href="<?php the_permalink(); ?>">
 
-										<?php
+										<img class="grid__item-img" src="<?php the_field('post_grid_image_acf'); ?>" alt="" />
+
+										<!-- <?php
+											$image = the_field('post_grid_image_acf');
+											$size = 'full';
 											if($image) {
 												echo wp_get_attachment_image($image, $size);
 											}
-										?>
-
-
+											endif;
+										?> -->
 
 										<div class="grid__item-copy-container">
 											<h1 class="grid__item-title <?php the_sub_field('color_acf'); ?> <?php the_sub_field('visibility_acf'); ?>">
