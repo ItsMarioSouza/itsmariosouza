@@ -14,11 +14,11 @@
 					<div class="about__content-container">
 						<div class="about__image-container">
 							<?php
-								// $image = get_field('about_image_acf');
-								// $size = 'full';
-								// if($image) {
-								// 	echo wp_get_attachment_image($image, $size);
-								// }
+								$image = get_field('about_image_acf');
+								$size = 'full';
+								if($image) {
+									echo wp_get_attachment_image($image, $size);
+								}
 							?>
 						</div>
 
