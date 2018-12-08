@@ -10,27 +10,27 @@ var autoprefixer     = require('gulp-autoprefixer');
 var rename           = require("gulp-rename");
 var sourcemaps       = require('gulp-sourcemaps');
 var del              = require('del');
-var injectPartials   = require('gulp-inject-partials');
 
 
-// Switch paths depending on /front-end vs. /themes
-var srcDirectory = 'front-end';
-var thmDirectory = 'theme';
+// Project Variables
+var projectURL       = 'itsmariosouza.local';
 
 
 //  Start BrowserSync server, reloads browser when definied items change
-gulp.task('browserSync', function() {
+gulp.task( 'browserSync', function() {
 	browserSync.init({
-		server: {
-			baseDir: 'front-end'
-		},
-	})
+		proxy: projectURL,
+		injectChanges: true,
+		watchOptions: {
+			debounceDelay: 1000 // Introduces a small delay when watching for changes to avoid triggering too many reloads
+		}
+	});
 });
 
 
 // SASS > CSS > Autoprefixer
 gulp.task('sass', function() {
-	return gulp.src(srcDirectory + '/ux/scss/*.scss') // Get all files ending with .scss in app/scss and children directories
+	return gulp.src('ux/scss/*.scss') // Get all files ending with .scss in app/scss and children directories
 
 	.pipe(sourcemaps.init()) // Initiaite SCSS sourcemap
 
@@ -43,9 +43,9 @@ gulp.task('sass', function() {
 		cascade: true
 	})) // Pass through autoprefixer
 
-	.pipe(sourcemaps.write('/sourcemaps')) // Place sourcemap in a destination making it an external file
+	.pipe(sourcemaps.write('sourcemaps')) // Place sourcemap in a destination making it an external file
 
-	.pipe(gulp.dest(srcDirectory + '/ux/css')) // Output the file in the destination folder
+	.pipe(gulp.dest('ux/css')) // Output the file in the destination folder
 
 	.pipe(browserSync.reload({
 		stream: true
@@ -53,33 +53,17 @@ gulp.task('sass', function() {
 });
 
 
-// Partials + Templates > Rendered Pages
-gulp.task('partials', function() {
-	return gulp.src('./' + srcDirectory +'/templates/*.html') // get all html template files
-
-	.pipe(injectPartials({
-		removeTags: false
-	})) // inject the partials into the templates
-
-	.pipe(gulp.dest('./' + srcDirectory)) // place the rendered page files into the correct directory
-
-	.pipe(browserSync.reload({
-		stream: true
-	})) // Reload the browser
-});
-
-
 // Watchers
 gulp.task('watchers', function() {
-	gulp.watch(srcDirectory + '/ux/scss/**/*.scss', ['sass']);
-	gulp.watch(srcDirectory + '/templates/**/*.html', ['partials']);
-	gulp.watch(srcDirectory + '/ux/js/**/*.js', browserSync.reload);
+	gulp.watch('ux/scss/**/*.scss', ['sass']);
+	gulp.watch('ux/js/**/*.js', browserSync.reload);
+	gulp.watch('*.php', browserSync.reload);
 });
 
 
 // Autoprefixed CSS > Minified CSS
 gulp.task('minify-css', function() {
-	return gulp.src(srcDirectory + '/ux/css/*.css') // get file
+	return gulp.src('ux/css/*.css') // get file
 
 	.pipe(cssnano()) // minify file
 
@@ -87,38 +71,25 @@ gulp.task('minify-css', function() {
 		suffix: '.min'
 	})) // rename with min suffix
 
-	.pipe(gulp.dest(thmDirectory + '/ux/css')); // place file in location
+	.pipe(gulp.dest('ux/css')); // place file in location
 });
 
 
 // JS > Minfied JS
 gulp.task('minify-js', function(callback) {
 	pump([
-		gulp.src(srcDirectory + '/ux/js/main.js'),
+		gulp.src('ux/js/main.js'),
 		uglify(),
 		rename({suffix: '.min'}),
-		gulp.dest(thmDirectory + '/ux/js')
+		gulp.dest('ux/js')
 	], callback);
 });
 
 
-// Clean Src CSS folder
-gulp.task('clean:srcCSS', function() {
-	return del.sync(srcDirectory + '/ux/css');
+// Clean CSS folder
+gulp.task('clean:css', function() {
+	return del.sync('ux/css');
 });
-
-
-// Clean Thm UX folder
-gulp.task('clean:thmUX', function() {
-	return del.sync(thmDirectory + '/ux');
-});
-
-
-// Copying UX Folder
-gulp.task('copy-ux', function() {
-	return gulp.src(srcDirectory + '/ux/**/*')
-	.pipe(gulp.dest(thmDirectory + '/ux'))
-})
 
 
 // Gulp Watch
@@ -134,10 +105,8 @@ gulp.task('watch', function(callback) {
 // Gulp Build
 gulp.task('build', function(callback) {
 	runSequence(
-		['clean:srcCSS', 'clean:thmUX'],
-		'partials',
+		'clean:css',
 		'sass',
-		'copy-ux',
 		['minify-css', 'minify-js'],
 		callback
 	)
