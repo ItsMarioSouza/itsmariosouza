@@ -1,13 +1,6 @@
 <?php
-
 	/**
-	* ACF Style Options To CSS
-	 *
-	 * http://www.designly.net/blog/custom-stylesheet-in-wordpress-with-advanced-custom-fields-and-the-acf-options-add-on/
-	 */
-
-	/**
-	* Custom Scripts + Styles
+	* Custom Styles + Scipts
 	 *
 	 * https://code.tutsplus.com/articles/how-to-include-javascript-and-css-in-your-wordpress-themes-and-plugins--wp-24321
 	 */
