@@ -1,6 +1,6 @@
 <?php
 	/**
-	* Custom Styles + Scipts
+	 * Custom Styles + Scipts
 	 *
 	 * https://code.tutsplus.com/articles/how-to-include-javascript-and-css-in-your-wordpress-themes-and-plugins--wp-24321
 	 */
