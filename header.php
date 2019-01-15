@@ -15,8 +15,11 @@
 			wp_head();
 		?>
 
-		<!-- Fonts --> 
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+		<!-- Fonts -->
+		<!-- <link href="https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,300i,400,400i,700,700i" rel="stylesheet"> -->
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,300i,400,400i,700,700i" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,300i,400,400i,700,700i"></noscript>
+
 	</head>
 
 	<body <?php body_class(); ?>>
