@@ -13,7 +13,7 @@
  		wp_enqueue_style( 'main-css', get_template_directory_uri() . '/ux/css/styles.min.css', array(), null, 'screen' );
 
 		// Register Font Awesome JS
-		wp_enqueue_script('font-awesome-js', get_template_directory_uri() . '/ux/vendor/fontawesome-all.min.js', array('jquery'), null, true);
+		// wp_enqueue_script('font-awesome-js', get_template_directory_uri() . '/ux/vendor/fontawesome-all.min.js', array('jquery'), null, true);
 
 		// Register AOS JS
 		wp_enqueue_script('aos-js', get_template_directory_uri() . '/ux/vendor/aos.js', array(), null, true);
