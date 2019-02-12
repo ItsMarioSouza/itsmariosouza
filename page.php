@@ -25,9 +25,9 @@
 				</div>
 			</section>
 
-			<section class="grid">
-				<?php $animation = get_field('blog_grid_item_animation_acf'); ?>
+			<?php // get_template_part('/partials/function_parts/filter-items'); ?>
 
+			<section class="grid">
 				<h2 class="grid__title"><?php the_field('blog_grid_title_acf'); ?></h2>
 
 				<?php if( ! post_password_required() ): ?>
@@ -46,39 +46,11 @@
 						?>
 
 						<!-- Get Posts & Place Them Into Template -->
-						<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-							<?php if( have_rows('post_title_options_acf') ): while( have_rows('post_title_options_acf') ): the_row(); ?>
-
-								<?php if( have_rows('post_details_list_acf') ): while( have_rows('post_details_list_acf') ): the_row(); ?>
-									<?php
-										// Feilds from child repeater
-										$client = get_sub_field('client_acf');
-									?>
-								<?php endwhile; endif; ?>
-
-								<article class="grid__item grid__item--blog" data-aos="<?php echo $animation ?>">
-									<a class="grid__item-link" href="<?php the_permalink(); ?>">
-
-										<?php
-											$image = get_field('post_grid_image_acf');
-											$size = 'full';
-											if($image) {
-												echo wp_get_attachment_image($image, $size, false, ['class' => 'grid__item-img']);
-											}
-										?>
-
-										<div class="grid__item-copy-container">
-											<h1 class="grid__item-title <?php the_sub_field('color_acf'); ?> <?php the_sub_field('visibility_acf'); ?>">
-												<span><?php echo $client ?></span>
-												<?php the_title(); ?>
-											</h1>
-										</div>
-									</a>
-								</article>
-							<?php endwhile; endif;  ?>
-
-						<?php endwhile; else : ?>
+						<?php
+							if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
+								get_template_part('/partials/function_parts/post-part');
+							endwhile; else :
+						?>
 							<p><?php esc_html_e('Sorry, no posts to display.'); ?></p>
 
 						<!-- Stop The Loop -->
@@ -96,5 +68,26 @@
 				?>
 			</section>
 		</div> <!-- /contentContainer -->
+
+		<!-- <script>
+			jQuery(function($){
+				$('#filter').submit(function(){
+					var filter = $('#filter');
+					$.ajax({
+						url:filter.attr('action'),
+						data:filter.serialize(), // form data
+						type:filter.attr('method'), // POST
+						beforeSend:function(xhr){
+							filter.find('button').text('Processing...');
+						},
+						success:function(data){
+							filter.find('button').text('Apply filter');
+							$('.grid__list').html(data); // insert data
+						}
+					});
+					return false;
+				});
+			});
+		</script> -->
 
 <?php get_footer(); ?>

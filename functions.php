@@ -115,4 +115,11 @@
 	 */
 	get_template_part('/partials/function_parts/password-protection');
 
+
+	/**
+	 * Get Filter Posts
+	 */
+	// get_template_part('/partials/function_parts/filter-posts');
+
+
 ?>
