@@ -80,7 +80,9 @@ gulp.task('minify-js', function(callback) {
 	pump([
 		gulp.src('ux/js/main.js'),
 		uglify(),
-		rename({suffix: '.min'}),
+		rename({
+			suffix: '.min'
+		}),
 		gulp.dest('ux/js')
 	], callback);
 });
