@@ -21,8 +21,9 @@ gulp.task( 'browserSync', function() {
 	browserSync.init({
 		proxy: projectURL,
 		injectChanges: true,
+		https: false,
 		watchOptions: {
-			debounceDelay: 1000 // Introduces a small delay when watching for changes to avoid triggering too many reloads
+			debounceDelay: 500 // Introduces a small delay when watching for changes to avoid triggering too many reloads
 		}
 	});
 });
