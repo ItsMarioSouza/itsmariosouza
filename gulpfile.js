@@ -3,7 +3,7 @@ var gulp             = require('gulp');
 var sass             = require('gulp-sass');
 var browserSync      = require('browser-sync').create();
 var uglify           = require('gulp-uglify');
-var pump             = require('pump');
+var pipeline         = require('readable-stream').pipeline;
 var cssnano          = require('gulp-cssnano');
 var runSequence      = require('run-sequence');
 var autoprefixer     = require('gulp-autoprefixer');
@@ -78,7 +78,7 @@ gulp.task('minify-css', function() {
 
 // JS > Minfied JS
 gulp.task('minify-js', function(callback) {
-	pump([
+	return pipeline([
 		gulp.src('ux/js/main.js'),
 		uglify(),
 		rename({
