@@ -24,7 +24,7 @@
 
 						<section class="post__content">
 							<div class="post__row">
-								<?php if( have_rows('post_details_list_acf') ): while( have_rows('post_details_list_acf') ): the_row(); ?>
+								<?php if( have_rows('post_details_list_acf') ) : while( have_rows('post_details_list_acf') ) : the_row(); ?>
 									<div class="post__details">
 										<hr />
 
@@ -45,7 +45,7 @@
 							</div>
 
 							<?php
-								if( have_rows('post_content_acf') ): while ( have_rows('post_content_acf') ): the_row();
+								if( have_rows('post_content_acf') ) : while ( have_rows('post_content_acf') ) : the_row();
 									if (get_row_layout() == 'copy_acf') {
 										$copy = get_sub_field('text_acf');
 										echo '<div class="post__row"><div class="post__copy borderLink">' . $copy . '</div></div>';
@@ -56,7 +56,7 @@
 										$size = 'full';
 
 										if ($columns == '1') {
-											echo '<div class="post__row"><div class="post__image-container"><div class="post__image post__image--single"><img src="' . wp_get_attachment_image($imageOne, $size) . '" /></div></div></div>';
+											echo '<div class="post__row"><div class="post__image-container"><div class="post__image post__image--single">' . wp_get_attachment_image($imageOne, $size) . '</div></div></div>';
 										} elseif ($columns == '2') {
 											echo '<div class="post__row"><div class="post__image post__image--double"><div class="post__image-container">' . wp_get_attachment_image($imageOne, $size) . '</div><div class="post__image-container">' . wp_get_attachment_image($imageTwo, $size) . '</div></div></div>';
 										}
@@ -72,12 +72,12 @@
 
 					<?php endif; //End password protect ?>
 
-				<?php endwhile; endif; //have posts?>
+				<?php endwhile; endif; //have posts ?>
 			</article>
 
 			<?php
 				// ACF Fields
-				if( have_rows('post_back_link_acf', 'option') ): while( have_rows('post_back_link_acf', 'option') ): the_row();
+				if( have_rows('post_back_link_acf', 'option') ) : while( have_rows('post_back_link_acf', 'option') ) : the_row();
 					$icon = get_sub_field('icon_acf');
 					$text = get_sub_field('text_acf');
 				endwhile; endif;
