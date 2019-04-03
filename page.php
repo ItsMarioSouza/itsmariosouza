@@ -25,8 +25,6 @@
 				</div>
 			</section>
 
-			<?php // get_template_part('/partials/function_parts/filter-items'); ?>
-
 			<section class="grid">
 				<h2 class="grid__title"><?php the_field('blog_grid_title_acf'); ?></h2>
 
@@ -68,26 +66,5 @@
 				?>
 			</section>
 		</div> <!-- /contentContainer -->
-
-		<!-- <script>
-			jQuery(function($){
-				$('#filter').submit(function(){
-					var filter = $('#filter');
-					$.ajax({
-						url:filter.attr('action'),
-						data:filter.serialize(), // form data
-						type:filter.attr('method'), // POST
-						beforeSend:function(xhr){
-							filter.find('button').text('Processing...');
-						},
-						success:function(data){
-							filter.find('button').text('Apply filter');
-							$('.grid__list').html(data); // insert data
-						}
-					});
-					return false;
-				});
-			});
-		</script> -->
 
 <?php get_footer(); ?>
