@@ -20,7 +20,7 @@ function filterPosts(){
 
 	if( $query->have_posts() ) :
 		while( $query->have_posts() ): $query->the_post();
-			get_template_part('/partials/function_parts/post-part');
+			get_template_part('/partials/template_parts/work-content-posts');
 		endwhile;
 		wp_reset_postdata();
 	else :
@@ -32,5 +32,3 @@ function filterPosts(){
 
 add_action('wp_ajax_myfilter', 'filterPosts');
 add_action('wp_ajax_nopriv_myfilter', 'filterPosts');
-
-?>

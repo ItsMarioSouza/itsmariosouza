@@ -25,7 +25,7 @@
 				</div>
 			</section>
 
-			<?php // get_template_part('/partials/function_parts/filter-items'); ?>
+			<?php get_template_part('/partials/template_parts/work-content-post-filter'); ?>
 
 			<section class="grid">
 				<h2 class="grid__title"><?php the_field('blog_grid_title_acf'); ?></h2>
@@ -48,7 +48,7 @@
 						<!-- Get Posts & Place Them Into Template -->
 						<?php
 							if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
-								get_template_part('/partials/function_parts/post-part');
+								get_template_part('/partials/template_parts/work-content-posts');
 							endwhile; else :
 						?>
 							<p><?php esc_html_e('Sorry, no posts to display.'); ?></p>
@@ -69,7 +69,7 @@
 			</section>
 		</div> <!-- /contentContainer -->
 
-		<!-- <script>
+		<script>
 			jQuery(function($){
 				$('#filter').submit(function(){
 					var filter = $('#filter');
@@ -88,6 +88,6 @@
 					return false;
 				});
 			});
-		</script> -->
+		</script>
 
 <?php get_footer(); ?>

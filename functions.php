@@ -1,4 +1,5 @@
 <?php
+
 	/**
 	 * Custom Styles + Scipts
 	 *
@@ -10,7 +11,7 @@
  		wp_enqueue_style( 'aos-css' );
 
  		// Register Main CSS
- 		wp_enqueue_style( 'main-css', get_template_directory_uri() . '/ux/css/styles.min.css', array(), null, 'screen' );
+ 		wp_enqueue_style( 'main-css', get_template_directory_uri() . '/ux/css/styles.css', array(), null, 'screen' );
 
 		// Register Font Awesome JS
 		// wp_enqueue_script('font-awesome-js', get_template_directory_uri() . '/ux/vendor/fontawesome-all.min.js', array('jquery'), null, true);
@@ -19,7 +20,7 @@
 		wp_enqueue_script('aos-js', get_template_directory_uri() . '/ux/vendor/aos.js', array(), null, true);
 
 		// Register Main JS
-		wp_enqueue_script('main-js', get_template_directory_uri() . '/ux/js/main.min.js', array('jquery'), null, true);
+		wp_enqueue_script('main-js', get_template_directory_uri() . '/ux/js/main.js', array('jquery'), null, true);
 	}
 	add_action('wp_enqueue_scripts', 'load_my_scripts');
 
@@ -119,7 +120,6 @@
 	/**
 	 * Get Filter Posts
 	 */
-	// get_template_part('/partials/function_parts/filter-posts');
-
+	get_template_part('/partials/function_parts/work-post-filter');
 
 ?>
