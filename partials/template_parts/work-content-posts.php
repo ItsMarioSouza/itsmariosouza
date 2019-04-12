@@ -1,9 +1,8 @@
 <?php
-	// Also get grid animation from work page id 2
+	// Get grid animation from work page, id 2
 	$animation = get_field('blog_grid_item_animation_acf', 2);
 ?>
 
-<h1><?php $pageID ?></h1>
 
 <?php if( have_rows('post_title_options_acf') ): while( have_rows('post_title_options_acf') ): the_row(); ?>
 
@@ -33,4 +32,4 @@
 			</div>
 		</a>
 	</article>
-<?php endwhile; endif;  ?>
+<?php endwhile; endif; ?>

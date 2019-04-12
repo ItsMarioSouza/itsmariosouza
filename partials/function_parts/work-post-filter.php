@@ -1,31 +1,43 @@
 <?php
+/**
+ * @link https://rudrastyh.com/wordpress/ajax-post-filters.html
+ * @link https://codex.wordpress.org/Class_Reference/WP_Query
+ * @link https://www.smashingmagazine.com/2011/10/how-to-use-ajax-in-wordpress/
+ */
 
-function filterPosts(){
-	$args = array(
-		'orderby' => 'date', // we will sort posts by date
-		'order'	=> $_POST['date'] // ASC or DESC
-	);
 
+function filterPosts() {
 	if( isset( $_POST['categoryfilter'] ) ) {
-		$args['tax_query'] = array(
-			array(
-				'taxonomy' => 'category',
-				'field' => 'id',
-				'terms' => $_POST['categoryfilter']
-			)
-		);
+		if ($_POST['categoryfilter'] !== 'all') {
+			$args = array(
+				'post_type' 	=> 'post',
+				'meta_key' 		=> 'posts_order_acf',
+				'orderby' 		=> 'meta_value date',
+				'order' 		=> 'DESC',
+				'cat' 			=> $_POST['categoryfilter']
+			);
+		} else {
+			$args = array(
+				'post_type' 	=> 'post',
+				'meta_key' 		=> 'posts_order_acf',
+				'orderby' 		=> 'meta_value date',
+				'order' 		=> 'DESC',
+			);
+		}
 	}
 
-	$query = new WP_Query( $args );
+	$the_query = new WP_Query($args);
 
-	if( $query->have_posts() ) :
-		while( $query->have_posts() ): $query->the_post();
+	if ( $the_query->have_posts() ) {
+		while ( $the_query->have_posts() ) {
+			$the_query->the_post();
 			get_template_part('/partials/template_parts/work-content-posts');
-		endwhile;
-		wp_reset_postdata();
-	else :
-		echo 'No posts found';
-	endif;
+		}
+	} else {
+		get_template_part('/partials/template_parts/work-content-no-posts');
+	}
+
+	wp_reset_postdata();
 
 	die();
 }

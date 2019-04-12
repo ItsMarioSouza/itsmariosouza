@@ -3,6 +3,10 @@
 	Template Name: Blog
 	*/
 
+	/**
+	 * @link https://wordpress.stackexchange.com/questions/111376/use-query-string-in-url-to-display-content-on-the-page/111429
+	 */
+
 	get_header();
 ?>
 
@@ -25,69 +29,26 @@
 				</div>
 			</section>
 
-			<?php get_template_part('/partials/template_parts/work-content-post-filter'); ?>
-
 			<section class="grid">
-				<h2 class="grid__title"><?php the_field('blog_grid_title_acf'); ?></h2>
+				<div class="grid__intro">
+					<h2 class="grid__title"><?php the_field('blog_grid_title_acf'); ?></h2>
+					<?php get_template_part('/partials/template_parts/work-content-post-filter'); ?>
+				</div>
 
 				<?php if( ! post_password_required() ): ?>
+					<div class="grid__ajax-response" id="response">test</div>
+
 					<div class="grid__list grid_list--blog">
-						<?php
-							// Arguments
-							$args = array(
-								'post_type' 	=> 'post',
-								'meta_key' 		=> 'posts_order_acf',
-								'orderby' 		=> 'meta_value date',
-								'order' 		=> 'DESC',
-							);
-
-							// Query
-							$the_query = new WP_Query($args);
-						?>
-
-						<!-- Get Posts & Place Them Into Template -->
-						<?php
-							if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
-								get_template_part('/partials/template_parts/work-content-posts');
-							endwhile; else :
-						?>
-							<p><?php esc_html_e('Sorry, no posts to display.'); ?></p>
-
-						<!-- Stop The Loop -->
-						<?php endif; ?>
-
-						<!-- Reset The Query -->
-						<?php wp_reset_query(); ?>
+						<?php get_template_part('/partials/template_parts/work-content-query'); ?>
 					</div> <!-- /grid_list -->
 
 				<?php
 					//If password is needed
-					else: the_content();
+					else : the_content();
 					//End password protect
 					endif;
 				?>
 			</section>
 		</div> <!-- /contentContainer -->
-
-		<script>
-			jQuery(function($){
-				$('#filter').submit(function(){
-					var filter = $('#filter');
-					$.ajax({
-						url:filter.attr('action'),
-						data:filter.serialize(), // form data
-						type:filter.attr('method'), // POST
-						beforeSend:function(xhr){
-							filter.find('button').text('Processing...');
-						},
-						success:function(data){
-							filter.find('button').text('Apply filter');
-							$('.grid__list').html(data); // insert data
-						}
-					});
-					return false;
-				});
-			});
-		</script>
 
 <?php get_footer(); ?>

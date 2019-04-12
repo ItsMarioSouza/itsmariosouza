@@ -1,15 +1,23 @@
-<section>
-	<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
-		<?php if( $terms = get_terms( array( 'taxonomy' => 'category', 'orderby' => 'name' ) ) ) : ?>
-			<select name="categoryfilter">
-				<option value="">Select category...</option>
-				<?php foreach ( $terms as $term ) :
-					echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
-				endforeach; ?>
-			</select>
-		<?php endif; ?>
-		<button>Apply filter</button>
-		<input type="hidden" name="action" value="myfilter">
+<?php
+	if($terms = get_terms(array(
+		'taxonomy' => 'category',
+		'orderby' => 'name',
+		'exclude' => 1
+	))) :
+?>
+
+	<form class="grid__filter" method="POST" id="filter">
+		<span class="grid__filter-label">Filter By: </span>
+
+		<label for="all" class="active">All</label>
+		<input type="radio" name="categoryfilter" value="all" id="all">
+
+		<?php foreach ($terms as $term) {
+			echo '<label for="' . $term->term_id . '">' . $term->name . '</label> ';
+			echo '<input type="radio" name="categoryfilter" value="' . $term->term_id . '" id="' . $term->term_id . '"> ';
+		} ?>
+
+		<input type="hidden" name="action" value="myfilter" aria-hidden="true">
 	</form>
-	<div id="response"></div>
-</section>
+
+<?php endif; ?>
