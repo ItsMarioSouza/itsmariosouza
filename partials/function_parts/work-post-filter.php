@@ -11,6 +11,7 @@ function filterPosts() {
 		if ($_POST['categoryfilter'] !== 'all') {
 			$args = array(
 				'post_type' 	=> 'post',
+				'post_status' 	=> 'published',
 				'meta_key' 		=> 'posts_order_acf',
 				'orderby' 		=> 'meta_value date',
 				'order' 		=> 'DESC',
@@ -19,6 +20,7 @@ function filterPosts() {
 		} else {
 			$args = array(
 				'post_type' 	=> 'post',
+				'post_status' 	=> 'published',
 				'meta_key' 		=> 'posts_order_acf',
 				'orderby' 		=> 'meta_value date',
 				'order' 		=> 'DESC',
