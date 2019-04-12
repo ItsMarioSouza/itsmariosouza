@@ -2,7 +2,7 @@
 <html lang="en" class="nav-closed">
 	<head>
 		<!-- Meta -->
-		<title><?php bloginfo('name'); ?> <?php wp_title("|", true); ?></title>
+		<title><?php bloginfo('name'); ?><?php wp_title("|", true); ?></title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<meta name="description" content="<?php bloginfo('description'); ?>" />

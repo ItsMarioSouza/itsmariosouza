@@ -59,7 +59,7 @@ gulp.task('sass', function() {
 gulp.task('watchers', function() {
 	gulp.watch('ux/scss/**/*.scss', ['sass']);
 	gulp.watch('ux/js/**/*.js', browserSync.reload);
-	gulp.watch('*.php', browserSync.reload);
+	gulp.watch('**.php ', browserSync.reload);
 });
 
 

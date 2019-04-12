@@ -43,17 +43,15 @@ jQuery(document).ready(function($) {
 	// AOS Scroll Animations
 	––––––––––––––––––––––––––––––––———————————————— */
 	// Apply Initial delays
-	$(function() {
+	function staggerFadeIn() {
 		//local variables
 		var $gridItem = $('.grid__item--blog');
 
 		//apply transition to all items
-		if (window.innerWidth >= 576) {
-			$($gridItem).each(function(index) {
-				$(this).css({'transition-delay': .1*(0 + index) + 's'});
-			});
-		}
-	});
+		$($gridItem).each(function(index) {
+			$(this).css({'transition-delay': .1*(0 + index) + 's'});
+		});
+	};
 
 	// Inititate AOS
 	$(function() {
@@ -64,18 +62,52 @@ jQuery(document).ready(function($) {
 		});
 	});
 
-	// Check and delay new elemets that have not been animated
-	$(function() {
-		if (window.innerWidth >= 576) {
-			$(document).on('scroll', function() {
-				var $gridItem2 = $('.grid__item--blog').not('.aos-animate');
+	//apply transition to all items
+	if (window.innerWidth >= 576) {
+		staggerFadeIn();
+	}
 
-				$($gridItem2).each(function(index) {
-					$(this).css({'transition-delay': .1*(0 + index) + 's'});
-				});
+
+	/* ––––––––––––––––––––––––––––––––————————————————
+	// Work Page Post Filters
+	––––––––––––––––––––––––––––––––———————————————— */
+	function filterWorkPosts() {
+		var $filter = $('#filter');
+
+		$($filter).submit(function() {
+			$.ajax({
+				url: myAjax.ajaxURL,
+				data: $filter.serialize(), // form data
+				type: $filter.attr('method'), // POST
+				beforeSend: function(xhr) {
+					$('#response').text('Loading Posts...').fadeIn();
+				},
+				success: function(data) {
+					setTimeout(function() {
+						$('#response').fadeOut();
+						$('.grid__list').html(data); // insert data
+						staggerFadeIn();
+					}, 500);
+				}
 			});
-		}
-	});
+			return false;
+		});
+
+		$($filter).submit();
+	};
+
+	if ($('.contentContainer--blog').length > 0) {
+		$('#filter input[type="radio"]').on('click', function() {
+			filterWorkPosts();
+
+			$('.grid__filter label').each(function() {
+				$(this).removeClass('active');
+			});
+
+			$(this).prev().addClass('active');
+		});
+
+	}
 
 
 

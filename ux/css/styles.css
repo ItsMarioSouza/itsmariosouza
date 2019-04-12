@@ -989,6 +989,63 @@ img {
   font-family: "Inconsolata", monospace;
 }
 
+.grid__filter-label {
+  font-weight: 400;
+  margin-right: .25rem;
+}
+
+.grid__filter label {
+  position: relative;
+}
+
+.grid__filter label:after {
+  background-color: #000;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+  height: 1px;
+}
+
+.grid__filter label:hover, .grid__filter label.active {
+  cursor: pointer;
+}
+
+.grid__filter label:hover:after, .grid__filter label.active:after {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+@media (hover: none) {
+  .grid__filter label:hover:after, .grid__filter label.active:after {
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+
+.grid__filter input {
+  vertical-align: text-top;
+}
+
+.grid__ajax-response {
+  text-align: center;
+  margin-bottom: .875rem;
+  display: none;
+}
+
 .grid__item {
   position: relative;
   margin-bottom: 1rem;
@@ -1138,6 +1195,15 @@ img {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .grid__filter {
+    margin-bottom: .875rem;
+  }
+  .grid__filter input {
+    margin-left: .5rem;
+  }
+}
+
 @media screen and (min-width: 576px) and (max-width: 767px) {
   .grid__item.grid__item--blog {
     width: calc(50% - 1rem/2);
@@ -1152,6 +1218,20 @@ img {
 }
 
 @media screen and (min-width: 768px) {
+  .grid__intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .grid__filter input {
+    margin-left: .25rem;
+  }
   .grid__item {
     width: calc(33.33% - 2rem/3);
     margin-right: 1rem;
