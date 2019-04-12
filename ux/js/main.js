@@ -89,7 +89,7 @@ jQuery(document).ready(function($) {
 						$('.grid__filter-label').text($filterLabelText);
 						$('.grid__list').html(data); // insert data
 						staggerFadeIn();
-					}, 1000);
+					}, 500);
 				}
 			});
 			return false;
@@ -99,7 +99,7 @@ jQuery(document).ready(function($) {
 	};
 
 	if ($('.contentContainer--blog').length > 0) {
-		$('#filter input[type="radio"]').on('click', function() {
+		$('#filter input[type="radio"]').on('change', function() {
 			filterWorkPosts();
 
 			$('.grid__filter label').each(function() {
