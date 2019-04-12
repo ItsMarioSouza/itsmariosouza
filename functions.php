@@ -10,13 +10,13 @@
  		wp_enqueue_style('aos-css', get_template_directory_uri() . '/ux/vendor/aos.css', array(), null, 'screen');
 
  		// Register Main CSS
- 		wp_enqueue_style('main-css', get_template_directory_uri() . '/ux/css/styles.css', array(), null, 'screen');
+ 		wp_enqueue_style('main-css', get_template_directory_uri() . '/ux/css/styles.min.css', array(), null, 'screen');
 
 		// Register AOS JS
 		wp_enqueue_script('aos-js', get_template_directory_uri() . '/ux/vendor/aos.js', array(), null, true);
 
 		// Register Main JS
-		wp_enqueue_script('main-js', get_template_directory_uri() . '/ux/js/main.js', array('jquery'), null, true);
+		wp_enqueue_script('main-js', get_template_directory_uri() . '/ux/js/main.min.js', array('jquery'), null, true);
 
 		// Localize Main JS for Ajax filtering
 		wp_localize_script('main-js', 'myAjax', array('ajaxURL' => admin_url('admin-ajax.php')));
