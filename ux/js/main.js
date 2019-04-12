@@ -53,19 +53,20 @@ jQuery(document).ready(function($) {
 		});
 	};
 
+	//apply transition to all items
+	if (window.innerWidth >= 576) {
+		staggerFadeIn();
+	}
+
 	// Inititate AOS
 	$(function() {
 		AOS.init({
-			offset: 25,
+			offset: 30,
 			duration: 750,
 			once: 'true'
 		});
 	});
 
-	//apply transition to all items
-	if (window.innerWidth >= 576) {
-		staggerFadeIn();
-	}
 
 
 	/* ––––––––––––––––––––––––––––––––————————————————
@@ -73,6 +74,7 @@ jQuery(document).ready(function($) {
 	––––––––––––––––––––––––––––––––———————————————— */
 	function filterWorkPosts() {
 		var $filter = $('#filter');
+		var $filterLabelText = $('.grid__filter-label').text();
 
 		$($filter).submit(function() {
 			$.ajax({
@@ -80,14 +82,14 @@ jQuery(document).ready(function($) {
 				data: $filter.serialize(), // form data
 				type: $filter.attr('method'), // POST
 				beforeSend: function(xhr) {
-					$('#response').text('Loading Posts...').fadeIn();
+					$('.grid__filter-label').text('Loading Posts...');
 				},
 				success: function(data) {
 					setTimeout(function() {
-						$('#response').fadeOut();
+						$('.grid__filter-label').text($filterLabelText);
 						$('.grid__list').html(data); // insert data
 						staggerFadeIn();
-					}, 500);
+					}, 1000);
 				}
 			});
 			return false;
