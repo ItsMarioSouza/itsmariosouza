@@ -49,9 +49,14 @@ jQuery(document).ready(function($) {
 
 		//apply transition to all items
 		$($gridItem).each(function(index) {
-			$(this).css({'transition-delay': .1*(0 + index) + 's'});
+			$(this).css({'transition-delay': .1 * (0 + index) + 's'});
 		});
 	};
+
+	//apply transition to all items
+	if (window.innerWidth >= 576) {
+		staggerFadeIn();
+	}
 
 	// Inititate AOS
 	$(function() {
@@ -61,11 +66,6 @@ jQuery(document).ready(function($) {
 			once: 'true'
 		});
 	});
-
-	//apply transition to all items
-	if (window.innerWidth >= 576) {
-		staggerFadeIn();
-	}
 
 
 	/* ––––––––––––––––––––––––––––––––————————————————
