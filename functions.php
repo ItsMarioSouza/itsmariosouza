@@ -121,9 +121,6 @@
 	 */
 	get_template_part('/partials/function_parts/password-protection');
 
-<<<<<<< HEAD
-?>
-=======
 
 
 	/**
@@ -132,4 +129,3 @@
 	get_template_part('/partials/function_parts/work-post-filter');
 
 ?>
->>>>>>> feature/work-filter
