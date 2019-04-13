@@ -85,7 +85,7 @@ jQuery(document).ready(function($) {
 			$($filter).submit(function() {
 				$.ajax({
 					url: myAjax.ajaxURL,
-					data: $filter.serialize(), // form data
+					data: $filter.serialize(), // Form data
 					type: $filter.attr('method'), // POST
 					beforeSend: function(xhr) {
 						$($FilterLabel).text('Loading Posts...');
@@ -97,7 +97,7 @@ jQuery(document).ready(function($) {
 
 						setTimeout(function() {
 							$($FilterLabel).text($filterLabelText);
-							$($gridList).html(data); // insert data
+							$($gridList).html(data); // Insert data
 							aosDelay();
 							$($gridList).css('height', 'auto');
 						}, 500);
