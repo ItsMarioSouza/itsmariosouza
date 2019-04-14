@@ -5,8 +5,6 @@
 
 textarea,
 select,
-input,
-button,
 input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
@@ -22,16 +20,27 @@ input[type="url"],
 input[type="week"] {
 	box-sizing: border-box;
 	background-clip: padding-box;
-	border-radius:0;
+	border-radius: 0;
 	-webkit-appearance: none;
 	background-color: #fff;
 	color: #000;
-	// outline: 0; // bad for accessability
 	margin: 0;
-	padding:  0;
+	padding: 0;
 	text-align: left;
 	font-size: 1em;
-	// height: 1em; 
+	height: auto;
+	vertical-align: middle;
+}
+
+button {
+	box-sizing: border-box;
+	border-radius: 0;
+	-webkit-appearance: none;
+	background-color: #fff;
+	color: #000;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
 	height: auto;
 	vertical-align: middle;
 }
@@ -44,8 +53,6 @@ select {
 	font-size: .875em
 }
 
-
-// From Me
 // select::-ms-expand {
 // 	display: none;
 // } /* Hide button on MS the opens and closes the input */
