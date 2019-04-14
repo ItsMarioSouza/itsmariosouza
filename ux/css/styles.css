@@ -1027,11 +1027,11 @@ img {
   height: 1px;
 }
 
-.grid__filter label:hover, .grid__filter label.active {
+.grid__filter label:hover {
   cursor: pointer;
 }
 
-.grid__filter label:hover:after, .grid__filter label.active:after {
+.grid__filter label:hover:after {
   visibility: visible;
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
@@ -1039,12 +1039,19 @@ img {
 }
 
 @media (hover: none) {
-  .grid__filter label:hover:after, .grid__filter label.active:after {
+  .grid__filter label:hover:after {
     visibility: hidden;
     -webkit-transform: scaleX(0);
         -ms-transform: scaleX(0);
             transform: scaleX(0);
   }
+}
+
+.grid__filter label.active {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 .grid__filter input {

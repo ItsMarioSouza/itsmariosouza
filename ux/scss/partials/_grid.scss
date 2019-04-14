@@ -21,8 +21,7 @@
 			height: 1px;
 		}
 
-		&:hover,
-		&.active {
+		&:hover {
 			cursor: pointer;
 
 			&:after {
@@ -34,10 +33,14 @@
 				}
 			}
 		}
+
+		&.active {
+			@include centerUnderline-show;
+		}
 	}
 
 	input {
-		// position + opacity hides radios, but keeps them accessible 
+		// position + opacity hides radios, but keeps them accessible
 		position: fixed;
 		opacity:0;
 	}
