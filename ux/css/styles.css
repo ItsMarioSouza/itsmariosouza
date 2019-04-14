@@ -1047,7 +1047,7 @@ img {
   }
 }
 
-.grid__filter label.active {
+.grid__filter label.active:after {
   visibility: visible;
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
