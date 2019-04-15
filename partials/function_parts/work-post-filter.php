@@ -44,5 +44,5 @@ function filterPosts() {
 	die();
 }
 
-add_action('wp_ajax_myfilter', 'filterPosts');
-add_action('wp_ajax_nopriv_myfilter', 'filterPosts');
+add_action('wp_ajax_myfilter', 'filterPosts'); //`myfilter` is tied to the hidden HTML form input value
+add_action('wp_ajax_nopriv_myfilter', 'filterPosts'); //`FilterPosts` is tied to the PHP function above
