@@ -1,12 +1,23 @@
 <?php
-	$args = array(
-		'post_type' 	=> 'post',
-		'post_status' 	=> 'publish',
-		'meta_key' 		=> 'posts_order_acf',
-		'orderby' 		=> 'meta_value date',
-		'order' 		=> 'DESC',
-	);
-
+	if(isset($_GET['categoryfilter'])) {
+		$args = array(
+			'post_type' 	=> 'post',
+			'post_status' 	=> 'publish',
+			'meta_key' 		=> 'posts_order_acf',
+			'orderby' 		=> 'meta_value date',
+			'order' 		=> 'DESC',
+			// 'category_name' => $_GET['cat']
+			'cat' 			=> $_GET['categoryfilter']
+		);
+	} else {
+		$args = array(
+			'post_type' 	=> 'post',
+			'post_status' 	=> 'publish',
+			'meta_key' 		=> 'posts_order_acf',
+			'orderby' 		=> 'meta_value date',
+			'order' 		=> 'DESC',
+		);
+	}
 	$the_query = new WP_Query($args);
 
 	if ( $the_query->have_posts() ) {

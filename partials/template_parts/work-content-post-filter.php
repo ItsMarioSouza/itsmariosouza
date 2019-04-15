@@ -6,10 +6,10 @@
 	))) :
 ?>
 
-	<form class="grid__filter" method="POST" autocomplete="off" id="filter">
+	<form class="grid__filter" method="POST" id="filter">
 		<span class="grid__filter-label">Filter By: </span>
 
-		<label for="all" class="active">All</label>
+		<label for="all">All</label>
 		<input type="radio" name="categoryfilter" value="all" id="all">
 
 		<?php foreach ($terms as $term) {

@@ -46,26 +46,9 @@ jQuery(document).ready(function($) {
 
 		// apply transition to all items
 		$($gridItem).each(function(index) {
-<<<<<<< HEAD
-			$(this).css({'transition-delay': .1 * (0 + index) + 's'});
-=======
 			$(this).css({'transition-delay': .1 * (0 + index) + 's'})
->>>>>>> master
 		});
 
-<<<<<<< HEAD
-	//apply transition to all items
-	if (window.innerWidth >= 576) {
-		staggerFadeIn();
-	}
-
-	// Inititate AOS
-	$(function() {
-		AOS.init({
-			offset: 25,
-			duration: 750,
-			once: 'true'
-=======
 		// apply transition to not yet animated items
 		$(document).on('scroll', function() {
 			setTimeout(function() {
@@ -75,12 +58,9 @@ jQuery(document).ready(function($) {
 					$(this).css({'transition-delay': .1 * (0 + index) + 's'});
 				});
 			}, 500);
->>>>>>> master
 		});
 	};
 
-<<<<<<< HEAD
-=======
 	aosDelay();
 
 	AOS.init({
@@ -89,7 +69,6 @@ jQuery(document).ready(function($) {
 		once: 'true'
 	});
 
->>>>>>> master
 
 	/* ––––––––––––––––––––––––––––––––————————————————
 	// Work Page Post Filters
@@ -100,7 +79,7 @@ jQuery(document).ready(function($) {
 			$FilterLabel = $('.grid__filter-label'),
 			$filterLabelText = $($FilterLabel).text();
 
-		function filterWorkPosts() {
+		function filterWorkPosts($category) {
 			$($filter).off('submit');
 
 			$($filter).submit(function() {
@@ -122,6 +101,8 @@ jQuery(document).ready(function($) {
 							aosDelay();
 							$($gridList).css('height', 'auto');
 						}, 500);
+
+						window.history.pushState(null, null, '?categoryfilter=' + $category);
 					}
 				});
 				return false;
@@ -132,13 +113,22 @@ jQuery(document).ready(function($) {
 
 		if ($('.contentContainer--blog').length > 0) {
 			$($filter).find('input[type="radio"]').on('change', function() {
-				filterWorkPosts();
+
+				var $category = $(this).val();
+
+				filterWorkPosts($category);
 
 				$($filter).find('label').removeClass('active');
 
+				$($filter).find('input').removeAttr('checked');
+				$(this).attr('checked', 'checked');
+
 				$(this).prev().addClass('active');
+				$($filter).find('input[type="radio"]:checked').prev().addClass('active');
 			});
 		}
+
+		$($filter).find('input[type="radio"]:checked').prev().addClass('active');
 	});
 
 
