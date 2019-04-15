@@ -9,7 +9,6 @@
 
 .grid__filter-label {
 	font-weight: 400;
-	margin-right: .25rem;
 }
 
 .grid__filter {
@@ -22,8 +21,7 @@
 			height: 1px;
 		}
 
-		&:hover,
-		&.active {
+		&:hover {
 			cursor: pointer;
 
 			&:after {
@@ -35,17 +33,19 @@
 				}
 			}
 		}
+
+		&.active {
+			&:after {
+				@include centerUnderline-show;
+			}
+		}
 	}
 
 	input {
-		vertical-align: text-top;
+		// position + opacity hides radios, but keeps them accessible
+		position: fixed;
+		opacity: 0;
 	}
-}
-
-.grid__ajax-response {
-	text-align: center;
-	margin-bottom: .875rem;
-	display: none;
 }
 
 .grid__item {
@@ -165,7 +165,7 @@
 	.grid__filter {
 		margin-bottom: .875rem;
 
-		input {
+		label {
 			margin-left: .5rem;
 		}
 	}
@@ -203,7 +203,7 @@
 	}
 
 	.grid__filter {
-		input {
+		label {
 			margin-left: .25rem;
 		}
 	}

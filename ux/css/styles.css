@@ -9,8 +9,6 @@
 —————————————————————————————————————————— */
 textarea,
 select,
-input,
-button,
 input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
@@ -34,6 +32,20 @@ input[type="week"] {
   margin: 0;
   padding: 0;
   text-align: left;
+  font-size: 1em;
+  height: auto;
+  vertical-align: middle;
+}
+
+button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 0;
+  -webkit-appearance: none;
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
   font-size: 1em;
   height: auto;
   vertical-align: middle;
@@ -991,7 +1003,6 @@ img {
 
 .grid__filter-label {
   font-weight: 400;
-  margin-right: .25rem;
 }
 
 .grid__filter label {
@@ -1016,11 +1027,11 @@ img {
   height: 1px;
 }
 
-.grid__filter label:hover, .grid__filter label.active {
+.grid__filter label:hover {
   cursor: pointer;
 }
 
-.grid__filter label:hover:after, .grid__filter label.active:after {
+.grid__filter label:hover:after {
   visibility: visible;
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
@@ -1028,7 +1039,7 @@ img {
 }
 
 @media (hover: none) {
-  .grid__filter label:hover:after, .grid__filter label.active:after {
+  .grid__filter label:hover:after {
     visibility: hidden;
     -webkit-transform: scaleX(0);
         -ms-transform: scaleX(0);
@@ -1036,14 +1047,16 @@ img {
   }
 }
 
-.grid__filter input {
-  vertical-align: text-top;
+.grid__filter label.active:after {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
-.grid__ajax-response {
-  text-align: center;
-  margin-bottom: .875rem;
-  display: none;
+.grid__filter input {
+  position: fixed;
+  opacity: 0;
 }
 
 .grid__item {
@@ -1199,7 +1212,7 @@ img {
   .grid__filter {
     margin-bottom: .875rem;
   }
-  .grid__filter input {
+  .grid__filter label {
     margin-left: .5rem;
   }
 }
@@ -1229,7 +1242,7 @@ img {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .grid__filter input {
+  .grid__filter label {
     margin-left: .25rem;
   }
   .grid__item {

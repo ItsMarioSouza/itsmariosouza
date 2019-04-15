@@ -36,7 +36,10 @@
 				</div>
 
 				<?php if( ! post_password_required() ): ?>
+<<<<<<< HEAD
 					<div class="grid__ajax-response" id="response"></div>
+=======
+>>>>>>> master
 
 					<div class="grid__list grid_list--blog">
 						<?php get_template_part('/partials/template_parts/work-content-query'); ?>

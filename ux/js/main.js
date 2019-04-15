@@ -1,5 +1,4 @@
 // Main JS File
-// jQuery.noConflict();
 
 jQuery(document).ready(function($) {
 
@@ -42,17 +41,19 @@ jQuery(document).ready(function($) {
 	/* ––––––––––––––––––––––––––––––––————————————————
 	// AOS Scroll Animations
 	––––––––––––––––––––––––––––––––———————————————— */
-	// Apply Initial delays
-	function staggerFadeIn() {
-		//local variables
+	function aosDelay() {
 		var $gridItem = $('.grid__item--blog');
 
-		//apply transition to all items
+		// apply transition to all items
 		$($gridItem).each(function(index) {
+<<<<<<< HEAD
 			$(this).css({'transition-delay': .1 * (0 + index) + 's'});
+=======
+			$(this).css({'transition-delay': .1 * (0 + index) + 's'})
+>>>>>>> master
 		});
-	};
 
+<<<<<<< HEAD
 	//apply transition to all items
 	if (window.innerWidth >= 576) {
 		staggerFadeIn();
@@ -64,52 +65,81 @@ jQuery(document).ready(function($) {
 			offset: 25,
 			duration: 750,
 			once: 'true'
+=======
+		// apply transition to not yet animated items
+		$(document).on('scroll', function() {
+			setTimeout(function() {
+				var $gridItem2 = $('.grid__item--blog').not('.aos-animate');
+
+				$($gridItem2).each(function(index) {
+					$(this).css({'transition-delay': .1 * (0 + index) + 's'});
+				});
+			}, 500);
+>>>>>>> master
 		});
+	};
+
+<<<<<<< HEAD
+=======
+	aosDelay();
+
+	AOS.init({
+		offset: 30,
+		duration: 750,
+		once: 'true'
 	});
 
+>>>>>>> master
 
 	/* ––––––––––––––––––––––––––––––––————————————————
 	// Work Page Post Filters
 	––––––––––––––––––––––––––––––––———————————————— */
-	function filterWorkPosts() {
-		var $filter = $('#filter');
+	$(function() {
+		var $filter = $('#filter'),
+			$gridList = $('.grid__list'),
+			$FilterLabel = $('.grid__filter-label'),
+			$filterLabelText = $($FilterLabel).text();
 
-		$($filter).submit(function() {
-			$.ajax({
-				url: myAjax.ajaxURL,
-				data: $filter.serialize(), // form data
-				type: $filter.attr('method'), // POST
-				beforeSend: function(xhr) {
-					$('#response').text('Loading Posts...').fadeIn();
-				},
-				success: function(data) {
-					setTimeout(function() {
-						$('#response').fadeOut();
-						$('.grid__list').html(data); // insert data
-						staggerFadeIn();
-					}, 500);
-				}
+		function filterWorkPosts() {
+			$($filter).off('submit');
+
+			$($filter).submit(function() {
+				$.ajax({
+					url: myAjax.ajaxURL,
+					data: $filter.serialize(), // Form data
+					type: $filter.attr('method'), // POST
+					beforeSend: function(xhr) {
+						$($FilterLabel).text('Loading Posts...');
+					},
+					success: function(data) {
+						var $gridHeight = $($gridList).height();
+						$($gridList).css({'height' : $gridHeight + 'px'});
+						$($gridList).children().fadeOut();
+
+						setTimeout(function() {
+							$($FilterLabel).text($filterLabelText);
+							$($gridList).html(data); // Insert data
+							aosDelay();
+							$($gridList).css('height', 'auto');
+						}, 500);
+					}
+				});
+				return false;
 			});
-			return false;
-		});
 
-		$($filter).submit();
-	};
+			$($filter).submit();
+		}
 
-	if ($('.contentContainer--blog').length > 0) {
-		$('#filter input[type="radio"]').on('click', function() {
-			filterWorkPosts();
+		if ($('.contentContainer--blog').length > 0) {
+			$($filter).find('input[type="radio"]').on('change', function() {
+				filterWorkPosts();
 
-			$('.grid__filter label').each(function() {
-				$(this).removeClass('active');
+				$($filter).find('label').removeClass('active');
+
+				$(this).prev().addClass('active');
 			});
-
-			$(this).prev().addClass('active');
-		});
-
-	}
-
-
+		}
+	});
 
 
 	/* ––––––––––––––––––––––––––––––––————————————————
