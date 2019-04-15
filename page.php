@@ -36,6 +36,7 @@
 				</div>
 
 				<?php if( ! post_password_required() ): ?>
+
 					<div class="grid__list grid_list--blog">
 						<?php get_template_part('/partials/template_parts/work-content-query'); ?>
 					</div> <!-- /grid_list -->
