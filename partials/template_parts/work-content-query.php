@@ -18,6 +18,7 @@
 			'order' 		=> 'DESC',
 		);
 	}
+
 	$the_query = new WP_Query($args);
 
 	if ( $the_query->have_posts() ) {
