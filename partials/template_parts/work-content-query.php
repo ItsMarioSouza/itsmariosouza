@@ -1,13 +1,13 @@
 <?php
-	if(isset($_GET['categoryfilter'])) {
+	if(isset($_GET['category'])) {
 		$args = array(
 			'post_type' 	=> 'post',
 			'post_status' 	=> 'publish',
 			'meta_key' 		=> 'posts_order_acf',
 			'orderby' 		=> 'meta_value date',
 			'order' 		=> 'DESC',
-			// 'category_name' => $_GET['cat']
-			'cat' 			=> $_GET['categoryfilter']
+			'category_name' => $_GET['category']
+			// 'cat' 			=> $_GET['category']
 		);
 	} else {
 		$args = array(

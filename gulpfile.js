@@ -41,7 +41,8 @@ gulp.task('sass', function() {
 	}).on('error', sass.logError)) // Pass through a gulp-sass, log errors to console
 
 	.pipe(autoprefixer({
-		browsers: ['> 5%', 'last 3 versions'],
+		overrideBrowserslist:  ['> 5%', 'last 3 versions'],
+		// browsers: ['> 5%', 'last 3 versions'],
 		cascade: true
 	})) // Pass through autoprefixer
 

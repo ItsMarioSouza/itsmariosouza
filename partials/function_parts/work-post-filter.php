@@ -7,15 +7,19 @@
 
 
 function filterPosts() {
-	if( isset( $_POST['categoryfilter'] ) ) {
-		if ($_POST['categoryfilter'] !== 'all') {
+	$formMethod = $_GET;
+	$getCategoryName = $_GET['category'];
+
+	if(isset($formMethod['category'])) {
+		if ($formMethod['category'] !== 'all') {
 			$args = array(
 				'post_type' 	=> 'post',
 				'post_status' 	=> 'publish',
 				'meta_key' 		=> 'posts_order_acf',
 				'orderby' 		=> 'meta_value date',
 				'order' 		=> 'DESC',
-				'cat' 			=> $_POST['categoryfilter']
+				'category_name' => $formMethod['category']
+				// 'cat' 			=> $formMethod['category']
 			);
 		} else {
 			$args = array(

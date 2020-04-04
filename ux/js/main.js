@@ -74,62 +74,101 @@ jQuery(document).ready(function($) {
 	// Work Page Post Filters
 	––––––––––––––––––––––––––––––––———————————————— */
 	$(function() {
-		var $filter = $('#filter'),
-			$gridList = $('.grid__list'),
-			$FilterLabel = $('.grid__filter-label'),
-			$filterLabelText = $($FilterLabel).text();
-
-		function filterWorkPosts($category) {
-			$($filter).off('submit');
-
-			$($filter).submit(function() {
-				$.ajax({
-					url: myAjax.ajaxURL,
-					data: $filter.serialize(), // Form data
-					type: $filter.attr('method'), // POST
-					beforeSend: function(xhr) {
-						$($FilterLabel).text('Loading Posts...');
-					},
-					success: function(data) {
-						var $gridHeight = $($gridList).height();
-						$($gridList).css({'height' : $gridHeight + 'px'});
-						$($gridList).children().fadeOut();
-
-						setTimeout(function() {
-							$($FilterLabel).text($filterLabelText);
-							$($gridList).html(data); // Insert data
-							aosDelay();
-							$($gridList).css('height', 'auto');
-						}, 500);
-
-						window.history.pushState(null, null, '?categoryfilter=' + $category);
-					}
-				});
-				return false;
-			});
-
-			$($filter).submit();
-		}
-
 		if ($('.contentContainer--blog').length > 0) {
-			$($filter).find('input[type="radio"]').on('change', function() {
+			var $filter = $('#filter'),
+				$gridList = $('.grid__list'),
+				$FilterLabel = $('.grid__filter-label'),
+				$filterLabelText = $($FilterLabel).text();
 
-				var $category = $(this).val();
+			function filterWorkPosts($category) {
+				$($filter).off('submit');
 
-				filterWorkPosts($category);
+				$($filter).on('submit', function() {
+					$.ajax({
+						url: myAjax.ajaxURL,
+						data: $filter.serialize(), // Form data
+						type: $filter.attr('method'), // GET
+						beforeSend: function(xhr) {
+							$($FilterLabel).text('Loading Posts...');
+						},
+						success: function(data) {
+							var $gridHeight = $($gridList).height();
 
+							$($gridList)
+								.css({'height' : $gridHeight + 'px'})
+								.children()
+								.fadeOut();
+
+							setTimeout(function() {
+								$($FilterLabel).text($filterLabelText);
+								$($gridList).html(data); // Insert data
+								aosDelay();
+								$($gridList).css('height', 'auto');
+							}, 500);
+						}
+					});
+					return false;
+				});
+
+				$($filter).submit();
+			}
+
+			function getURL() {
+				$urlQuery = new URLSearchParams(window.location.search),
+				$urlCat = $urlQuery.get('category');
+
+				if ($urlCat) {
+					selectRadio($urlCat);
+				} else {
+					selectRadio('all');
+				}
+			}
+
+			function selectRadio($category) {
+				$($filter).find('input[type="radio"]').attr('checked', '');
 				$($filter).find('label').removeClass('active');
 
-				$($filter).find('input').removeAttr('checked');
-				$(this).attr('checked', 'checked');
+				$($filter)
+					.find('input[value="' + $category + '"]')
+					.attr('checked', 'checked')
+					.prev().addClass('active');
+			}
 
-				$(this).prev().addClass('active');
-				$($filter).find('input[type="radio"]:checked').prev().addClass('active');
+			$($filter).find('input[type="radio"]').on('change', function() {
+				// Get the category when a radio is selected
+				var $category = $(this).val(),
+					$categoryQuery = '?category=' + $category;
+
+				// console.log('Radio on change category: ' + $category);
+
+				window.history.pushState($category, null, $categoryQuery);
+
+				selectRadio($category);
+
+				filterWorkPosts($category);
 			});
-		}
 
-		$($filter).find('input[type="radio"]:checked').prev().addClass('active');
+			// Update content with browser back and forward buttons
+			window.addEventListener('popstate', function() {
+				var $category = history.state;
+
+				// console.log('Popstate... location: ' + document.location + ' & history: ' + history.state);
+
+				// History does not exist is user loads page with query string, history is null
+				if ($category) {
+					selectRadio($category);
+				} else {
+					getURL();
+				}
+
+				filterWorkPosts($category);
+			});
+
+			// Show active state on load
+			getURL();
+		}
 	});
+
 
 
 	/* ––––––––––––––––––––––––––––––––————————————————
