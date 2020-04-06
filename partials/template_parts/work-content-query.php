@@ -1,13 +1,14 @@
 <?php
-	if(isset($_GET['category'])) {
+	$queryString = $_GET['category'];
+
+	if( isset($queryString) && $queryString !== 'all') {
 		$args = array(
 			'post_type' 	=> 'post',
 			'post_status' 	=> 'publish',
 			'meta_key' 		=> 'posts_order_acf',
 			'orderby' 		=> 'meta_value date',
 			'order' 		=> 'DESC',
-			'category_name' => $_GET['category']
-			// 'cat' 			=> $_GET['category']
+			'category_name' => $queryString
 		);
 	} else {
 		$args = array(
