@@ -1,24 +1,52 @@
+/* Articles
+	* https://gulpjs.com/docs/en/getting-started/creating-tasks/
+	* https://gulpjs.com/docs/en/getting-started/working-with-files
+	* https://css-tricks.com/gulp-for-beginners/
+	* https://github.com/cferdinandi/gulp-boilerplate
+*/
+
+
 // Require these things
-var gulp             = require('gulp');
-var sass             = require('gulp-sass');
-var browserSync      = require('browser-sync').create();
-var uglify           = require('gulp-uglify');
-var pump             = require('pump');
-// var pipeline         = require('readable-stream').pipeline;
-var cssnano          = require('gulp-cssnano');
-var runSequence      = require('run-sequence');
-var autoprefixer     = require('gulp-autoprefixer');
-var rename           = require("gulp-rename");
-var sourcemaps       = require('gulp-sourcemaps');
-var del              = require('del');
+const {
+	gulp,
+	watch,
+	src,
+	dest,
+	series,
+	parallel
+}                      = require('gulp');
+const browserSync      = require('browser-sync').create();
+const del              = require('del');
+const rename           = require("gulp-rename");
+const sass             = require('gulp-sass');
+const sourcemaps       = require('gulp-sourcemaps');
+const autoprefixer     = require('gulp-autoprefixer');
+const cssnano          = require('gulp-cssnano');
+const uglify           = require('gulp-uglify');
+const pump             = require('pump');
 
 
 // Project Variables
-var projectURL       = 'itsmariosouza.local';
+const projectURL       = 'itsmariosouza.local';
+
+// const paths = {
+// 	sass: {
+// 		src: 'ux/scss/*.{scss,sass}',
+// 		dest: 'ux/css'
+// 	},
+// 	scripts: {
+// 		src: 'ux/js/**/*.js',
+// 		dest: 'dist/scripts/'
+// 	},
+// 	styles: {
+// 		src: 'ux/scss/*.{scss,sass}',
+// 		dest: 'ux/css'
+// 	}
+// }; //paths.sass.src, future enhancement
 
 
-//  Start BrowserSync server, reloads browser when definied items change
-gulp.task( 'browserSync', function() {
+// Start Local Server
+function starServer(cb) {
 	browserSync.init({
 		proxy: projectURL,
 		injectChanges: true,
@@ -27,103 +55,109 @@ gulp.task( 'browserSync', function() {
 			debounceDelay: 500 // Introduces a small delay when watching for changes to avoid triggering too many reloads
 		}
 	});
-});
+
+	cb();
+};
 
 
-// SASS > CSS > Autoprefixer
-gulp.task('sass', function() {
-	return gulp.src('ux/scss/*.scss') // Get all files ending with .scss in app/scss and children directories
+// Reload Local Server
+function reloadServer(cb) {
+	browserSync.reload();
 
-	.pipe(sourcemaps.init()) // Initiaite SCSS sourcemap
-
-	.pipe(sass({
-		outputStyle: 'expanded'
-	}).on('error', sass.logError)) // Pass through a gulp-sass, log errors to console
-
-	.pipe(autoprefixer({
-		overrideBrowserslist:  ['> 5%', 'last 3 versions'],
-		// browsers: ['> 5%', 'last 3 versions'],
-		cascade: true
-	})) // Pass through autoprefixer
-
-	.pipe(sourcemaps.write('sourcemaps')) // Place sourcemap in a destination making it an external file
-
-	.pipe(gulp.dest('ux/css')) // Output the file in the destination folder
-
-	.pipe(browserSync.reload({
-		stream: true
-	})) // Reload the browser with BrowserSync
-});
+	cb();
+}
 
 
-// Watchers
-gulp.task('watchers', function() {
-	gulp.watch('ux/scss/**/*.scss', ['sass']);
-	gulp.watch('ux/js/**/*.js', browserSync.reload);
-	gulp.watch('**.php ', browserSync.reload);
-});
+// Watch for File Changes
+function watchFiles(cb) {
+	// watch('ux/scss/**/*.scss', series(buildStyles, updateServer));
+	watch('ux/scss/**/*.scss', buildStyles);
+	watch('ux/js/**/*.js', reloadServer);
+	watch('**/*.php', reloadServer);
+
+	cb();
+}
+
+
+// SASS > CSS > Autoprefixer + Sourcemaps
+function buildStyles(cb) {
+	return src('ux/scss/*.scss') // Get all files ending with .scss and children directories
+
+		.pipe(sourcemaps.init()) // Initiaite sourcemap
+
+		.pipe(sass({
+			outputStyle: 'expanded'
+		}).on('error', sass.logError)) // Compile Sass, log errors to console
+
+		.pipe(autoprefixer({
+			overrideBrowserslist:  ['> 5%', 'last 3 versions'],
+			// browsers: ['> 5%', 'last 3 versions'],
+			cascade: true
+		})) // Pass CSS through autoprefixer
+
+		.pipe(sourcemaps.write('sourcemaps')) // Place sourcemap in a destination making it an external file
+
+		.pipe(dest('ux/css')) // Output the file in the destination folder
+
+		.pipe(browserSync.stream()); // Inject (don't reload) changes with BrowserSync
+
+	cb();
+}
 
 
 // Autoprefixed CSS > Minified CSS
-gulp.task('minify-css', function() {
-	return gulp.src('ux/css/*.css') // get file
+function minifyStyles(cb) {
+	return src('ux/css/*.css') // get file
 
-	.pipe(cssnano()) // minify file
+		.pipe(cssnano()) // Minify file
 
-	.pipe(rename({
-		suffix: '.min'
-	})) // rename with min suffix
+		.pipe(rename({
+			suffix: '.min'
+		})) // rename with min suffix
 
-	.pipe(gulp.dest('ux/css')); // place file in location
-});
+		.pipe(dest('ux/css')); // place file in location
+
+	cb();
+}
 
 
 // JS > Minfied JS
-gulp.task('minify-js', function(callback) {
+function minifyScripts(cb) {
 	pump([
-		gulp.src('ux/js/main.js'),
+		src('ux/js/main.js'),
 		uglify(),
 		rename({
 			suffix: '.min'
 		}),
-		gulp.dest('ux/js')
-	], callback);
-});
-
-// gulp.task('minify-js', function() {
-// 	return pipeline(
-// 		gulp.src('ux/js/main.js'),
-// 		uglify(),
-// 		rename({
-// 			suffix: '.min'
-// 		}),
-// 		gulp.dest('ux/js')
-// 	);
-// });
+		dest('ux/js')
+	], cb);
+}
 
 
 // Clean CSS folder
-gulp.task('clean:css', function() {
-	return del.sync('ux/css');
-});
+function cleanCSS (cb) {
+	del.sync('ux/css');
+
+	cb();
+}
 
 
 // Gulp Watch
-gulp.task('watch', function(callback) {
-	runSequence(
-		['sass', 'browserSync'],
-		'watchers',
-		callback
-	)
-});
+exports.watch = series (
+	parallel (
+		buildStyles,
+		starServer
+	),
+	watchFiles
+);
 
 
 // Gulp Build
-gulp.task('build', function(callback) {
-	runSequence(
-		'clean:css',
-		'sass',
-		['minify-css', 'minify-js'],
-		callback
+exports.build = series (
+	cleanCSS,
+	buildStyles,
+	parallel (
+		minifyStyles,
+		minifyScripts
 	)
-});
+);
